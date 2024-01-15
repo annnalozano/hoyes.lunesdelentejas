@@ -1,0 +1,100 @@
+
+
+body {
+
+  /* Configuracion tipografia */
+    font-family: "dancing script";
+    font-size: 25px; 
+   
+    /* Configuracion Fondo de pantalla */
+    background-image: url("../../hoyes.lunesdelentejas/img/fondome.png");
+    background-color: #ffffff; /* Used if the image is unavailable */
+
+    height: 100vh; /* 100% de la altura de la ventana */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* No repite la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir toda la ventana */
+  }
+  
+
+
+
+.imagenes-container{
+ 
+  display: flex;
+  justify-content:center ;
+  align-items: center ;
+  height: 100vh;
+}
+
+.imagenes-container .imagen {
+
+  position: relative;
+  margin-right: -6px;
+  display: inline-flex;
+  flex-direction: column;
+}
+.imagenes-container .imagen img{
+   width: 150px;
+   height: 170px;  /*movimiento de los corazones  */
+   transition: transform 0.2s ease-in-out; /*movimiento de los corazones  */
+    
+
+}
+.imagenes-container .imagen .nombre { /* los puntos son para acceder dentro de las carpetas/ classes . como cd */
+
+  position: absolute;
+  background-color: rgb(255, 255, 255); /* color interior de la caja */
+  border-radius: 5px;
+  color:rgb(245, 106, 217); /* color de las letras */
+  display: none;
+  min-width: 100px;
+  width: 150px; /* modificar el ancho entre el medio de los corazones */
+  top: -55px; /* modificar el texto hascia arriba o abajo */
+  left: calc(2%); /* mover las cajas de derecha a izquierda */
+  padding: 10px 15px; /* relleno del texto */ 
+
+}
+.imagenes-container .imagen .nombre .text {
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  width: 150px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.imagenes-container .imagen:hover .nombre { /* hover cada vez que pasas el mouse por ahi se realiza una accion concreta*/
+  display: inline-block;
+ 
+}
+
+.imagenes-container .imagen .nombre::before {
+  content: "";
+  position: absolute; /*contenedor immediato */
+  width: 1px; 
+  height: 1px;
+  left: 40%;
+  bottom: -20px;
+  /*para crear la caja de texto  */
+  border-top: 10px solid  rgb(253, 120, 209); 
+  border-left: 10px solid transparent; 
+  border-right: 10px solid transparent; 
+  border-bottom: 10px solid transparent; 
+
+} 
+
+.imagenes-container .imagen:hover img{ 
+transform: translateY(-3px);
+
+}
+
+@media  (max-widht: 680px) {
+  .imagenes-container{
+    flex-direction: column;
+    height: 180vh; 
+  }
+}
+
+

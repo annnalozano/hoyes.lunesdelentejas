@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotherOfDolphins</title>
+    <link rel="stylesheet" type="text/css" href="../../hoyes.lunesdelentejas/stylesheet/stylesheet3.css">
+    <link rel="icon" type="image/x-icon" href="../hoyes.lunesdelentejas/img/dolphin_1f42c.png">
+    
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .draggable {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            cursor: grab; /* Agrega este estilo */
+        }
+
+        .draggable #objeto1 {
+            background-image: url('../PaginaWeb/imagenes/ilovesinfondo.png');
+            background-size: cover;
+        }
+
+        .draggable #objeto2 {
+            background-image: url('../PaginaWeb/imagenes/artbreeder-pattern (3).jpg');
+            background-size: cover;
+        }
+
+        .draggable #objeto3 {
+            background-image: url('../PaginaWeb/imagenes/grandefondo.png');
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        .draggable #objeto4 {
+            background-image: url('../PaginaWeb/imagenes/hi.png');
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <a href="../../hoyes.lunesdelentejas/about/about.html"><p class="boton">Go Back About</p></a>
+
+    <div class="draggable" id="objeto1"></div>
+    <div class="draggable" id="objeto2"></div>
+    <div class="draggable" id="objeto3"></div>
+    <div class="draggable" id="objeto4"></div>
+
+    <script>
+        function hacerArrastrable(elemento) {
+            var offsetX, offsetY, isDragging = false;
+
+            elemento.addEventListener('mousedown', function (e) {
+                isDragging = true;
+                offsetX = e.clientX - elemento.getBoundingClientRect().left;
+                offsetY = e.clientY - elemento.getBoundingClientRect().top;
+            });
+
+            document.addEventListener('mousemove', function (e) {
+                if (isDragging) {
+                    elemento.style.left = e.clientX - offsetX + 'px';
+                    elemento.style.top = e.clientY - offsetY + 'px';
+                }
+            });
+
+            document.addEventListener('mouseup', function () {
+                isDragging = false;
+            });
+        }
+
+        var elementosArrastrables = document.querySelectorAll('.draggable');
+        elementosArrastrables.forEach(function (elemento) {
+            hacerArrastrable(elemento);
+        });
+    </script>
+</body>
+</html>

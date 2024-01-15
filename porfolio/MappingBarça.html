@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MappingBarça</title>
+  <link rel="icon" type="image/x-icon" href="../../hoyes.lunesdelentejas/img/dolphin_1f42c.png">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'MiTipografia', dancing script;
+      font-size: 25px;
+      background-color: #ffffff;
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center; /* Cambiado para centrar los elementos */
+      margin-top: 50px;
+    }
+
+    .video-container {
+      width: 50%; /* Cambiado a 100% para ocupar el ancho completo */
+      position: relative;
+    }
+
+    .video-container video {
+      width: 50%;
+      height: auto;
+      display: block;
+      margin: 0 auto; /* Añadido para centrar horizontalmente */
+    }
+
+    .video-container:hover .overlay {
+      opacity: 1;
+    }
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    #goBack {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      text-decoration: none;
+      color: #000;
+      font-size: 30px; /* Aumentado el tamaño del texto */
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="../../hoyes.lunesdelentejas/porfolio.html" id="goBack">Go Back</a>
+
+  <!-- Repite el mismo patrón para otros videos -->
+
+  <div class="video-container">
+
+    <video controls>
+      <source src="../mp4/tres - Compressed with FlexClip.mp4" type="video/mp4">
+      Tu navegador no soporta el elemento de video.
+    </video>
+
+  </div>
+
+</body>
+
+</html>

@@ -1,134 +1,200 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Porfolio</title>
-  <link rel="icon" type="image/x-icon" href="../hoyes.lunesdelentejas/img/dolphin_1f42c.png">
-  <link rel="stylesheet" type="text/css" href="../hoyes.lunesdelentejas/stylesheet/stylesheet2.css">
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../hoyes.lunesdelentejas/img/dolphin_1f42c.png">
+    <title>MotherOfDolphins</title>
 
+    <style>
+         /* Establecer un cursor personalizado en todo el cuerpo */
+         body {
+            cursor: url('https://e1.pngegg.com/pngimages/253/24/png-clipart-britney-spears-0134.png') 16 16, auto; /* Cambia la ruta de la imagen según tu estructura */
+        }
 
-    * {
-      box-sizing: border-box;
-    }
+        /* Cambiar el cursor solo para los enlaces */
+        a {
+            cursor: url('https://media.revistagq.com/photos/5ca5ecaa27f26436607c8d9f/4:3/w_320,h_240,c_limit/britney_spears_femme_fatale_216021890.jpg') 16 16, pointer; /* Cambia la ruta de la imagen según tu estructura */
+        }
 
-    .img-container {
-      float: left;
-      width: 33.33%;
-      position: relative;
-    }
+        /* Mantener el enlace "Go Back Home" en la esquina superior izquierda */
+        .boton {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 120%; 
+            font-family: 'MiTipografia', dancing script;
+        }
 
-    .img-container img {
-      width: 100%;
-      display: block;
-    }
+        /* Centrar la columna en el cuerpo */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; 
+            height: 100vh;
+            margin: 0;
+            font-size: 1.2em;
+            font-style: italic;
+            position: relative;
+        }
 
-    .img-container:hover .overlay {
-      opacity: 1;
-    }
+        /* Ajustar la posición del contenido hacia la izquierda */
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            line-height: 0.5;
+            margin-left: -375px;
+        }
 
-    .overlay {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100%;
-      width: 100%;
-      opacity: 0;
-      transition: .5s ease;
-      background-color: #ffffff;
-    }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
 
-    .text {
-      color: rgb(0, 0, 0);
-      font-size: 50px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-    }
+        nav ul li {
+            margin: 0.5em 0;
+        }
 
-    .clearfix::after {
-      content: "";
-      clear: both;
-      display: table;
-    }
-  </style>
+        nav ul a {
+            text-decoration: none;
+            color: #000;
+            display: block;
+            padding: 0.5em 0;
+        }
+
+        /* Aumentar el tamaño de los enlaces principales */
+        .container > li > a {
+            font-size: 1em;
+        }
+
+        /* Subapartados escondidos inicialmente */
+        .container2 {
+            display: none;
+            margin-left: 20px;
+            padding-left: 20px;
+        }
+
+        /* Mostrar el contenido cuando tiene la clase activa */
+        .active {
+            display: block;
+        }
+
+        /* Cambiar a rosa cuando pase el ratón */
+        nav ul a:hover {
+            color: #f858dd;
+        }
+
+        /* Estilo del contenedor de la imagen que aparece a la derecha */
+        .image-container {
+            position: absolute;
+            top: 100px; /* Ajusta la altura de la imagen para que esté un poco más abajo */
+            right: 50px; /* Alinea a la derecha */
+            width: 300px; /* Tamaño de la imagen */
+            height: 300px;
+            display: none; /* Ocultar inicialmente */
+            z-index: 1000;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
-  
-<div class="clearfix">
-  <div class="img-container">
-    <a href="../hoyes.lunesdelentejas/porfolio/DreamsDoComeTrue.html">
-    <img src="../hoyes.lunesdelentejas/img/10.png" alt="Dreams Do Come True" >
-    <div class="overlay">
-      <div class="text">Dreams Do Come True</div>
+    <!-- Cursor personalizado -->
+    <div class="custom-cursor site-wide">
+        <div class="pointer"></div>
     </div>
-  </a>
-  </div>
-  
-  <div class="img-container">
-    <a href="../hoyes.lunesdelentejas/porfolio/vfx.html">
-      <img src="../hoyes.lunesdelentejas/img/CAPK_poster-IreneCastro.jpg" alt="VFX">
-      <div class="overlay">
-        <div class="text">The Wondrous Adventure of Captain Kit</div>
-      </div>
-    </a>
-  </div>
-  
-  
-  <div class="img-container">
-    <img src="../hoyes.lunesdelentejas/img/4.png" alt="3d" >
-    <div class="overlay">
-      <div class="text">3d</div>
+
+    <!-- Enlace "Go Back Home" en la esquina -->
+    <a href="../hoyes.lunesdelentejas/index.html" class="boton">Go Back Home</a>
+
+    <!-- Contenido centrado con texto alineado a la izquierda y desplazado -->
+    <div class="content">
+        <nav>
+            <ul class="container">
+              
+                <li><a href="#">PROJECTES</a></li>
+                <li><a href="#">⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖</a></li>
+
+                <!-- Sección de Research -->
+
+                <li><a href="#">╭══• ೋ•✧๑♡๑✧•ೋ •══╮
+
+                </a></li>
+                <li><a href="#" class="toggle">Research</a>
+                    <ul class="container2">
+                        <li>
+                            <a href="#" data-image="img/DSCN0204.JPG">//  Jaleo </a>
+                            <a href="#" data-image="img/1.JPG">//  Gaia </a>
+                            <a href="" data-image=" img/FINAL.png">//  Tiburon </a>
+                            <a href="#" data-image="img/10.png">//  Dreams Do Come True </a>
+                           
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- Sección de CGI -->
+                <li><a href="#" class="toggle">CGI</a>
+                    <ul class="container2">
+                        <li>
+                            <a href="../hoyes.lunesdelentejas/porfolio/HumanRazz.html" data-image="img/HumanRazz.PNG">// 1r Aniversari Human </a>
+                            <a href="#" data-image="img/CAPK_poster-IreneCastro.jpg">// Captian Kit </a>
+                            <a href="#" data-image="img/barca.png">// Homenatge Victor Tomas </a>
+                        </li>
+
+                        
+                    </ul>
+
+
+                </li>
+
+                <li><a href="#">╰══• ೋ•✧๑♡๑✧•ೋ •══╯
+
+                </a></li>
+            </ul>
+        </nav>
     </div>
-  </div>
-  
-  <div class="img-container">
-    <a href="../hoyes.lunesdelentejas/porfolio/MappingBarça.html">
-
-    <img src="../hoyes.lunesdelentejas/img/barca.png" alt="Barça" >
-    <div class="overlay">
-      <div class="text">Mapping Barça Comiat Victor Tomás:</div>
+    <!-- Contenedor para la imagen -->
+    <div class="image-container" id="imageContainer">
+        <img src="" alt="Image preview" id="previewImage">
     </div>
-  </div>
-  
 
-  <div class="img-container">
-    <a href="../hoyes.lunesdelentejas/porfolio/sujetoneoliberal.html">
-    <img src="../hoyes.lunesdelentejas/img/FINAL.png" alt="SujetoNeoLiberal" >
-    <div class="overlay">
-      <div class="text">Sujeto NeoLiberal</div>
-    </div>
-  </a>
-  </div>
+    <script>
+        // JavaScript para activar o desactivar los subapartados
+        document.querySelectorAll('.toggle').forEach(item => {
+            item.addEventListener('click', event => {
+                const sublist = item.nextElementSibling;
+                if (sublist) {
+                    sublist.classList.toggle('active');
+                }
+                event.preventDefault();
+            });
+        });
 
-  <div class="img-container">
-    <a href="../hoyes.lunesdelentejas/porfolio/HumanRazz.html">
-    <img src="../hoyes.lunesdelentejas/img/image_2022-03-08_12-49-18-1024x683.png" alt="HumanRazz">
-    <div class="overlay">
-      <div class="text">1r Aniversari Human Razzmatazz</div>
-    </div>
-  </a>
-  </div>
- 
+        // Mostrar imágenes solo en los subapartados (dentro de container2)
+        document.querySelectorAll('.container2 a').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                const imageUrl = this.getAttribute('data-image');
+                const imageContainer = document.getElementById('imageContainer');
+                const previewImage = document.getElementById('previewImage');
 
-  <div class="img-container">
-    
-    <img src="../hoyes.lunesdelentejas/img/final_8.png" alt="3d" >
-    <div class="overlay">
-      <div class="text">3d</div>
-    </div>
-  </div>
+                if (imageUrl) {
+                    previewImage.src = imageUrl; // Cambiar la imagen
+                    imageContainer.style.display = 'block'; // Mostrar el contenedor de la imagen
+                }
+            });
 
-
- 
- 
-</div>
-
+            item.addEventListener('mouseleave', function() {
+                const imageContainer = document.getElementById('imageContainer');
+                imageContainer.style.display = 'none'; // Ocultar la imagen cuando no esté sobre el enlace
+            });
+        });
+    </script>
 </body>
 </html>

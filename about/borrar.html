@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="icon" type="image/x-icon" href="../img/dolphin_1f42c.png">
+
+    <style>
+        body {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.6rem; /* Tamaño de fuente adaptable */
+            color: rgb(255, 255, 255);
+            background-color: rgb(255, 255, 255);
+            margin: 0;
+            padding: 0;
+            text-align: center; /* Centra el contenido en el cuerpo */
+            position: relative; /* Permite el posicionamiento absoluto dentro del body */
+        }
+
+        /* Estilo del enlace "Go Back Home" */
+        .boton {
+            font-size: 1.2rem; /* Tamaño del texto */
+            position: fixed; /* Fija el enlace en la esquina superior izquierda */
+            top: 10px; /* Distancia desde la parte superior */
+            left: 10px; /* Distancia desde la izquierda */
+            color: rgb(255, 105, 180); /* Color del texto */
+            text-decoration: none; /* Elimina el subrayado del enlace */
+            z-index: 1000; /* Asegura que esté por encima de otros elementos */
+        }
+
+        /* Efecto rotatorio en 2D para los íconos */
+        .rotar2d {
+            transition: transform 0.8s ease; /* Transición suave para el efecto rotatorio */
+            display: inline-block; /* Asegura que el efecto de rotación se aplique correctamente */
+            transform-origin: center; /* Rotar alrededor del centro del elemento */
+        }
+
+        .rotar2d:hover {
+            animation: rotar 10s linear; /* Animación de rotación */
+        }
+
+        @keyframes rotar {
+            from {
+                transform: rotate(0deg); /* Inicio de la rotación */
+            }
+            to {
+                transform: rotate(360deg); /* Fin de la rotación */
+            }
+        }
+
+        /* Estilo para el ícono "Mother of Dolphins" */
+        .cabezaimg {
+            display: block;
+            margin: 20px auto; /* Centra el ícono y añade margen superior */
+            z-index: 10; /* Asegura que esté sobre otros elementos */
+            position: relative;
+        }
+
+        /* Contenedor para los íconos */
+        .icon-wrapper {
+            position: relative;
+            width: 100%;
+            height: 800px; /* Ajustar según el tamaño necesario para acomodar todos los íconos */
+            margin-top: 20px; /* Espacio debajo del ícono principal */
+            display: flex; /* Usar flexbox para alinear los íconos */
+            justify-content: center; /* Centra horizontalmente los íconos */
+            flex-direction: column; /* Apila los íconos verticalmente */
+            z-index: 5; /* Establece un z-index más bajo para los íconos */
+        }
+
+        .my-img, .avatar, .Ig {
+            position: relative; /* Para mantener la posición relativa a su contenedor */
+            margin: 10px; /* Espacio entre los íconos */
+            z-index: 5;
+        }
+
+        .my-img {
+            left: -15%; /* Ajusta la posición horizontal del ícono de uwu */
+            top: 80%; /* Ajusta la altura del ícono de uwu */
+        }
+
+        .avatar {
+            left: 0%; /* Centra horizontalmente el ícono de avatar */
+            top: 60%; /* Ajusta la altura del ícono de avatar */
+        }
+
+        .Ig {
+            left: 15%; /* Ajusta la posición horizontal del ícono de Instagram */
+            top: 40%; /* Ajusta la altura del ícono de Instagram */
+        }
+    </style>
+</head>
+<body>
+
+    <a href="../../hoyes.lunesdelentejas/index.html" class="boton">Go Back Home</a>   
+
+    <!-- Imagen de "Mother of Dolphins" sin enlace y con mayor z-index -->
+    <img src="../../hoyes.lunesdelentejas/img/NOMBRE.png" class="cabezaimg" alt="MotherOfDolphins" width="700" height="400"> 
+
+    <div class="icon-wrapper">
+      <a href="../../hoyes.lunesdelentejas/about/info.html">
+        <img src="../../hoyes.lunesdelentejas/img/uwu.png" class="my-img rotar2d" alt="uwu" width="800" height="500"> 
+      </a> 
+      <a href="../../hoyes.lunesdelentejas/about/glugluglu.html">
+          <img src="../../hoyes.lunesdelentejas/img/avatar.png" class="avatar rotar2d" alt="avatar" width="400" height="550">
+      </a>
+      <a href="https://www.instagram.com/hoyes.lunesdelentejas/">
+          <img src="../../hoyes.lunesdelentejas/img/IG.png" class="Ig rotar2d" alt="Instagram" width="1000" height="700">
+      </a>
+    </div>
+
+</body>
+</html>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,163 +6,301 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Porfolio</title>
   <link rel="icon" type="image/x-icon" href="../../hoyes.lunesdelentejas/img/dolphin_1f42c.png">
- 
-</head>
-
   <style>
     * {
       box-sizing: border-box;
-    }
-
-    .video-container {
-      float: left;
-      width: 33.33%;
-      position: relative;
-    }
-
-    .video-container video {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .video-container:hover .overlay {
-      opacity: 1;
-    }
-
-    .clearfix::after {
-      content: "";
-      clear: both;
-      display: table;
-    
+      margin: 0;
+      padding: 0;
     }
 
     body {
-    font-family: 'MiTipografia', dancing script;
-    font-size: 25px;
-}
+      background-color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px;
+      color: rgb(0, 0, 0);
+      overflow: hidden; /* Evita el scroll cuando se amplía un video */
+    }
+
+    .videos-wrapper {
+      position: fixed;
+      right: 10px; /* Ajustar aquí la distancia del borde derecho */
+      top: 0;
+      padding: 20px;
+      width: 30%; /* Ajusta el ancho si es necesario */
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .video-container {
+      margin-bottom: 20px;
+      opacity: 0; /* Inicialmente invisible */
+      transform: translateY(50px); /* Desplazado hacia abajo */
+      transition: opacity 1s ease-out, transform 1s ease-out;
+      width: 200px; /* Ancho fijo para crear el marco cuadrado */
+      height: 200px; /* Altura fija para crear el marco cuadrado */
+      overflow: hidden; /* Para evitar que el contenido se salga del marco */
+      position: relative;
+    }
+
+    .video-container.show {
+      opacity: 1; /* Video visible */
+      transform: translateY(0); /* Eliminar desplazamiento */
+    }
+
+    video {
+      width: 100%; /* El video ocupará todo el contenedor */
+      height: 100%; /* El video ocupará todo el contenedor */
+      object-fit: cover; /* El contenido del video se ajustará dentro del marco cuadrado */
+      display: block;
+      cursor: pointer; /* Cursor de puntero para indicar que es interactivo */
+      transition: transform 0.3s ease; /* Transición suave para el zoom */
+    }
+
+    /* Estilo del enlace "Go Back" */
+    #goBack {
+      font-family: 'MiTipografia', dancing script;
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      font-size: 1.2rem;
+      position: fixed;
+      top: 10px;
+      left: 80px;
+    }
+
+    #goBack:hover {
+      color: #f858dd;
+    }
+
+    /* Estilo para el video ampliado */
+    .video-container.expanded {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Centrando el video */
+      width: 30vw; /* Ancho del video ampliado */
+      height: auto; /* Mantener la proporción del video */
+      z-index: 1000; /* Asegúrate de que el video esté por encima de otros elementos */
+      background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro para destacar el video */
+    }
+
+    .video-container.expanded video {
+      width: 100%; /* Asegúrate de que el video ocupe todo el contenedor */
+      height: auto; /* Mantener la proporción del video */
+      object-fit: contain; /* Asegúrate de que el video mantenga su formato original */
+    }
+
+    .video-container.hidden {
+      display: none; /* Ocultar otros videos cuando uno está ampliado */
+    }
+
+    .left-text {
+      position: fixed;
+      left: 35px;
+      top: 25px;
+      font-family: 'Arial', sans-serif;
+      font-size: 18px;
+      color: rgb(0, 0, 0);
+            text-align: left;
+   
+      
+    }
+
+    .capsulas {
+      margin-top: -50px; /* Espacio entre el texto del emoticono y el texto de las cápsulas */
+      line-height: 1.5; /* Ajusta el interlineado aquí */
+      font-size: 13px;
+    }
+
+    .capsulas a {
+      text-decoration: none;
+      color: rgb(0, 0, 0);
+      transition: text-decoration 0.3s ease;
+    }
+
+    .capsulas a.active {
+      text-decoration: underline;
+    }
   </style>
 </head>
 
 <body>
 
-    <a href="../../hoyes.lunesdelentejas/porfolio.html" id="goBack">Go Back</a>   
+  <!-- Enlace "Go Back" -->
+  <a href="../../hoyes.lunesdelentejas/porfolio.html" id="goBack">Go Back</a>
 
-  <div class="clearfix">
+  <!-- Contenedor de videos alineado a la derecha -->
+  <div class="videos-wrapper">
     <div class="video-container">
-    
-        <video controls>
-          <source src="../mp4/street_series 11.mp4" type="video/mp4">
-          Tu navegador no soporta el elemento de video.
-        </video>
-       
-         </div>
-
-    <!-- Repite el mismo patrón para otros videos -->
-
-    <div class="video-container">
-      
-        <video controls>
-          <source src="../mp4/street_series.mp4" type="video/mp4">
-          Tu navegador no soporta el elemento de video.
-        </video>
-        
-        </div>
-
-    <div class="video-container">
-      <video controls>
-        <source src="../mp4/street_series 10.mp4" type="video/mp4">
+      <video controls autoplay muted>
+        <source src="../mp4/street_series 11.mp4" type="video/mp4">
         Tu navegador no soporta el elemento de video.
       </video>
-      
     </div>
 
     <div class="video-container">
-        <video controls>
-          <source src="../mp4/street_series 12.mp4" type="video/mp4">
-          Tu navegador no soporta el elemento de video.
-        </video>
-       
-      </div>
+      <video controls autoplay muted>
+        <source src="../mp4/street_series.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+      </video>
+    </div>
 
-      
-      <div class="video-container">
-        <video controls>
-          <source src="../mp4/street_series 13.mp4" type="video/mp4">
-          Tu navegador no soporta el elemento de video.
-        </video>
-        
-      </div>
+    <div class="video-container">
+      <video controls autoplay muted>
+        <source src="../mp4/street_series 10.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+      </video>
+    </div>
 
-      <div class="video-container">
-        <video controls>
-          <source src="../mp4/street_series 2.mp4" type="video/mp4">
-          Tu navegador no soporta el elemento de video.
-        </video>
-       
-      </div>
+    <div class="video-container">
+      <video controls autoplay muted>
+        <source src="../mp4/street_series 12.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+      </video>
+    </div>
 
-      <div class="video-container">
-        <video controls>
-          <source src="../mp4/street_series 4.mp4" type="video/mp4">
-          Tu navegador no soporta el elemento de video.
-        </video>
-        
-      </div>
+    <div class="video-container">
+      <video controls autoplay muted>
+        <source src="../mp4/street_series 13.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+      </video>
+    </div>
 
-      <div class="video-container">
-        <video controls>
-          <source src="../mp4/street_series 5.mp4" type="video/mp4">
-          Tu navegador no soporta el elemento de video.
-        </video>
-        
-      </div>
+    <div class="video-container">
+      <video controls autoplay muted>
+        <source src="../mp4/street_series 2.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+      </video>
+    </div>
 
-      <div class="video-container">
-        <video controls>
-          <source src="../mp4/street_series 6.mp4" type="video/mp4">
-          Tu navegador no soporta el elemento de video.
-        </video>
-        
-      </div>
+    <div class="video-container">
+      <video controls autoplay muted>
+        <source src="../mp4/street_series 4.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+      </video>
+    </div>
 
+    <div class="video-container">
+      <video controls autoplay muted>
+        <source src="../mp4/street_series 5.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+      </video>
+    </div>
 
-      <div class="video-container">
-        <video controls>
-          <source src="../mp4/street_series 7.mp4" type="video/mp4">
-          Tu navegador no soporta el elemento de video.
-        </video>
-        
-      </div>
+    <div class="video-container">
+      <video controls autoplay muted>
+        <source src="../mp4/street_series 6.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+      </video>
+    </div>
 
-      <div class="video-container">
-        <video controls>
-          <source src="../mp4/street_series 8.mp4" type="video/mp4">
-          Tu navegador no soporta el elemento de video.
-        </video>
-        
-      </div>
+    <div class="video-container">
+      <video controls autoplay muted>
+        <source src="../mp4/street_series 7.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+      </video>
+    </div>
 
-      <div class="video-container">
-        <video controls>
-          <source src="../mp4/street_series 9.mp4" type="video/mp4">
-          Tu navegador no soporta el elemento de video.
-        </video>
-        
-      </div>
+    <div class="video-container">
+      <video controls autoplay muted>
+        <source src="../mp4/street_series 8.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+      </video>
+    </div>
 
-      <div class="video-container">
-        <video controls>
-          <source src="../mp4/REEL_VR.mp4" type="video/mp4">
-          Tu navegador no soporta el elemento de video.
-        </video>
-        
-      </div>
+    <div class="video-container">
+      <video controls autoplay muted>
+        <source src="../mp4/street_series 9.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+      </video>
+    </div>
 
-
-
-
+    <div class="video-container">
+      <video controls autoplay muted>
+        <source src="../mp4/REEL_VR.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+      </video>
+    </div>
   </div>
+
+  <!-- Texto en la parte izquierda -->
+  <div class="left-text">
+    ∧＿∧<br>
+    (｡･ω･｡)つ━☆・*。<br>
+    ⊂/　     /    &nbsp;&nbsp;&nbsp;              　     ・゜<br>
+    しーＪ　　　     °。+ * 。<br>
+    　　　　　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                      .・゜<br>
+    　　　　　                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   ゜｡ﾟﾟ･｡･ﾟﾟ。<br>
+    　　　　      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                 　ﾟ。　 　｡ﾟ<br>
+    　　　　　　　　　　ﾟ･｡･ﾟ<br>
+    <div class="capsulas">
+      <a href="../mp4/street_series 11.mp4" class="capsula-link" data-index="0">CAPSULA 1</a><br>
+      <a href="../mp4/street_series.mp4" class="capsula-link" data-index="1">CAPSULA 2</a><br>
+      <a href="../mp4/street_series 10.mp4" class="capsula-link" data-index="2">CAPSULA 3</a><br>
+      <a href="../mp4/street_series 12.mp4" class="capsula-link" data-index="3">CAPSULA 4</a><br>
+      <a href="../mp4/street_series 13.mp4" class="capsula-link" data-index="4">CAPSULA 5</a><br>
+      <a href="../mp4/street_series 2.mp4" class="capsula-link" data-index="5">CAPSULA 6</a><br>
+      <a href="../mp4/street_series 4.mp4" class="capsula-link" data-index="6">CAPSULA 7</a><br>
+      <a href="../mp4/street_series 5.mp4" class="capsula-link" data-index="7">CAPSULA 8</a><br>
+      <a href="../mp4/street_series 6.mp4" class="capsula-link" data-index="8">CAPSULA 9</a><br>
+      <a href="../mp4/street_series 7.mp4" class="capsula-link" data-index="9">CAPSULA 10</a><br>
+      <a href="../mp4/street_series 8.mp4" class="capsula-link" data-index="10">CAPSULA 11</a><br>
+      <a href="../mp4/street_series 9.mp4" class="capsula-link" data-index="11">CAPSULA 12</a><br>
+      <a href="../mp4/REEL_VR.mp4" class="capsula-link" data-index="12">CAPSULA 13</a>
+    </div>
+  </div>
+
+  <script>
+    // IntersectionObserver para hacer que los videos aparezcan al hacer scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const videoIndex = Array.from(entry.target.parentElement.children).indexOf(entry.target);
+
+          // Retrasar la aparición de los videos por su posición
+          setTimeout(() => {
+            entry.target.classList.add('show');
+          }, videoIndex * 30); // Escalonar el retraso con 30ms entre cada video
+        }
+      });
+    }, { threshold: 0.1 }); // El video aparece cuando el 10% es visible
+
+    // Seleccionar todos los contenedores de video
+    const videoContainers = document.querySelectorAll('.video-container');
+    videoContainers.forEach(container => {
+      observer.observe(container); // Observar cada contenedor de video
+    });
+
+    // Funcionalidad para ampliar el video al hacer clic
+    videoContainers.forEach(container => {
+      const video = container.querySelector('video');
+      video.addEventListener('click', () => {
+        const expandedContainer = document.querySelector('.video-container.expanded');
+        if (expandedContainer) {
+          // Detener la reproducción del video ampliado actual
+          const expandedVideo = expandedContainer.querySelector('video');
+          expandedVideo.pause();
+          expandedVideo.currentTime = 0; // Reiniciar el video
+          expandedContainer.classList.remove('expanded');
+          videoContainers.forEach(v => v.classList.remove('hidden')); // Mostrar todos los videos
+        }
+
+        // Alternar el estado ampliado del video clicado
+        container.classList.toggle('expanded');
+        if (container.classList.contains('expanded')) {
+          videoContainers.forEach(v => {
+            if (v !== container) v.classList.add('hidden'); // Ocultar otros videos
+          });
+          // Iniciar la reproducción automática del video ampliado
+          video.play();
+
+          // Subrayar la cápsula correspondiente
+          const index = Array.from(videoContainers).indexOf(container);
+          document.querySelectorAll('.capsula-link').forEach(link => link.classList.remove('active'));
+          document.querySelector(`.capsula-link[data-index="${index}"]`).classList.add('active');
+        }
+      });
+    });
+  </script>
 
 </body>
 

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Define que el idioma del documento es español -->
+<head>
+  <meta charset="UTF-8" /> <!-- Codificación de caracteres (UTF-8 para usar tildes y símbolos) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Responsive para móviles -->
+  <title>About Me</title> <!-- Título del sitio -->
+  <link rel="icon" type="image/x-icon" href="../img/dolphin_1f42c.png" /> <!-- Favicon -->
+
+  <style>
+    body {
+      font-family: Arial, sans-serif; /* Fuente general */
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      color: black;
+      overflow: hidden; /* Oculta scroll vertical */
+    }
+
+    .header {
+      display: flex; /* Alineación horizontal */
+      justify-content: flex-start;
+      align-items: center;
+      margin: 20px;
+    }
+
+    .header button {
+      padding: 5px 15px;
+      border: 1px solid black;
+      background: none;
+      cursor: pointer; /* Cambia cursor al pasar por encima */
+      margin-left: auto; /* Empuja el botón a la derecha */
+    }
+
+    .menu {
+      margin-bottom: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 0px; /* Espacio entre elementos del menú */
+      position: relative;
+      margin-left: 60px;
+    }
+
+    .menu-group {
+      position: relative;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    /* Fondo blanco con borde al pasar el cursor o al abrir */
+    .menu-group::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -10px;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      border: 1px solid black;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1; /* Se coloca debajo del texto */
+    }
+
+    /* Aparece el fondo solo al abrir o pasar el cursor */
+    .menu-group:hover::before,
+    .menu-group.open::before {
+      opacity: 1;
+    }
+
+    .menu-item {
+      font-size: 17px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .submenu {
+      display: none; /* Oculto por defecto */
+      font-size: 17px; /* Tamaño del subtexto */
+      margin-left: 20px;
+      margin-top: 5px;
+      color: #333;
+      white-space: pre-line; /* aqui preline !!! */
+      max-width: none; /* Sin límite de ancho */
+    }
+
+    .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: black; /* Barra negra */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0; /* Elimina cualquier padding adicional */
+}
+
+.footer-text {
+  font-size: 12px;
+  text-align: center; /* Centra el texto */
+  margin-bottom: 10px; /* Espacio entre el texto y la barra negra */
+  background-color: white; /* Fondo blanco */
+  color: black; /* Texto negro */
+  padding: 10px; /* Espaciado alrededor del texto */
+  width: 100%; /* Ocupa todo el ancho */
+}
+
+.footer-gifs {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 0;
+}
+
+.footer-gifs img {
+  height: 40px;
+  filter: grayscale(100%);
+}
+
+
+
+
+  </style>
+</head>
+<body>
+  <div class="header">
+    
+    <button>INICIO</button>
+  </div>
+
+  <div class="menu">
+    <div class="menu-group" onclick="toggleSubmenu(this)">
+      <div class="menu-item">Sobre mí</div>
+      <div class="submenu">Texto descriptivo sobre tu perfil personal, biografía o presentación.</div>
+    </div>
+
+    <div class="menu-group" onclick="toggleSubmenu(this)">
+      <div class="menu-item">001 &nbsp; Work</div>
+      <div class="submenu">Proyectos destacados, colaboraciones, encargos o trabajos en curso.</div>
+    </div>
+
+    <div class="menu-group" onclick="toggleSubmenu(this)">
+      <div class="menu-item">002 &nbsp; Exhibiciones</div>
+      <div class="submenu">
+MAIG 2024
+*Exposició a Appartenenze V3 a la Galleria L. Da Vinci, Cesenatico (IT)
+
+JUNY 2024
+*Exposició a Ssuave3000, Barcelona (ES)
+
+NOVEMBRE 204
+*Exposició a Vibez Festival, Hospitalet de Llobregat (ES)
+*Concert a El Pumarejo, dins del projecte DePalco, Hospitalet de Llobregat (ES)
+
+GENER 2025
+*Concert a Dinamo Espai DIY, Barcelona (ES)
+*Concert a El Pumarejo, dins del projecte Esquirla, Hospitalet de Llobregat (ES)
+*Concert a Espai La Filanda, La Garriga (ES)
+
+ABRIL 2025
+*Concert a CanFanga, dins del projecte Entresuelos, Barcelona (ES)
+      </div>
+    </div>
+
+    <div class="menu-group" onclick="toggleSubmenu(this)">
+      <div class="menu-item">003 &nbsp; Residencias</div>
+      <div class="submenu">
+MARÇ 2024
+*Residència a La Grand Maison Rouge, Angoustrine (FR) i presentació a l’exposició Transfrontailer.
+
+NOVEMBRE 2024
+*Residència a Espronceda, Barcelona (ES), dins del programa NUBIA LAB ISA 2024.
+      </div>
+    </div>
+
+    <div class="menu-group" onclick="toggleSubmenu(this)">
+      <div class="menu-item">004 &nbsp; Talleres</div>
+      <div class="submenu">
+Taller de Circuit Bending: Creació d’instruments
+FEBRER 2025
+*Dinamo Espai DIY, Barcelona (ES)
+
+ABRIL 2025
+*Associació Sonora MUTAN LAB, Barcelona (ES).
+      </div>
+    </div>
+
+    <div class="menu-group" onclick="toggleSubmenu(this)">
+      <div class="menu-item">005 &nbsp; Premios</div>
+      <div class="submenu">
+*Projecte Premiat de “Cultura Digital” a Vibez Festival 2024.
+42Barcelona. Fundació Telefonica. Generalitat de Catalunya, Departament de Recerca 
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">
+      <p>Si estudias el material de este sitio web, con suerte comprenderás cuál ha sido nuestro propósito aquí en la tierra.</p>
+      <p>Click al link con más información sobre el server</p>
+    </div>
+    <div class="footer-gifs">
+      <img src="../gif/earth2.gif" alt="Globo animado" style="filter: grayscale(100%)" />
+      <img src="../gif/earth2.gif" alt="Globo animado" style="filter: grayscale(100%)" />
+      <img src="../gif/earth2.gif" alt="Globo animado" style="filter: grayscale(100%)" />
+      <img src="../gif/earth2.gif" alt="Globo animado" style="filter: grayscale(100%)" />
+      <img src="../gif/earth2.gif" alt="Globo animado" style="filter: grayscale(100%)" />
+      <img src="../gif/earth2.gif" alt="Globo animado" style="filter: grayscale(100%)" />
+    </div>
+  </div>
+
+  <script>
+    function toggleSubmenu(clickedGroup) {
+      const isAlreadyOpen = clickedGroup.classList.contains('open');
+  
+      // Cierra todos los submenús
+      document.querySelectorAll('.menu-group').forEach(group => {
+        group.classList.remove('open');
+        group.querySelector('.submenu').style.display = 'none';
+      });
+  
+      // Si no estaba abierto, lo abrimos
+      if (!isAlreadyOpen) {
+        clickedGroup.classList.add('open');
+        clickedGroup.querySelector('.submenu').style.display = 'block';
+      }
+    }
+  </script>
+  
+  
+</body>
+</html>

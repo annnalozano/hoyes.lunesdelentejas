@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Info</title>
+  <link rel="icon" type="image/x-icon" href="./img/dolphin_1f42c.png" />
+  <style>
+/* ==== LAYOUT GENERAL ==== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0102de;
+  color: #ffffff;
+  overflow: hidden;   /* Evita el scroll */
+  height: 100vh;      /* Ajusta a la altura de la ventana */
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* ==== HEADER ==== */
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* ==== BOTÓN INICIO ==== */
+.inicio-btn {
+  margin-left: 85%;
+  padding: 8px 20px;
+  border: 2px solid #ffffff;
+  background-color: #0102de;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: normal;
+  pointer-events: auto;
+}
+
+/* ==== MENÚ PRINCIPAL ==== */
+.menu {
+  margin-left: 60px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.menu-group {
+  position: relative;
+  padding: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+  width: 1500px;
+  box-sizing: border-box;
+}
+
+.menu-group:hover {
+  outline: 1px solid #ffffff;
+}
+
+.menu-item {
+  font-size: 17px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.menu-item .icono {
+  margin-right: 20px;
+  color: white;
+}
+
+.menu-item .texto {
+  color: blue;
+  background-color: white;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.submenu {
+  display: none;
+  font-size: 17px;
+  margin-left: 20px;
+  margin-top: 5px;
+  color: #ffffff;
+  white-space: pre-line;
+  max-width: none;
+  line-height: 1.2;
+}
+
+/* ==== FOOTER TEXTOS ==== */
+.footer-text {
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 10px;
+  background-color: #0102de;
+  color: #ffffff;
+  padding: 10px;
+  width: 100%;
+}
+
+/* ==== FOOTER GIFS ==== */
+.footer-gifs {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 0;
+}
+
+.footer-gifs img {
+  height: 40px;
+  filter: grayscale(100%);
+}
+
+/* ==== ASCII ART Y GIF PERSONALIZADOS ==== */
+.ascii-container {
+  position: absolute;
+  bottom: 10px; /* ✅ Subido un poco para que no corte */
+  left: 20px;
+  display: flex;
+  align-items: flex-end;  /* ✅ Alinea por la base inferior */
+  gap: 40px;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.ascii-art {
+  font-size: 15px;
+  white-space: pre;
+  line-height: 1.3;
+  margin: 0;
+  padding: 0;
+}
+
+.gif-container {
+  position: absolute;
+  bottom: 20px;
+  right: 5%;
+}
+
+.ascii-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+
+
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="./gif/home_md_clr.gif" alt="Casa" class="gif-casa" />
+    <button class="inicio-btn">INICIO</button>
+  </div>
+
+  <div class="menu">
+    <div class="menu-group" onclick="toggleSubmenu(this)">
+      <div class="menu-item">
+        <span class="icono">જ⁀➴</span>
+        <span class="texto">Sobre mí</span>
+      </div>
+      <div class="submenu">Texto descriptivo sobre tu perfil personal, biografía o presentación.</div>
+    </div>
+
+    <div class="menu-group" onclick="toggleSubmenu(this)">
+      <div class="menu-item">
+        <span class="icono">╰┈➤</span>
+        <span class="texto">Work</span>
+      </div>
+      <div class="submenu">Proyectos destacados, colaboraciones, encargos o trabajos en curso.</div>
+    </div>
+
+    <div class="menu-group" onclick="toggleSubmenu(this)">
+      <div class="menu-item">
+        <span class="icono">╰┈➤</span>
+        <span class="texto">Exhibiciones</span>
+      </div>
+      <div class="submenu">
+MAIG 2024  
+*Exposició a Appartenenze V3 a la Galleria L. Da Vinci, Cesenatico (IT)
+
+JUNY 2024  
+*Exposició a Ssuave3000, Barcelona (ES)
+
+NOVEMBRE 204  
+*Exposició a Vibez Festival, Hospitalet de Llobregat (ES)  
+*Concert a El Pumarejo, dins del projecte DePalco, Hospitalet de Llobregat (ES)
+
+GENER 2025  
+*Concert a Dinamo Espai DIY, Barcelona (ES)  
+*Concert a El Pumarejo, dins del projecte Esquirla, Hospitalet de Llobregat (ES)  
+*Concert a Espai La Filanda, La Garriga (ES)
+
+ABRIL 2025  
+*Concert a CanFanga, dins del projecte Entresuelos, Barcelona (ES)
+      </div>
+    </div>
+
+    <div class="menu-group" onclick="toggleSubmenu(this)">
+      <div class="menu-item">
+        <span class="icono">╰┈➤</span>
+        <span class="texto">Residencias</span>
+      </div>
+      <div class="submenu">
+MARÇ 2024  
+*Residència a La Grand Maison Rouge, Angoustrine (FR) i presentació a l’exposició Transfrontailer.
+
+NOVEMBRE 2024  
+*Residència a Espronceda, Barcelona (ES), dins del programa NUBIA LAB ISA 2024.
+      </div>
+    </div>
+
+    <div class="menu-group" onclick="toggleSubmenu(this)">
+      <div class="menu-item">
+        <span class="icono">╰┈➤</span>
+        <span class="texto">Talleres</span>
+      </div>
+      <div class="submenu">
+Taller de Circuit Bending: Creació d’instruments
+
+FEBRER 2025  
+*Dinamo Espai DIY, Barcelona (ES)
+
+ABRIL 2025  
+*Associació Sonora MUTAN LAB, Barcelona (ES).
+      </div>
+    </div>
+
+    <div class="menu-group" onclick="toggleSubmenu(this)">
+      <div class="menu-item">
+        <span class="icono">╰┈➤</span>
+        <span class="texto">Premios</span>
+      </div>
+      <div class="submenu">
+*Projecte Premiat de “Cultura Digital” a Vibez Festival 2024.  
+42Barcelona. Fundació Telefonica. Generalitat de Catalunya, Departament de Recerca 
+      </div>
+    </div>
+  </div>
+
+<div class="ascii-wrapper">
+  <div class="ascii-container">
+    <pre class="ascii-art">
+              _
+             |E]
+         .--|=====-.
+         |  | MAIL |   <----  Send email 
+         |__|______|___
+             ||
+             ||
+             ||   www                 %%%
+      vwv    ||   )_(,;;;,           ,;,\_/ www
+     )_(     ||   \|/ \_/            )_(\|  (_)
+     \|      \    || /\\|/  |/        \| \|//  | 
+ ___  \|//jgs|     |//_\V/_\|//_______\\|//V/\\|/__
+    </pre>
+
+    <pre class="ascii-art">
+         wWWWw               wWWWw
+   vVVVv (___) wWWWw         (___)  vVVVv
+   (___)  ~Y~  (___)  vVVVv   ~Y~   (___)
+    ~Y~   \|    ~Y~   (___)    |/    ~Y~
+    \|   \ |/   \| /  \~Y~/   \|    \ |/
+   \\|// \\|// \\|/// \\|//  \\|// \\\|///
+jgs^^^^
+    </pre>
+
+
+
+<div class="gif-container">
+  <img src="./gif/9.gif" alt="Decorativo" />
+</div>
+
+  <script>
+    function toggleSubmenu(clickedGroup) {
+      const isAlreadyOpen = clickedGroup.classList.contains('open');
+      document.querySelectorAll('.menu-group').forEach(group => {
+        group.classList.remove('open');
+        group.querySelector('.submenu').style.display = 'none';
+      });
+      if (!isAlreadyOpen) {
+        clickedGroup.classList.add('open');
+        clickedGroup.querySelector('.submenu').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>

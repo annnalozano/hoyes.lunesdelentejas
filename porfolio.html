@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Galería</title>
+    <title>Porfolio</title>
     <link rel="icon" type="image/x-icon" href="img/dolphin_1f42c.png" /> <!-- Favicon -->
     <style>
         :root {
@@ -10,10 +10,11 @@
             --gif-size: 30px; /* Tamaño del gif */
             --gif-height: 30px; /* Altura del gif */
             --titulo-width: 200px; /* Ancho de los recuadros */
-            --titulo-height: 10px; /* Altura de los recuadros */
-            --gap: 40px; /* Espacio entre los recuadros */
+            --titulo-height: 10px; /* Altura del recuadro */
+            --gap: 90px; /* Espacio entre los recuadros */
             --font-size: 14px; /* Tamaño de la fuente */
-            --element-height: 60px; /* NUEVO valor consistente para imagen y título */
+            --element-height: 10px; /* NUEVO valor consistente para imagen y título */
+            --barra-height: 200px;
         }
 
         body {
@@ -25,27 +26,25 @@
 
         .top-bar {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end; /* botón a la derecha */
             align-items: center;
             padding: 15px 30px;
+            gap: 10px;
         }
 
         .top-bar img {
             width: 40px;
+            cursor: pointer;
+            margin-right: auto; /* para que el gif quede a la izquierda */
         }
 
         .top-bar button {
-            margin-left: 10px;
             padding: 10px 20px;
             font-size: 16px;
             background-color: transparent;  /* Sin fondo */
             border: 2px solid black;        /* Línea continua */
             font-weight: normal;            /* Sin negrita */
             cursor: pointer;
-        }
-
-        .top-bar button:hover {
-            background-color: #f1f1f1;  /* Color de fondo al pasar el mouse */
         }
 
         .barra-con-texto {
@@ -55,25 +54,47 @@
             margin-bottom: 40px;
         }
 
-        .barra {
-            display: flex;
-            justify-content: center;
-            gap: var(--gap); /* Utiliza la variable de espacio */
-            background-color: #b4b680;
-            padding: 40px 0;
-            width: 90%;
-            border: 1px solid #888;
-        }
+      .barra {
+    height: var(--barra-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap);  /* espacio entre imágenes */
+    background-color: #b4b680;
+    padding: 0 20px;
+    width: 90%;
+    border: 1px solid #888;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.imagen {
+    height: var(--barra-height); /* altura igual a la barra */
+    width: auto;                 /* mantener proporción */
+    max-width: none;
+    object-fit: contain;
+    cursor: pointer;
+    display: block;
+}
+
 
         .contenedor {
             text-align: center;
+            display: flex;
+            flex-direction: column; /* Asegura que la imagen y el título se apilen verticalmente */
+            align-items: center; /* Centra los elementos (imagen y título) */
+            width: var(--titulo-width);
+            flex-shrink: 0; /* para que no se encoja y mantenga ancho */
         }
 
-        .imagen {
-    height: var(--element-height);
-    width: auto;
-    object-fit: contain; /* o 'cover', dependiendo del efecto visual deseado */
-}
+     
+
+        /* Para imágenes verticales: dales más altura */
+        .imagen.vertical {
+            height: calc(var(--barra-height) * 1.2); /* 20% más alta */
+            object-fit: contain; /* evita recortes si es muy alta */
+        }
+
         .titulos {
             display: flex;
             justify-content: center;
@@ -81,22 +102,24 @@
             margin-top: 20px;
             width: 90%;
         }
-        .titulo {
-    width: var(--titulo-width);
-    height: var(--element-height); /* altura igual que la imagen */
-    font-size: var(--font-size);
-    text-align: center;
-    margin-top: 10px;
-    padding: 8px;
-    display: inline-block;
-    border: 4px solid transparent;
-    background-color: transparent;
-    font-weight: normal;
-    position: relative;
-    line-height: var(--element-height); /* centra verticalmente el texto */
-    border-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='4'><path d='M0 2 h4 M6 2 h1 M9 2 h4 M15 2 h1' stroke='black' stroke-width='2' fill='none'/></svg>") 2 round;
-}
 
+        .titulo {
+            width: var(--titulo-width);
+            height: var(--element-height);
+            font-size: var(--font-size);
+            text-align: center;
+            margin-top: 10px;
+            padding: 8px;
+            display: inline-block;
+            border: 4px solid transparent;
+            background-color: transparent;
+            font-weight: normal;
+            position: relative;
+            line-height: var(--element-height);
+            border-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='20'%20height='4'%3E%3Cpath%20d='M0%202%20h4%20M6%202%20h1%20M9%202%20h4%20M15%202%20h1' %20stroke='black'%20stroke-width='2'%20fill='none'/%3E%3C/svg%3E") 2 round;
+            cursor: default;
+            user-select: none;
+        }
 
         /* Estilo para los gifs fuera del recuadro */
         .titulo img {
@@ -106,35 +129,33 @@
             transform: translateY(-50%);
             width: var(--gif-size); /* Utiliza la variable para el tamaño */
             height: var(--gif-size); /* Utiliza la variable para el tamaño */
+            pointer-events: none; /* No interfiere con el click */
         }
-
         
     </style>
-</head>         
+</head>
 <body>
 
     <div class="top-bar">
-        <img src="./gif/home_pink.gif" alt="Casa">
-        <div>
-            <button>INICIO</button>
-            <button>INFO</button>
-        </div>
+        <img src="./gif/home_pink.gif" alt="Casa" onclick="window.location.href='home.html'">
+        <button onclick="window.location.href='inicio.html'">INICIO</button>
+        <button onclick="window.location.href='info.html'">INFO</button>
     </div>
 
     <!-- Primera barra + títulos -->
     <div class="barra-con-texto">
         <div class="barra">
             <div class="contenedor">
-                <img src="img/barça/dithered-image (2) - copia.png" class="imagen" alt="Comiat Victor Tomas">
+                <img src="img/barça/dithered-image (2) - copia.png" class="imagen" alt="Comiat Victor Tomas" onclick="window.location.href='pagina1.html'">
             </div>
             <div class="contenedor">
-                <img src="imagen2.jpg" class="imagen" alt="Tiburon">
+                <img src="./img/tiburon/dithered-image (11).png" class="imagen" alt="Tiburon" onclick="window.location.href='pagina2.html'">
             </div>
             <div class="contenedor">
-                <img src="imagen3.jpg" class="imagen" alt="Dreams Do Come True">
+                <img src="img/vfx/dithered-image (10)copia.png" class="imagen" alt="Dreams Do Come True" onclick="window.location.href='pagina3.html'">
             </div>
             <div class="contenedor">
-                <img src="imagen4.jpg" class="imagen" alt="Jaleo">
+                <img src="img/jaleo/dithered-image (10).png" class="imagen" alt="Jaleo" onclick="window.location.href='pagina4.html'">
             </div>
         </div>
         <div class="titulos">
@@ -157,28 +178,24 @@
     <div class="barra-con-texto">
         <div class="barra">
             <div class="contenedor">
-                <img src="imagen5.jpg" class="imagen" alt="Razz Human">
+                <img src="img/razz/image_2022-03-08_12-49-18-1024x683.png" class="imagen" alt="Razz Human" onclick="window.location.href='pagina5.html'">
             </div>
             <div class="contenedor">
-                <img src="imagen6.jpg" class="imagen" alt="SoftRobot">
+                <img src="img/gaia/dithered-image (10).png" class="imagen" alt="SoftRobot" onclick="window.location.href='pagina6.html'">
             </div>
             <div class="contenedor">
-                <img src="imagen7.jpg" class="imagen" alt="SoftRobot">
+                <img src="img/angustrine/dithered-image (11)copia.png" class="imagen" alt="SoftRobot" onclick="window.location.href='pagina7.html'">
             </div>
             <div class="contenedor">
-                <img src="imagen8.jpg" class="imagen" alt="SoftRobot">
+                <img src="img/dreams/dithered-image (11).png" class="imagen " alt="SoftRobot" onclick="window.location.href='pagina8.html'">
             </div>
-            <div class="contenedor">
-                <img src="imagen9.jpg" class="imagen" alt="SoftRobot">
-            </div>
+            
         </div>
         <div class="titulos">
             <div class="titulo">
                 <img src="gif/info_teclado.gif" alt="Gif Razz Human"> Angoustrine
             </div>
-            <div class="titulo">
-                <img src="gif/info_teclado.gif" alt="Gif SoftRobot"> SoftRobot
-            </div>
+           
             <div class="titulo">
                 <img src="gif/info_teclado.gif" alt="Gif SoftRobot"> Tiburon
             </div>

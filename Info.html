@@ -15,6 +15,9 @@ body {
   color: #ffffff;
   overflow: hidden;   /* Evita el scroll */
   height: 100vh;      /* Ajusta a la altura de la ventana */
+  
+
+
 }
 
 footer {
@@ -37,7 +40,7 @@ footer {
 .inicio-btn {
   margin-left: 85%;
   padding: 8px 20px;
-  border: 2px solid #ffffff;
+  border: 1px solid #ffffff;
   background-color: #0102de;
   color: #ffffff;
   cursor: pointer;
@@ -71,7 +74,7 @@ footer {
 }
 
 .menu-item {
-  font-size: 17px;
+  font-size: 18px;
   position: relative;
   z-index: 1;
   display: flex;
@@ -88,11 +91,12 @@ footer {
   background-color: white;
   padding-left: 6px;
   padding-right: 6px;
+   font-weight: bold;
 }
 
 .submenu {
   display: none;
-  font-size: 17px;
+  font-size: 16px;
   margin-left: 20px;
   margin-top: 5px;
   color: #ffffff;
@@ -110,6 +114,7 @@ footer {
   color: #ffffff;
   padding: 10px;
   width: 100%;
+  
 }
 
 /* ==== FOOTER GIFS ==== */
@@ -128,7 +133,7 @@ footer {
 /* ==== ASCII ART Y GIF PERSONALIZADOS ==== */
 .ascii-container {
   position: absolute;
-  bottom: 10px; /* ✅ Subido un poco para que no corte */
+  bottom: 15px; /* ✅ Subido un poco para que no corte */
   left: 20px;
   display: flex;
   align-items: flex-end;  /* ✅ Alinea por la base inferior */
@@ -148,7 +153,25 @@ footer {
 .gif-container {
   position: absolute;
   bottom: 20px;
-  right: 5%;
+  right: 20px;
+}
+
+/* Posiciona el primer GIF en la parte superior izquierda */
+.gif-top-left {
+  top: 20px;   /* Ajusta la distancia desde el borde superior */
+  left: 20px;  /* Ajusta la distancia desde el borde izquierdo */
+}
+
+/* Posiciona el segundo GIF en la parte superior derecha */
+.gif-top-right {
+  top: 20px;   /* Ajusta la distancia desde el borde superior */
+  right: 20px; /* Ajusta la distancia desde el borde derecho */
+}
+
+/* Posiciona el tercer GIF en la parte inferior izquierda */
+.gif-bottom-right {
+  bottom: 150px; /* Ajusta la distancia desde el borde inferior */
+  right: 50%;   /* Ajusta la distancia desde el borde izquierdo */
 }
 
 .ascii-wrapper {
@@ -159,10 +182,71 @@ footer {
   margin-top: 50px;
 }
 
+.marquee-container {
+  position: absolute;
+  bottom: -10px;
+  width: 100vw;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 19s linear infinite;
+}
+
+
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100vw); /* ✅ Entra desde fuera de la pantalla a la derecha */
+  }
+  100% {
+    transform: translateX(-100vw); /* ✅ Sale completamente por la izquierda */
+  }
+}
+
+
+
+
+
+
+.ascii-fish {
+  font-family: monospace;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  margin-right: 40px;
+  vertical-align: top;
+  white-space: pre;
+  line-height: 1.1;
+}
+
+.marquee-text {
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+ 
+  padding: 2px 8px;
+  display: inline-block;
+}
+
+.marquee-info {
+  display: inline-block;
+  margin-left: 20px;
+  transform: translateY(10px); /* Baja el texto respecto al pez */
+  color: blue;
+  background-color: white;
+  padding: 2px 6px;
+ 
+}
+
 
 
   </style>
 </head>
+
+
 <body>
   <div class="header">
     <img src="./gif/home_md_clr.gif" alt="Casa" class="gif-casa" />
@@ -281,6 +365,39 @@ ABRIL 2025
 jgs^^^^
     </pre>
 
+   <pre class="ascii-art">
+    .             ,
+               .:/ 
+            ,,///;,   ,;/
+     .     o:::::::;;/// 
+        . >::::::::;;\\\ 
+            ''\\\\\'" ';\ 
+               '; 
+     .            ,
+                .:/ 
+       .      ,,///;,   ,;/
+         .   o:::::::;;/// 
+            >::::::::;;\\\ 
+              ''\\\\\'" ';\ 
+                   '; 
+  </pre>
+
+   <pre class="ascii-art">
+         \
+      \
+  .    \  (\             .               (_) o
+  (\    \  ))   .         \.       |       o .        
+  ((.    \((.   (\.       ))       (\   . _ o       
+   \\/    \))    ))      ((        ((. . (_)   
+ |  ||   ./\    ((        \\ /      \\/  o  
+ \\//    (( \    \\/   .  .||     |  || . 
+ .//      \\(\  .--.____)  .-.    \\//   
+ ||      | || "(o>_/___ \_//\)    .//      
+.||      \\||   .~||   \__/ \\.   ||        
+\||       \||    \||         ||   ||             
+
+  </pre>
+
 
 
 <div class="gif-container">
@@ -299,6 +416,28 @@ jgs^^^^
         clickedGroup.querySelector('.submenu').style.display = 'block';
       }
     }
-  </script>
+</script>
+<div class="marquee-container">
+  <div class="marquee-content">
+    <span class="ascii-fish">  ,-,
+ ('_)<   
+  `-`</span>
+    <span class="marquee-info">Did you know that dolphins are also called "Angels of the sea"??</span>
+  </div>
+</div>
+
+<div class="gif-container gif-top-left">
+  <img src="./gif/blueline_background.gif" alt="GIF 1" />
+</div>
+
+<div class="gif-container gif-top-right">
+  <img src="./gif/blueline_background.gif" alt="GIF 2" />
+</div>
+
+<div class="gif-container gif-bottom-right">
+  <img src="./gif/fish-anie.gif" alt="GIF 3" />
+</div>
+
+  
 </body>
 </html>

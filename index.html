@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Home</title>
+  <link rel="icon" type="image/x-icon" href="img/dolphin_1f42c.png" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background-color: #0102de;
+      font-family: Arial, sans-serif;
+      overflow-y: hidden;
+      overflow-x: scroll;
+      height: 100vh;
+      white-space: nowrap;
+      scroll-behavior: auto;
+      color: white;
+      cursor: url('cursor1.png'), auto;
+    }
+
+    .section {
+      display: inline-block;
+      width: 200vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    .label-line {
+      font-weight: bold;
+      font-style: italic;
+      font-size: 16px;
+      color: #0102de;
+      line-height: 0.7;
+      margin-bottom: 8px;
+    }
+
+    .label-line > span {
+      position: relative;
+      display: inline-block;
+      padding: 0;
+    }
+
+    .label-line > span::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1.2em;
+      background-color: white;
+      transform: translateY(-50%);
+      z-index: -1;
+      border-radius: 0;
+    }
+
+    .label-home {
+      position: absolute;
+      top: 140px;
+      left: 40px;
+      display: flex;
+      flex-direction: column;
+    }
+
+  .label-line.spacer {
+  margin-bottom: 3px;
+  line-height: 1.3;
+  margin-left: 5%;
+}
+
+.label-line.spacer span::before {
+  background-color: white;
+  width: 1500%;
+  height: 1.5em;
+}
+
+    /* Estilo de texto expandido */
+    .stretch-text {
+      letter-spacing: 2px;
+      transform: scaleX(1.2);
+      display: inline-block;
+    }
+
+    /* Sangrías */
+    .indent-small {
+      padding-left: 20px;
+    }
+
+    .indent-medium {
+      padding-left: 57px;
+    }
+
+    .indent-large {
+      padding-left: 100px;
+    }
+
+    /* Tamaños */
+    .label-big {
+      font-size: 30px;
+    }
+
+    .label-medium {
+      font-size: 20px;
+    }
+
+    /* ASCII decorativo */
+    .ascii-block {
+      position: absolute;
+      white-space: pre;
+      font-family: monospace;
+      font-size: 14px;
+      line-height: 1.1;
+      color: white;
+    }
+
+    #ascii-castillo {
+      bottom: 10px;
+      left: 600px;
+    }
+
+    #ascii-puerta {
+      bottom: 10px;
+      left: 950px;
+    }
+
+    /* GIFs decorativos */
+    #gif1, #gif2, #gif3, #gif4, #gif5, #gif6, #gif7, #gif8, #gif9, #gif10,  #gif11, #gif12 {
+      position: absolute;
+      z-index: 1000;
+      width: 50px;
+    }
+
+    #gif1 { bottom: 110px; left: 1200px; height: 65px; }
+    #gif2 { bottom: 110px; left: 1170px; height: 100px; }
+    #gif3 { bottom: 180px; left: 1170px; height: 200px; }
+    #gif4 { bottom: 110px; left: 1660px; height: 65px; }
+    #gif5 { bottom: 110px; left: 1630px; height: 100px; }
+    #gif6 { bottom: 180px; left: 1650px; height: 200px; }
+    #gif7 { bottom: 120px; left: 4880px; height: 80px; }
+    #gif8 { bottom: 120px; left: 5200px; height: 40px; }
+     #gif7 { bottom: 120px; left: 4880px; height: 80px; }
+    #gif8 { bottom: 120px; left: 5200px; height: 40px; }
+      #gif9 { bottom: 120px; left: 4860px; height: 40px; }
+    #gif10 { bottom: 120px; left: 5200px; height: 40px; }
+     #gif11 { bottom: 120px; left: 5200px; height: 150px; }
+      #gif12 { bottom: 120px; left: 4860px; height: 100px; }
+    
+
+
+  </style>
+</head>
+<body>
+
+  <div class="section">
+    <div class="label-home">
+
+      <!-- div -->
+      <span class="label-line label-medium indent-small"><span>&lt;div&gt;</span></span>
+
+      <!-- Welcome Home -->
+      <span class="label-line label-big stretch-text indent-medium"><span>&lt;!-- Welcome Home --&gt;</span></span>
+
+      <!-- Espacio blanco -->
+      <span class="label-line spacer"><span>&nbsp;</span></span>
+
+      <!-- Tabla de contenido -->
+      <span class="label-line label-medium  indent-medium"><span>&lt;"tabla de contenido"=&gt;</span></span>
+
+      <!-- Enlaces -->
+      <span class="label-line label-medium indent-large"><span><a href="./Porfolio.html"> ✰ curro</a></span></span>
+      <span class="label-line label-medium indent-large"><span><a href="./Info.html"> ✰ info</a></span></span>
+
+    </div>
+  </div>
+
+
+
+
+<img id="gif1" src="./gif/planta1.gif" alt="gif1">
+<img id="gif2" src="./gif/planta1.gif" alt="gif2">
+<img id="gif3" src="gif/blueline_background.gif" alt="gif3">
+<img id="gif4" src="./gif/planta1.gif" alt="gif4">
+<img id="gif5" src="./gif/planta1.gif" alt="gif5">
+<img id="gif6" src="gif/blueline_background.gif" alt="gif6">
+
+<img id="gif7" src="./gif/planta1.gif" alt="gif7">
+<img id="gif8" src="./gif/planta1.gif" alt="gif8">
+<img id="gif9" src="./gif/planta1.gif" alt="gif9">
+<img id="gif10" src="./gif/planta1.gif" alt="gif10">
+<img id="gif11" src="./gif/blueline_background.gif" alt="gif11">
+<img id="gif12" src="./gif/blueline_background.gif" alt="gif12">
+
+
+<!-- CASTILLO -->
+<div class="ascii-block" style="bottom: 10px; left: 800px;">
+<pre>
+   _                     _
+  _|_|___________________|_|_
+ |__:_____________________:__|
+ |___________________________|
+ |__:_____________________:__|
+ |___________________________|
+   |_|___________________|_|
+  /__.___________________.__\
+ /__._____________________.__\
+/_____________________________\
+   | |_|               |_| |
+   | |                   | |
+   | |                   | |
+   |_|                   |_|lc
+</pre>
+</div>
+
+<!-- PUERTA -->
+<div class="ascii-block" style="bottom: 10px; left: 1200px;">
+<pre>
+ .. ..           
+  o:  '  :o    
+ o '.   .' o              
+  o _`.' _o          ..                 .. 
+   ('>  <`)         :  :               :  :
+  (\/)  (\/)         ::     .''.''.     ::
+  ."".  ."".  .''.  .''. .'';  ;  ;''. .''.  .''.  .''.  .''.
+  |  |oo| ||  |  |  |  | |     ;  ;  | |  |  |  |  |  |oo|  |
+--|  |--| d|--|  |--|  |-|  ;  ;  ;  |-|  |--|  |--|  |--|  |--
+--|| |--|  |--|  |--|  |-|  ;     ;  |-|  |--|  |--|  |--|  |--
+.o|b |  |  |o.|  |  |  | |     ;     | |  |  |  |.o|  |  |  |o.
+o'|  |  |  |`o|  |  |  | |  ;     ; o| |  |  |  |o'|  |  |  |`o
+o |  |  | || o|  |  |  | |  ;     ;  | |  |  |  |o |  |  |  | o
+--|  |--| b|--|  |--|  |-|     ;  ;  |-|  |--|  |--|  |--|  |--
+--|  |--|  |--|  |--|  |-|  ;  ;     |-|  |--|  |--|  |--|  |--
+`o|  |  |  |o'|  |  |  | |  ;  ;  ;  | |  |  |  |`o|  |  |  |o'
+ `|__|oo|__|' |__|  |__| |__;__;__;__| |__|  |__| `|__|oo|__|'
+   ""    ""               ___________
+  ""       ""      ""    /           \
+                        /"" WELCOME   \ 
+                       /           ""  \   
+                       ~~~~~~~~~~~~~~~~~ 
+TOC TOC
+</pre>
+</div>
+
+<!-- VENTANA -->
+<div class="ascii-block" style="top: 100px; left: 2100px ;font-size: 19px;">
+<pre>
+(IIIIIIIIIIIIIIIIIII)
+)'.'.'.':;:;:'.'.'.'(
+('.'.'.;' | `:.'.'.')
+)'.'.';'  |  `:'.'.'(
+('.'.;'   |   `:.'.')
+)'.';'____|____`:'.'(
+(==@'     |     `@==)
+)'.:     @()     :.'(
+('.'.   ()@()   .'.')
+)'.'.  ()@()@)  .'.'(
+('.'.   _\|/_   .'.')
+)'.'.  |-----|  .'.'(
+('.'.___\___/___.'.')
+)'.'============='.'(
+('.'             '.')
+ ~                 ~
+</pre>
+</div>
+
+<!-- SOFA -->
+<div class="ascii-block" style="bottom: 100px; left: 2200px; font-size: 19px; ">
+<pre>
+ ___.--------'``````:``````'--------.___
+(   |               :               |   )
+ \ ,;,,,            :               |  /
+  |\%%%%\___________:__________/~~~~~/|
+ / ,\%%%%\           |         / @*@ /, \
+/_ / `````           |         ~~~~~~ \ _\
+(@l)                 |                 (@l)
+ ||__________________|__________________||
+ ||_____________________________________||
+/_|_____________________________________|_\ zzz
+</pre>
+</div>
+
+
+
+<!-- CAJÓN -->
+<div class="ascii-block" style="bottom: 50px; left: 3000px;">
+<pre>
+_________________________________________________________
+||-------------------------------------------------------||
+||.--.    .-._                        .----.             ||
+|||==|____| |H|___            .---.___|""""|_____.--.___||
+|||  |====| | |xxx|_          |+++|=-=|_  _|-=+=-|==|---|||
+|||==|    | | |   | \         |   |   |_\/_|Ilumi|  | ^ |||
+|||  |    | | |   |\ \   .--. |   |=-=|_/\_|-=+=-|  | ^ |||
+|||  |    | | |   |_\ \_( oo )|   |   |    |nati!|  | ^ |||
+|||==|====| |H|xxx|  \ \ |''| |+++|=-=|""""|-=+=-|==|---|||
+||`--^----'-^-^---'   `-' ""  '---^---^----^-----^--^---^||
+||-------------------------------------------------------||
+||-------------------------------------------------------||
+</pre>
+</div>
+
+<!-- TELEVISOR -->
+<div class="ascii-block" style="bottom: 220px; left: 3000px;">
+<pre id="tv-screen">
+         o
+          o    |
+           \   |
+            \  |
+             \.|-.
+             (\|  )
+    .==================.
+    | .--------------. |
+    | |--.__.--.__.--| |
+    | |--.__.--.__.--| |
+    | |--.__.--.__.--| |
+    | |--.__.--.__.--| |
+    | |--.__.--.__.--| |
+    | '--------------'o|
+jgs | LI LI """""""   o|
+    '=================='
+</pre>
+</div>
+
+<!-- RELOJ -->
+<div class="ascii-block" style="top: 100px; left: 3700px; font-size: 19px;">
+<pre>
+  _______
+ /  12   \
+|    |    | 
+|9   |   3|
+|     \   |
+|         |
+ \___6___/
+</pre>
+</div>
+
+<!-- COCINA -->
+<div class="ascii-block" style="bottom: 90px; left: 4100px;">
+<pre>
+<pre>
+_____________________________________________________
+____________________________________________________\\
+|.-------.-------.|_.----._.----._|.-------.-------.\\\
+|]       |       [|       .       |]       |       [ \\\
+||       |       ||     .':'.     ||       |       |  |\\
+||       |       ||    .' : '.    ||       |       |  |\\\
+||     (O|O)     ||   .'  :  '.   ||     (O|O)     |  | \\\
+||       |       ||  .'===:==='.  ||       |       | O|  |\\
+||       |       ||=='    :    '==||       |       |  |  |\\\
+|]       |       [|  )    :    (  |]       |       [  |O | \\\
+||_______|_______||"" ____:_____""||_______|_______|  |  |  |\\
+'-----------------'_______________'----------------'  |  |  |\\\
+|.--------.  |    '---------------'  (o)______)(0)  \ |  |  | \\\
+||        |::|_________________________________())___\|  | O|  \\\______
+||        |::|-----______*!*______-------------))( .'.\  |  |   | _____ |
+||________|::|  _ /       '       \  _        _   (__.'\ |  |O  ||     ||
+|____________| _  \_______________/     _           (_.'\|  |   ||  _  ||
+ ___________________________________________      _  (___\  |   ||     ||
+||.-----.|.------.|.-.-.--.--.-.-.||.-----.||\   _        \ |   ||     ||
+||| === ||| ==== ||| | |  |  | | |||| === ||| \     _      \|   ||    _||
+||'-----'|'------'|'-'-'--'--'-'-'||'-----'||. \          _ \   ||     ||
+||.-----.|.------.|.------.------.||.-----.|| `|\       _    \  || _   ||
+||| === |||      |||      |      |||| === |||\ | \  _         \ ||_____||
+||'-----'|]      ||]      |      [||'-----'|| \|. \        _   \|_______|
+||.-----.||    (O|||    (O|O)    |||.-----.||  | `|\                   ||
+||| === |||      |||      |      |||| === |||  |\ | \__________________||
+|||     ||]      ||]      |      [|||     ||| O| \|. |  _____________  ||
+||'-----'||______|||______|______|||'-----'||  |  | `| |             | ||
+||LGB____|________|_______________||_______||  |O |\ | |   _         | ||
+''-----------------------------------------' \ |  | \| |          _  | ||
+   ____                 _______               \|  |  | |       _     | ||
+           _________                  ______   \  |O | |             | ||
+                                                \ |  | |   _      _  | ||
+                                _________        \|  | |             | ||
+      ___________        __                       \  | | _        _  | || 
+    __                              _________      \ | |_____________| ||  chup chup 
+               ___________        
+</pre>
+
+</pre>
+</div>
+
+<!-- VALLA -->
+<div class="ascii-block" style="bottom: 90px; left: 4900px;">
+<pre>
+  _             _              _
+__| |___________| |____________| |________
+__| |___________| |____________| |________
+  | |           | |            | |
+  | |           | |            | |
+__| |___________| |____________| |________
+__| |___________| |____________| |________
+  | |           | |            | |
+  | |           | |            | |      VK
+'''''''''''''''''''''''''''''''''''''''''''''
+</pre>
+</div>
+
+<!-- ESTRELLA -->
+<div class="ascii-block" style="top: 30px; left: 5000px; font-size: 10px;">
+<pre>
+   *   '*
+           *
+                *
+                       *
+               *
+                     *
+
+         .                      .
+         .                      ;
+         :                  - --+- -
+         !           .          !
+         |        .             .
+         |_         +
+      ,  | `.
+--- --+-<#>-+- ---  --  -
+      `._|_,'
+         T
+         |
+         !
+         :         . :
+         .       *
+</pre>
+</div>
+
+<!-- CORTADOR -->
+<div class="ascii-block" style="bottom: 10px; left:5500px;">
+<pre>
+                    .-----
+                    '.  .'
+                     '.'
+                     /
+                    /
+                   /
+                  /
+                 /
+                /
+               /
+              /
+            .' .
+          .'   \
+        .'     |
+      .'       \
+ ..--/_________|.--.
+// '----------'//  \\
+||'=:='=:='=:='||()||
+\\_'--''--''--'\\__//
+ `--' LGBT       `--`
+</pre>
+</div>
+
+
+<div style="
+  position: fixed;
+  bottom: 1px;
+  right: 40px;
+  font-size: 16px;
+  color: #0102de;
+  z-index: 9999;
+  pointer-events: none;
+  font-size: 10px;
+">
+<pre>
+  _
+><_>
+     </pre>
+</div>
+
+<div class="label-line" style="
+  position: absolute;
+  bottom: 60px; /* antes era 30px */
+  left: 6000px;
+  font-size: 20px;
+">
+  <span>&lt;div&gt;</span>
+</div>
+
+
+<div style="
+  position: absolute;
+  bottom: 30px;
+  left: 6200px;
+  font-size: 16px;
+  font-style: italic;
+  color:#0102de;
+">
+  &lt;div &gt;
+</div>
+  </div>
+
+
+
+ 
+
+  <script>
+let scrollTarget = 0;
+const speed = 0.2;  // Más rápido, aún suave
+
+function smoothScroll() {
+  const current = window.scrollX;
+  const distance = scrollTarget - current;
+  window.scrollTo(current + distance * speed, 0);
+  requestAnimationFrame(smoothScroll);
+}
+
+window.addEventListener('wheel', function(e) {
+  e.preventDefault();
+  scrollTarget += e.deltaY * 2;  // Más movimiento al girar rueda
+  scrollTarget = Math.max(0, scrollTarget);
+}, { passive: false });
+
+window.addEventListener('scroll', () => {
+  scrollTarget = window.scrollX;
+});
+
+smoothScroll();
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight') scrollTarget += 100;
+  if (e.key === 'ArrowLeft') scrollTarget -= 100;
+});
+
+
+
+  const cursorImages = [
+    'img/1.png',
+    'img/2.png',
+     'img/3.png',
+      'img/4.png',
+       'img/5.png',
+  ];
+
+  let currentCursor = 0;
+
+  function updateCursor() {
+    document.body.style.cursor = `url(${cursorImages[currentCursor]}), auto`;
+    currentCursor = (currentCursor + 1) % cursorImages.length;
+  }
+
+  // Inicializa el cursor
+  updateCursor();
+
+  // Cambia el cursor cada 2 segundos
+  setInterval(updateCursor, 2000);
+
+
+ 
+const tvFrames = [
+`         o
+          o    |
+           \\   |
+            \\  |
+             \\.|-.
+             (\\|  )
+    .==================.
+    | .--------------. |
+    | |~~..~~..~~..~~| |
+    | |~~..~~..~~..~~| |
+    | |~~..~~..~~..~~| |
+    | |~~..~~..~~..~~| |
+    | |~~..~~..~~..~~| |
+    | '--------------'o|
+jgs | LI LI """""""   o|
+    '=================='`,
+
+`         o
+          o    |
+           \\   |
+            \\  |
+             \\.|-.
+             (\\|  )
+    .==================.
+    | .--------------. |
+    | |--~~--~~--~~--| |
+    | |--~~--~~--~~--| |
+    | |--~~--~~--~~--| |
+    | |--~~--~~--~~--| |
+    | |--~~--~~--~~--| |
+    | '--------------'o|
+jgs | LI LI """""""   o|
+    '=================='`,
+
+`         o
+          o    |
+           \\   |
+            \\  |
+             \\.|-.
+             (\\|  )
+    .==================.
+    | .--------------. |
+    | |__--__--__--__| |
+    | |__--__--__--__| |
+    | |__--__--__--__| |
+    | |__--__--__--__| |
+    | |__--__--__--__| |
+    | '--------------'o|
+jgs | LI LI """""""   o|
+    '=================='`
+];
+
+let currentTVFrame = 0;
+setInterval(() => {
+  document.getElementById('tv-screen').textContent = tvFrames[currentTVFrame];
+  currentTVFrame = (currentTVFrame + 1) % tvFrames.length;
+}, 500);
+
+const starFrames = [
+`   *   '*
+           *
+                *
+                       *
+               *
+                     *
+
+         .                      .
+         .                      ;
+         :                  - --+- -
+         !           .          !
+         |        .             .
+         |_         +
+      ,  | \`.
+--- --+-<#>-+- ---  --  -
+      \`._|_,
+         T
+         |
+         !
+         :         . :
+         .       *`,
+
+`   '*
+         *
+              *
+                     *
+             *
+                   *
+
+       .                      .
+       .                      ;
+       :                  - --+- -
+       !           .          !
+       |        .             .
+       |_         +
+    ,  | \`.
+--- --+-<#>-+- ---  --  -
+    \`._|_,
+       T
+       |
+       !
+       :         . :
+       .       *`,
+
+`    *
+           *
+                 *
+                         *
+             *
+                   *
+
+         .                      .
+         .                      ;
+         :                  - --+- -
+         !           .          !
+         |        .             .
+         |_         +
+      ,  | \`.
+--- --+-<#>-+- ---  --  -
+      \`._|_,
+         T
+         |
+         !
+         :         . :
+         .       *`,
+
+`     *
+           '*
+                *
+                       *
+              *
+                    *
+
+         .                      .
+         .                      ;
+         :                  - --+- -
+         !           .          !
+         |        .             .
+         |_         +
+      ,  | \`.
+--- --+-<#>-+- ---  --  -
+      \`._|_,
+         T
+         |
+         !
+         :         . :
+         .       *`
+];
+
+let i = 0;
+setInterval(() => {
+  console.clear();
+  console.log(starFrames[i]);
+  i = (i + 1) % starFrames.length;
+}, 500);
+</script>
+
+
+  
+</body>
+</html>

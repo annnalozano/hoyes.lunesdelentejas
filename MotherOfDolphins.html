@@ -29,48 +29,84 @@
       position: relative;
     }
 
-  .label-line {
-    font-weight: bold;
-    font-style: italic;
-    font-size: 16px;
-    color: #0102de;
-  }
+    .label-line {
+      font-weight: bold;
+      font-style: italic;
+      font-size: 16px;
+      color: #0102de;
+      line-height: 0.7;
+      margin-bottom: 8px;
+    }
 
- .label-line > span {
-  position: relative;
-  display: inline-block;
-  padding: 1px 0;
-}
+    .label-line > span {
+      position: relative;
+      display: inline-block;
+      padding: 0;
+    }
 
-  .label-line > span::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 1.2em;
-    background-color: white;
-    transform: translateY(-50%);
-    z-index: -1;
-    border-radius: 0; /* esquinas sin redondear */
-  }
+    .label-line > span::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1.2em;
+      background-color: white;
+      transform: translateY(-50%);
+      z-index: -1;
+      border-radius: 0;
+    }
 
-  /* Sangrías jerárquicas */
-  .level-0 span { padding-left: 0px; }
-  .level-1 span { padding-left: 20px; }
-  .level-2 span { padding-left: 40px; }
-  .level-3 span { padding-left: 60px; }
-
- 
-
-       .label-home {
+    .label-home {
       position: absolute;
       top: 140px;
       left: 40px;
       display: flex;
       flex-direction: column;
-      gap: 4px;
     }
+
+  .label-line.spacer {
+  margin-bottom: 3px;
+  line-height: 1.3;
+  margin-left: 5%;
+}
+
+.label-line.spacer span::before {
+  background-color: white;
+  width: 1500%;
+  height: 1.5em;
+}
+
+    /* Estilo de texto expandido */
+    .stretch-text {
+      letter-spacing: 2px;
+      transform: scaleX(1.2);
+      display: inline-block;
+    }
+
+    /* Sangrías */
+    .indent-small {
+      padding-left: 20px;
+    }
+
+    .indent-medium {
+      padding-left: 57px;
+    }
+
+    .indent-large {
+      padding-left: 100px;
+    }
+
+    /* Tamaños */
+    .label-big {
+      font-size: 30px;
+    }
+
+    .label-medium {
+      font-size: 20px;
+    }
+
+    /* ASCII decorativo */
     .ascii-block {
       position: absolute;
       white-space: pre;
@@ -90,88 +126,72 @@
       left: 950px;
     }
 
+    /* GIFs decorativos */
+    #gif1, #gif2, #gif3, #gif4, #gif5, #gif6, #gif7, #gif8, #gif9, #gif10,  #gif11, #gif12 {
+      position: absolute;
+      z-index: 1000;
+      width: 50px;
+    }
 
-    .label-big {
-  font-size: 30px;
-}
+    #gif1 { bottom: 110px; left: 1200px; height: 65px; }
+    #gif2 { bottom: 110px; left: 1170px; height: 100px; }
+    #gif3 { bottom: 180px; left: 1170px; height: 200px; }
+    #gif4 { bottom: 110px; left: 1660px; height: 65px; }
+    #gif5 { bottom: 110px; left: 1630px; height: 100px; }
+    #gif6 { bottom: 180px; left: 1650px; height: 200px; }
+    #gif7 { bottom: 120px; left: 4880px; height: 80px; }
+    #gif8 { bottom: 120px; left: 5200px; height: 40px; }
+     #gif7 { bottom: 120px; left: 4880px; height: 80px; }
+    #gif8 { bottom: 120px; left: 5200px; height: 40px; }
+      #gif9 { bottom: 120px; left: 4860px; height: 40px; }
+    #gif10 { bottom: 120px; left: 5200px; height: 40px; }
+     #gif11 { bottom: 120px; left: 5200px; height: 150px; }
+      #gif12 { bottom: 120px; left: 4860px; height: 100px; }
+    
 
-.label-medium {
-  font-size: 20px;
-}
 
-#gif1 {
-  position: absolute;
-  bottom: 110px;
-  left: 1200px;
-  width: 50px;
-  z-index: 1000;
-  height: 65px;
-}
-
-#gif2 {
-   position: absolute;
-  bottom: 110px;
-  left: 1170px;
-  width: 50px;
-  z-index: 1000;
-  height: 100px;
-}
-
-#gif3 {
-  position: absolute;
-  bottom: 180px;
-  left: 1170px;
-  width: 50px;
-  z-index: 1000;
-  height: 200px;
-}
-
-#gif4 {
-  position: absolute;
-  bottom: 110px;
-  left: 1200px;
-  width: 50px;
-  z-index: 1000;
-  height: 65px;
-}
-
-#gif5 {
-   position: absolute;
-  bottom: 110px;
-  left: 1170px;
-  width: 50px;
-  z-index: 1000;
-  height: 100px;
-}
-
-#gif6 {
-  position: absolute;
-  bottom: 180px;
-  left: 1170px;
-  width: 50px;
-  z-index: 1000;
-  height: 200px;
-}
   </style>
 </head>
 <body>
 
   <div class="section">
+    <div class="label-home">
 
-    <!-- Contenido jerárquico con subrayado tipo footer -->
-   <div class="label-home">
-  <span class="label-line level-0 label-medium"><span>&lt;div&gt;</span></span>
-   <span class="label-line level-3 label-big"><span>&lt--!Welcome Home-- &gt </span></span>
-  <span class="label-line level-1 label-medium" ><span>&lt; "tabla de contenido" = &gt;</span></span>
-  <span class="label-line level-2 label-medium"><span><a href="./"> ✰ curro</a></span></span>
-   <span class="label-line level-2 label-medium"><span><a href="./Info.html" > ✰ info</a></span></span>
-</div>
+      <!-- div -->
+      <span class="label-line label-medium indent-small"><span>&lt;div&gt;</span></span>
+
+      <!-- Welcome Home -->
+      <span class="label-line label-big stretch-text indent-medium"><span>&lt;!-- Welcome Home --&gt;</span></span>
+
+      <!-- Espacio blanco -->
+      <span class="label-line spacer"><span>&nbsp;</span></span>
+
+      <!-- Tabla de contenido -->
+      <span class="label-line label-medium  indent-medium"><span>&lt;"tabla de contenido"=&gt;</span></span>
+
+      <!-- Enlaces -->
+      <span class="label-line label-medium indent-large"><span><a href="./Porfolio.html"> ✰ curro</a></span></span>
+      <span class="label-line label-medium indent-large"><span><a href="./Info.html"> ✰ info</a></span></span>
+
+    </div>
+  </div>
+
 
 
 
 <img id="gif1" src="./gif/planta1.gif" alt="gif1">
 <img id="gif2" src="./gif/planta1.gif" alt="gif2">
 <img id="gif3" src="gif/blueline_background.gif" alt="gif3">
+<img id="gif4" src="./gif/planta1.gif" alt="gif4">
+<img id="gif5" src="./gif/planta1.gif" alt="gif5">
+<img id="gif6" src="gif/blueline_background.gif" alt="gif6">
+
+<img id="gif7" src="./gif/planta1.gif" alt="gif7">
+<img id="gif8" src="./gif/planta1.gif" alt="gif8">
+<img id="gif9" src="./gif/planta1.gif" alt="gif9">
+<img id="gif10" src="./gif/planta1.gif" alt="gif10">
+<img id="gif11" src="./gif/blueline_background.gif" alt="gif11">
+<img id="gif12" src="./gif/blueline_background.gif" alt="gif12">
 
 
 <!-- CASTILLO -->
@@ -245,7 +265,7 @@ TOC TOC
 </pre>
 </div>
 
-<!-- MESA -->
+<!-- SOFA -->
 <div class="ascii-block" style="bottom: 100px; left: 2200px; font-size: 19px; ">
 <pre>
  ___.--------'``````:``````'--------.___
@@ -316,7 +336,7 @@ jgs | LI LI """""""   o|
 </pre>
 </div>
 
-<!-- ARMARIO -->
+<!-- COCINA -->
 <div class="ascii-block" style="bottom: 90px; left: 4100px;">
 <pre>
 <pre>
@@ -362,7 +382,7 @@ ____________________________________________________\\
 </pre>
 </div>
 
-<!-- BANCO -->
+<!-- VALLA -->
 <div class="ascii-block" style="bottom: 90px; left: 4900px;">
 <pre>
   _             _              _
@@ -378,7 +398,7 @@ __| |___________| |____________| |________
 </pre>
 </div>
 
-<!-- ÁRBOL -->
+<!-- ESTRELLA -->
 <div class="ascii-block" style="top: 30px; left: 5000px; font-size: 10px;">
 <pre>
    *   '*
@@ -405,10 +425,10 @@ __| |___________| |____________| |________
 </pre>
 </div>
 
-<!-- ARCO LGBT -->
+<!-- CORTADOR -->
 <div class="ascii-block" style="bottom: 10px; left:5500px;">
 <pre>
-           ---.      .---
+                    .-----
                     '.  .'
                      '.'
                      /
@@ -466,7 +486,7 @@ __| |___________| |____________| |________
   font-style: italic;
   color:#0102de;
 ">
-  &lt;div&gt;
+  &lt;div &gt;
 </div>
   </div>
 
@@ -497,7 +517,10 @@ window.addEventListener('scroll', () => {
 
 smoothScroll();
 
-
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight') scrollTarget += 100;
+  if (e.key === 'ArrowLeft') scrollTarget -= 100;
+});
 
 
 

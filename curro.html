@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -6,15 +6,15 @@
     <link rel="icon" type="image/x-icon" href="img/dolphin_1f42c.png" /> <!-- Favicon -->
     <style>
         :root {
-            /* Variables para controlar los tamaños */
-            --gif-size: 30px; /* Tamaño del gif */
-            --gif-height: 30px; /* Altura del gif */
-            --titulo-width: 200px; /* Ancho de los recuadros */
-            --titulo-height: 10px; /* Altura del recuadro */
-            --gap: 90px; /* Espacio entre los recuadros */
-            --font-size: 14px; /* Tamaño de la fuente */
-            --element-height: 10px; /* NUEVO valor consistente para imagen y título */
-            --barra-height: 200px;
+            /* Variables para controlar los tamaños usando rem (1rem = 16px base) */
+            --gif-size: 1.875rem; /* 30px */
+            --gif-height: 1.875rem; /* 30px */
+            --titulo-width: 12.5rem; /* 200px */
+            --titulo-height: 0.625rem; /* 10px */
+            --gap: 5.625rem; /* 90px */
+            --font-size: 0.875rem; /* 14px */
+            --element-height: 0.625rem; /* 10px */
+            --barra-height: 12.5rem; /* 200px */
         }
 
         body {
@@ -28,19 +28,19 @@
             display: flex;
             justify-content: flex-end; /* botón a la derecha */
             align-items: center;
-            padding: 15px 30px;
-            gap: 10px;
+            padding: 0.9375rem 1.875rem; /* 15px 30px */
+            gap: 0.625rem; /* 10px */
         }
 
         .top-bar img {
-            width: 40px;
+            width: 2.5rem; /* 40px */
             cursor: pointer;
             margin-right: auto; /* para que el gif quede a la izquierda */
         }
 
         .top-bar button {
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 0.625rem 1.25rem; /* 10px 20px */
+            font-size: 1rem; /* 16px */
             background-color: transparent;  /* Sin fondo */
             border: 2px solid black;        /* Línea continua */
             font-weight: normal;            /* Sin negrita */
@@ -51,32 +51,31 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 2.5rem; /* 40px */
         }
 
-      .barra {
-    height: var(--barra-height);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--gap);  /* espacio entre imágenes */
-    background-color: #b4b680;
-    padding: 0 20px;
-    width: 90%;
-    border: 1px solid #888;
-    box-sizing: border-box;
-    overflow: hidden;
-}
+        .barra {
+            height: var(--barra-height);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--gap);  /* espacio entre imágenes */
+            background-color: #b4b680;
+            padding: 0 1.25rem; /* 0 20px */
+            width: 90%;
+            border: 1px solid #888;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
 
-.imagen {
-    height: var(--barra-height); /* altura igual a la barra */
-    width: auto;                 /* mantener proporción */
-    max-width: none;
-    object-fit: contain;
-    cursor: pointer;
-    display: block;
-}
-
+        .imagen {
+            height: var(--barra-height); /* altura igual a la barra */
+            width: auto;                 /* mantener proporción */
+            max-width: none;
+            object-fit: contain;
+            cursor: pointer;
+            display: block;
+        }
 
         .contenedor {
             text-align: center;
@@ -86,8 +85,6 @@
             width: var(--titulo-width);
             flex-shrink: 0; /* para que no se encoja y mantenga ancho */
         }
-
-     
 
         /* Para imágenes verticales: dales más altura */
         .imagen.vertical {
@@ -99,7 +96,7 @@
             display: flex;
             justify-content: center;
             gap: var(--gap); /* Utiliza la variable de espacio */
-            margin-top: 20px;
+            margin-top: 1.25rem; /* 20px */
             width: 90%;
         }
 
@@ -108,10 +105,10 @@
             height: var(--element-height);
             font-size: var(--font-size);
             text-align: center;
-            margin-top: 10px;
-            padding: 8px;
+            margin-top: 0.625rem; /* 10px */
+            padding: 0.5rem; /* 8px */
             display: inline-block;
-            border: 4px solid transparent;
+            border: 0.25rem solid transparent; /* 4px */
             background-color: transparent;
             font-weight: normal;
             position: relative;
@@ -124,7 +121,7 @@
         /* Estilo para los gifs fuera del recuadro */
         .titulo img {
             position: absolute;
-            left: -25px; /* Ajusta el gif fuera del recuadro */
+            left: -1.5625rem; /* -25px */
             top: 50%; /* Centra el gif verticalmente */
             transform: translateY(-50%);
             width: var(--gif-size); /* Utiliza la variable para el tamaño */

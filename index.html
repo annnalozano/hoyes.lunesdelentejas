@@ -28,14 +28,13 @@
       height: 100vh;
       position: relative;
     }
-
-    .label-line {
+.label-line {
       font-weight: bold;
       font-style: italic;
-      font-size: 16px;
+      font-size: 1rem;
       color: #0102de;
       line-height: 0.7;
-      margin-bottom: 8px;
+      margin-bottom: 0.5rem;
     }
 
     .label-line > span {
@@ -56,20 +55,20 @@
       z-index: -1;
       border-radius: 0;
     }
-
-    .label-home {
+ .label-home {
       position: absolute;
-      top: 140px;
-      left: 40px;
+      top: 8.75rem; /* 140px */
+      left: 2.5rem; /* 40px */
       display: flex;
       flex-direction: column;
     }
 
-  .label-line.spacer {
-  margin-bottom: 3px;
-  line-height: 1.3;
-  margin-left: 5%;
-}
+
+    .label-line.spacer {
+      margin-bottom: 0.2rem;
+      line-height: 1.3;
+      margin-left: 5%;
+    }
 
 .label-line.spacer span::before {
   background-color: white;
@@ -78,76 +77,71 @@
 }
 
     /* Estilo de texto expandido */
-    .stretch-text {
-      letter-spacing: 2px;
+      .stretch-text {
+      letter-spacing: 0.125rem;
       transform: scaleX(1.2);
       display: inline-block;
     }
 
     /* Sangrías */
-    .indent-small {
-      padding-left: 20px;
+  .indent-small {
+      padding-left: 1.25rem; /* 20px */
     }
 
     .indent-medium {
-      padding-left: 57px;
+      padding-left: 3.5625rem; /* 57px */
     }
 
     .indent-large {
-      padding-left: 100px;
+      padding-left: 6.25rem; /* 100px */
     }
 
-    /* Tamaños */
     .label-big {
-      font-size: 30px;
+      font-size: 1.875rem; /* 30px */
     }
 
     .label-medium {
-      font-size: 20px;
+      font-size: 1.25rem; /* 20px */
     }
 
     /* ASCII decorativo */
-    .ascii-block {
+     .ascii-block {
       position: absolute;
       white-space: pre;
       font-family: monospace;
-      font-size: 14px;
+      font-size: 0.875rem; /* 14px */
       line-height: 1.1;
       color: white;
     }
 
-    #ascii-castillo {
-      bottom: 10px;
-      left: 600px;
+   #ascii-castillo {
+      bottom: 0.625rem; /* 10px */
+      left: 37.5rem; /* 600px */
     }
 
     #ascii-puerta {
-      bottom: 10px;
-      left: 950px;
+      bottom: 0.625rem;
+      left: 59.375rem; /* 950px */
     }
 
     /* GIFs decorativos */
     #gif1, #gif2, #gif3, #gif4, #gif5, #gif6, #gif7, #gif8, #gif9, #gif10,  #gif11, #gif12 {
       position: absolute;
       z-index: 1000;
-      width: 50px;
+      width: 3.125rem; /* 50px */
     }
-
-    #gif1 { bottom: 110px; left: 1200px; height: 65px; }
-    #gif2 { bottom: 110px; left: 1170px; height: 100px; }
-    #gif3 { bottom: 180px; left: 1170px; height: 200px; }
-    #gif4 { bottom: 110px; left: 1660px; height: 65px; }
-    #gif5 { bottom: 110px; left: 1630px; height: 100px; }
-    #gif6 { bottom: 180px; left: 1650px; height: 200px; }
-    #gif7 { bottom: 120px; left: 4880px; height: 80px; }
-    #gif8 { bottom: 120px; left: 5200px; height: 40px; }
-     #gif7 { bottom: 120px; left: 4880px; height: 80px; }
-    #gif8 { bottom: 120px; left: 5200px; height: 40px; }
-      #gif9 { bottom: 120px; left: 4860px; height: 40px; }
-    #gif10 { bottom: 120px; left: 5200px; height: 40px; }
-     #gif11 { bottom: 120px; left: 5200px; height: 150px; }
-      #gif12 { bottom: 120px; left: 4860px; height: 100px; }
-    
+ #gif1 { bottom: 6.875rem; left: 75rem; height: 4.0625rem; }
+    #gif2 { bottom: 6.875rem; left: 73.125rem; height: 6.25rem; }
+    #gif3 { bottom: 11.25rem; left: 73.125rem; height: 12.5rem; }
+    #gif4 { bottom: 6.875rem; left: 103.75rem; height: 4.0625rem; }
+    #gif5 { bottom: 6.875rem; left: 101.875rem; height: 6.25rem; }
+    #gif6 { bottom: 11.25rem; left: 103.125rem; height: 12.5rem; }
+    #gif7 { bottom: 7.5rem; left: 305rem; height: 5rem; }
+    #gif8 { bottom: 7.5rem; left: 325rem; height: 2.5rem; }
+    #gif9 { bottom: 7.5rem; left: 303.75rem; height: 2.5rem; }
+    #gif10 { bottom: 7.5rem; left: 325rem; height: 2.5rem; }
+    #gif11 { bottom: 7.5rem; left: 325rem; height: 9.375rem; }
+    #gif12 { bottom: 7.5rem; left: 303.75rem; height: 6.25rem; }
 
 
   </style>

@@ -141,60 +141,162 @@ footer {
     background:#d5d5d5;
 
 }
+/* ===== VENTANA ESTILO WINDOWS 95 ===== */
 
-.submenu {
-  display: none;
-  position: fixed;
 
-  top: 130px;
-  left: 280px;
 
-  width: 900px;
-  max-width: calc(100vw - 340px);
 
-  height: 420px;
+.submenu{
 
-  padding: 18px;
+    display:none;
+    position:fixed;
 
-  background: #0102de;
-  color: white;
+    top:120px;
+    left:260px;
 
-  border: 2px solid white;
+    width:850px;
+    height:480px;
 
-  box-sizing: border-box;
+    background:#C0C0C0;
 
-  overflow-y: auto;
-  overflow-x: hidden;
+    border:2px solid;
+    border-color:#FFFFFF #404040 #404040 #FFFFFF;
 
-  line-height: 1.5;
-  white-space: pre-line;
+    box-shadow:
+        inset -1px -1px #808080,
+        inset 1px 1px #DFDFDF,
+        2px 2px #000;
 
-  z-index: 9999;
+    overflow:hidden;
+
+    font-family:"MS Sans Serif",Tahoma,Arial,sans-serif;
+    font-size:13px;
+
 }
 
 
-.submenu::-webkit-scrollbar {
-  width: 12px;
+/* BARRA SUPERIOR */
+.window-title{
+
+    height:24px;
+
+    background:#0102de;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:2px 3px;
+
+    font-weight:bold;
+
+    cursor:move;
+
+    user-select:none;
+
+    border-bottom:1px solid #808080;
+
+    box-sizing:border-box;
+
 }
 
-.submenu::-webkit-scrollbar-track {
-  background: #0102de;
-  border-left: 1px solid white;
+
+
+/* BOTON X */
+
+.window-title button{
+
+    width:20px;
+    height:20px;
+
+    background:#C0C0C0;
+
+    border:2px solid;
+    border-color:#FFFFFF #404040 #404040 #FFFFFF;
+
+    font-size:13px;
+    font-weight:bold;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:0;
+
 }
 
-.submenu::-webkit-scrollbar-thumb {
+.window-title button:active{
+
+    border-color:#404040 #FFFFFF #FFFFFF #404040;
+
+}
+
+
+
+
+
+
+
+/* CONTENIDO */
+
+.window-content {
+
+
+  height:calc(100% - 32px);
+
+
   background: white;
+
+
+  color:black;
+
+
+  padding:15px;
+
+
+  overflow:auto;
+
+
+  white-space:pre-line;
+
+
+  font-size:15px;
+
+
+  line-height:1.5;
+
+
 }
 
-.submenu::-webkit-scrollbar-thumb:hover {
-  background: #d9d9d9;
+
+
+/* SCROLLBAR WINDOWS */
+
+.window-content::-webkit-scrollbar {
+    width: 16px;
 }
 
-.submenu {
-  scrollbar-color: white #0102de;
-  scrollbar-width: thin;
+.window-content::-webkit-scrollbar-track {
+    background: #C0C0C0;
 }
 
+.window-content::-webkit-scrollbar-thumb{
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #C0C0C0 0px,
+            #C0C0C0 2px,
+            #D8D8D8 2px,
+            #D8D8D8 4px
+        );
+
+    border:2px solid;
+    border-color: white #404040 #404040 white ;
+}
 /* ==== FOOTER TEXTOS ==== */
 .footer-text {
   font-size: 0.75rem; /* 12px */
@@ -362,28 +464,60 @@ footer {
         <span class="icono">જ⁀➴</span>
         <span class="texto">Sobre mí</span>
       </div>
-      <div class="submenu">...</div>
+      <div class="submenu">...</div> 
     </div>
 
-    <div class="menu-group" onclick="toggleSubmenu(this)">
-      <div class="menu-item">
-        <span class="icono">╰┈➤</span>
-        <span class="texto">Work</span>
-      </div>
-      <div class="submenu">
-JUNY 2020-Actualment.
-*Informadora. Eurotomb. Barcelona.
-Funcions: Control de Sala ( Filmoteca de Catalunya ) Respondre
-mails i trucades, Resoldre dubtes sobre subvencions i becas de l’ ICUB ( Virreina Centre de la Imatge ) Donar i facilitar informacio sobre Cultura a LlumBcn, La Mercè, Biennal del Pensament.) 
 
-FEB-MAR.2023
-*1r Aniversari Human Razzmatazz: Razzmatazz. Barcelona
-Funcions: Texturització del logo en Realitat Augmentada.
+<!-- WORK -->
 
-NOV-DES.2022
-*Mapping Barça Comiat Víctor Tomás: Anton Babinski Studio.Barcelona
-Funcions: VFX.</div>
+
+
+<div class="menu-group" onclick="toggleSubmenu(this)">
+
+  <div class="menu-item">
+    <span class="icono">╰┈➤</span>
+    <span class="texto">Work</span>
+  </div>
+
+
+  <div class="submenu">
+
+    <div class="window-title">
+      <span>Work</span>
+      <button onclick="closeWindow(event,this)">×</button>
     </div>
+
+    <div class="window-content">
+
+      JUNY 2020-Actualment.
+
+      *Informadora. Eurotomb. Barcelona.
+
+      Funcions: Control de Sala ( Filmoteca de Catalunya )
+      Respondre mails i trucades,
+      Resoldre dubtes sobre subvencions i becas de l’ ICUB
+      ( Virreina Centre de la Imatge )
+
+      FEB-MAR.2023
+
+      *1r Aniversari Human Razzmatazz:
+      Razzmatazz. Barcelona
+
+      Funcions: Texturització del logo en Realitat Augmentada.
+
+      NOV-DES.2022
+
+      *Mapping Barça Comiat Víctor Tomás:
+      Anton Babinski Studio.Barcelona
+
+      Funcions: VFX.
+
+    </div>
+
+
+  </div>
+
+</div>
 
     <div class="menu-group" onclick="toggleSubmenu(this)">
       <div class="menu-item">
@@ -521,18 +655,128 @@ jgs^^^^
   <img src="./gif/9.gif" alt="Decorativo" />
 </div>
 
-  <script>
-    function toggleSubmenu(clickedGroup) {
-      const isAlreadyOpen = clickedGroup.classList.contains('open');
-      document.querySelectorAll('.menu-group').forEach(group => {
-        group.classList.remove('open');
-        group.querySelector('.submenu').style.display = 'none';
-      });
-      if (!isAlreadyOpen) {
-        clickedGroup.classList.add('open');
-        clickedGroup.querySelector('.submenu').style.display = 'block';
-      }
+
+
+<script>
+
+function toggleSubmenu(clickedGroup){
+
+    const ventana = clickedGroup.querySelector(".submenu");
+
+
+    if(ventana.style.display === "block"){
+
+        ventana.style.display = "none";
+
+    } else {
+
+
+        document.querySelectorAll(".submenu").forEach(w=>{
+
+            w.style.display = "none";
+
+        });
+
+
+        ventana.style.display = "block";
+
     }
+
+}
+
+
+
+// CERRAR VENTANA CON LA X
+
+function closeWindow(event, button){
+
+    event.stopPropagation();
+
+    button.closest(".submenu").style.display = "none";
+
+}
+
+
+
+// MOVER VENTANAS
+
+document.addEventListener("DOMContentLoaded", function(){
+
+
+    document.querySelectorAll(".submenu").forEach(win=>{
+
+
+        const bar = win.querySelector(".window-title");
+
+
+        // Si todavía no tiene barra, no hace nada
+        if(!bar) return;
+
+
+
+        let moving = false;
+
+        let offsetX = 0;
+
+        let offsetY = 0;
+
+
+
+        bar.addEventListener("mousedown", function(e){
+
+
+            moving = true;
+
+
+            offsetX = e.clientX - win.offsetLeft;
+
+            offsetY = e.clientY - win.offsetTop;
+
+
+        });
+
+
+
+        document.addEventListener("mousemove", function(e){
+
+
+            if(moving){
+
+
+                win.style.left = (e.clientX - offsetX) + "px";
+
+                win.style.top = (e.clientY - offsetY) + "px";
+
+
+            }
+
+
+        });
+
+
+
+        document.addEventListener("mouseup", function(){
+
+
+            moving = false;
+
+
+        });
+
+
+
+    });
+
+
+});
+
+document.querySelectorAll(".submenu").forEach(win => {
+
+    win.addEventListener("click", e => e.stopPropagation());
+
+});
+
+
 </script>
 <div class="marquee-container">
   <div class="marquee-content">

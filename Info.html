@@ -154,12 +154,12 @@ footer {
     top:120px;
     left:260px;
 
-    width:850px;
-    height:480px;
+    width:550px;
+    height:320px;
 
     background:#C0C0C0;
 
-    border:2px solid;
+    border:1px solid;
     border-color:#FFFFFF #404040 #404040 #FFFFFF;
 
     box-shadow:
@@ -170,7 +170,7 @@ footer {
     overflow:hidden;
 
     font-family:"MS Sans Serif",Tahoma,Arial,sans-serif;
-    font-size:13px;
+    font-size:18px;
 
 }
 
@@ -180,9 +180,9 @@ footer {
 
     height:24px;
 
-    background:#0102de;
+    background:white;
 
-    color:white;
+    color:#0102de;;
 
     display:flex;
 
@@ -249,10 +249,10 @@ footer {
   height:calc(100% - 32px);
 
 
-  background: white;
+  background: #0102de;;
 
 
-  color:black;
+  color:white;
 
 
   padding:15px;
@@ -461,56 +461,84 @@ footer {
   <div class="menu">
     <div class="menu-group" onclick="toggleSubmenu(this)">
       <div class="menu-item">
-        <span class="icono">જ⁀➴</span>
+                <span class="icono">જ⁀➴</span>
         <span class="texto">Sobre mí</span>
       </div>
-      <div class="submenu">...</div> 
+
+  <div class="submenu">
+   <div class="window-title">
+      <span>SOBRE MI  </span>
+      <button onclick="closeWindow(event,this)">×</button>
+    </div>
+
+    <div class="window-content">
+Tengo formación en Artes Digitales, Medios Audiovisuales aplicados a las Artes Escénicas y diseño. 
+Me dedico a la creación y experimentación audiovisual y lumínica, combinando herramientas digitales con el trabajo de taller. 
+Mi práctica se centra en la experimentación, las metodologías DIY, el hacking y las tecnologías abiertas.
+
     </div>
 
 
-<!-- WORK -->
+  </div>
 
+</div>
 
+<!-- TALLERES -->
 
 <div class="menu-group" onclick="toggleSubmenu(this)">
 
   <div class="menu-item">
     <span class="icono">╰┈➤</span>
-    <span class="texto">Work</span>
+    <span class="texto">Talleres</span>
   </div>
 
 
   <div class="submenu">
 
     <div class="window-title">
-      <span>Work</span>
+      <span>TALLERES </span>
       <button onclick="closeWindow(event,this)">×</button>
     </div>
 
     <div class="window-content">
 
-      JUNY 2020-Actualment.
+Tallers de Circuit Bending: Creació d’instruments DIY : 
+Juny 2026. Associació Sonora MUTAN LAB en col·laboració amb
+Dissonant , La Negra Factory .Barcelona (ES)
+Juny 2026. Festival Rauxa: Jornada ElectrónicaTransfeminista.
+CSO La 13. Molins de Rei. (ES)
+Abril 2025. Associació Sonora MUTAN LAB, Barcelona (ES)
+Febrer 2025. Dinamo Espai DIY, Barcelona (ES)
 
-      *Informadora. Eurotomb. Barcelona.
+Taller Dirty Video Mixer: Inyección Technicolor, Agost 2026. Festival
+Landlight. Teruel (ES)
 
-      Funcions: Control de Sala ( Filmoteca de Catalunya )
-      Respondre mails i trucades,
-      Resoldre dubtes sobre subvencions i becas de l’ ICUB
-      ( Virreina Centre de la Imatge )
+Taller Sonorització de Videojocs: Iniciació a l’electrónica i al Circuit
+Bending , Juny 2026. Centre Civic La Capsa i Centre Civic Jardins
+de la Pau. El Prat (ES)
 
-      FEB-MAR.2023
+Taller Electronica bàsica i soldadura ( mixtes i no mixtes) ,
+Juny 2026. Centre Civic Convent Sant Agusti, Barcelona (ES)
 
-      *1r Aniversari Human Razzmatazz:
-      Razzmatazz. Barcelona
+Taller Sonorització de pelis mudes: Circuit Bending i altres meravelles del pirateig. Abril - Juny 2026. Centre Civic Convent de Sant
+Agustí. Barcelona (ES)
 
-      Funcions: Texturització del logo en Realitat Augmentada.
+Taller per a Infants i Joves: La meva primera caixa de Soroll.
+Febrer 2026. Dissonant. Ateneu del Clot, Barcelona (ES)
 
-      NOV-DES.2022
+Taller Hacking: Dirty Video Mixer, per l’ ART CITY BOLOGNA 2026
+Febrer 2026. Bologna (IT)
 
-      *Mapping Barça Comiat Víctor Tomás:
-      Anton Babinski Studio.Barcelona
+Conferència a l’ISE (Integrated Systems Europe), Youz Talent &
+VIBEZ.
 
-      Funcions: VFX.
+Taller per a alumnes d’art i disseny interactiu: Cap a la recerca de
+l’anarquia elèctrica i La importància de construir els teus propis
+aparells. Novembre 2025. Elisava. Barcelona (ES)
+
+Taller per a Joves i Adolescents: Iniciació al Pirateig
+Octubre 2025.Centre Civic Convent Sant Agusti. MakerConvent,
+Barcelona (ES)
 
     </div>
 
@@ -519,27 +547,58 @@ footer {
 
 </div>
 
-<!-- EXPOSICIONES  -->
+
+<!-- PREMIOS -->
+
+<div class="menu-group" onclick="toggleSubmenu(this)">
+
+  <div class="menu-item">
+    <span class="icono">╰┈➤</span>
+    <span class="texto">Premios</span>
+  </div>
+
+
+  <div class="submenu">
+
+    <div class="window-title">
+      <span>PREMIOS </span>
+      <button onclick="closeWindow(event,this)">×</button>
+    </div>
+
+    <div class="window-content">
+
+ Projecte Premiat de “Cultura Digital” a Vibez Festival 2024.
+42Barcelona. Fundació Telefonica.Generalitat de Catalunya, Departament de Recerca.
+
+    </div>
+
+
+  </div>
+
+</div>
+
+<!-- CONTACTO  -->
 
 
     <div class="menu-group" onclick="toggleSubmenu(this)">
 
   <div class="menu-item">
     <span class="icono">╰┈➤</span>
-    <span class="texto">Exposiciones</span>
+    <span class="texto">Contacto </span>
   </div>
 
 
   <div class="submenu">
 
     <div class="window-title">
-      <span>Exposiciones </span>
+      <span>CONTACTO </span>
       <button onclick="closeWindow(event,this)">×</button>
     </div>
 
     <div class="window-content">
 
-     ...
+     Redes sociales = @soldadores.estanyo 
+     Correo electronico = usaestoparadescargar@gmail.com
     </div>
 
 
@@ -547,21 +606,7 @@ footer {
 
 </div>
 
-    <div class="menu-group" onclick="toggleSubmenu(this)">
-      <div class="menu-item">
-        <span class="icono">╰┈➤</span>
-        <span class="texto">Talleres</span>
-      </div>
-      <div class="submenu">
-Taller de Circuit Bending: Creació d’instruments
-
-FEBRER 2025  
-*Dinamo Espai DIY, Barcelona (ES)
-
-ABRIL 2025  
-*Associació Sonora MUTAN LAB, Barcelona (ES).
-      </div>
-    </div>
+ 
 
   
 

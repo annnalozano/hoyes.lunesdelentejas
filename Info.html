@@ -58,7 +58,7 @@ footer {
 }
 
 .menu-group{
-    cursor:pointer;
+    display:inline-block;
 }
 
 .menu-item{
@@ -459,8 +459,12 @@ footer {
   </div>
 
   <div class="menu">
-    <div class="menu-group" onclick="toggleSubmenu(this)">
-      <div class="menu-item">
+
+
+   <div class="menu-group">
+    <div class="menu-item" onclick="toggleSubmenu(this.parentElement)">
+
+
                 <span class="icono">જ⁀➴</span>
         <span class="texto">Sobre mí</span>
       </div>
@@ -484,10 +488,10 @@ Mi práctica se centra en la experimentación, las metodologías DIY, el hacking
 </div>
 
 <!-- TALLERES -->
+<div class="menu-group">
+    <div class="menu-item" onclick="toggleSubmenu(this.parentElement)">
 
-<div class="menu-group" onclick="toggleSubmenu(this)">
 
-  <div class="menu-item">
     <span class="icono">╰┈➤</span>
     <span class="texto">Talleres</span>
   </div>
@@ -550,9 +554,10 @@ Barcelona (ES)
 
 <!-- PREMIOS -->
 
-<div class="menu-group" onclick="toggleSubmenu(this)">
+<div class="menu-group">
+    <div class="menu-item" onclick="toggleSubmenu(this.parentElement)">
 
-  <div class="menu-item">
+
     <span class="icono">╰┈➤</span>
     <span class="texto">Premios</span>
   </div>
@@ -579,10 +584,10 @@ Barcelona (ES)
 
 <!-- CONTACTO  -->
 
+<div class="menu-group">
+    <div class="menu-item" onclick="toggleSubmenu(this.parentElement)">
 
-    <div class="menu-group" onclick="toggleSubmenu(this)">
-
-  <div class="menu-item">
+      
     <span class="icono">╰┈➤</span>
     <span class="texto">Contacto </span>
   </div>

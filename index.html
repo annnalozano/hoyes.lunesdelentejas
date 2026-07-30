@@ -144,6 +144,51 @@
     #gif12 { bottom: 7.5rem; left: 303.75rem; height: 6.25rem; }
 
 
+
+    ::-webkit-scrollbar {
+  height: 18px;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #c0c0c0 0px,
+      #c0c0c0 2px,
+      #b8b8b8 2px,
+      #b8b8b8 4px
+    );
+}
+
+::-webkit-scrollbar-track {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #d4d0c8 0px,
+      #d4d0c8 2px,
+      #c8c4bc 2px,
+      #c8c4bc 4px
+    );
+
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
+}
+
+::-webkit-scrollbar-thumb {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #c0c0c0 0px,
+      #c0c0c0 3px,
+      #b0b0b0 3px,
+      #b0b0b0 6px
+    );
+
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
+}
+
   </style>
 </head>
 <body>
@@ -151,17 +196,18 @@
   <div class="section">
     <div class="label-home">
 
-      <!-- div -->
-      <span class="label-line label-medium indent-small"><span>&lt;div&gt;</span></span>
+ 
 
       <!-- Welcome Home -->
-      <span class="label-line label-big stretch-text indent-medium"><span>&lt;!-- Welcome Home --&gt;</span></span>
+      <span class="label-line label-big stretch-text indent-medium"><span>&lt;!-- BIENVENIDA A CASA --&gt;</span></span>
 
-      <!-- Espacio blanco -->
-      <span class="label-line spacer"><span>&nbsp;</span></span>
+      <!-- Espacio blanco 
+      <span class="label-line spacer"><span>&nbsp;</span></span> -->
 
-      <!-- Tabla de contenido -->
-      <span class="label-line label-medium  indent-medium"><span>&lt;"tabla de contenido"=&gt;</span></span>
+      
+
+      <!-- Tabla de contenido -- >
+      <span class="label-line label-medium  indent-medium"><span>&lt;"tabla de contenido"=&gt;</span></span>  -->
 
       <!-- Enlaces -->
       <span class="label-line label-medium indent-large"><span><a href="./curro.html"> ✰ curro</a></span></span>
@@ -394,7 +440,8 @@ __| |___________| |____________| |________
 
 <!-- ESTRELLA -->
 <div class="ascii-block" style="top: 30px; left: 5000px; font-size: 10px;">
-<pre>
+<pre id="star-screen">
+
    *   '*
            *
                 *
@@ -468,7 +515,7 @@ __| |___________| |____________| |________
   left: 6000px;
   font-size: 20px;
 ">
-  <span>&lt;div&gt;</span>
+ 
 </div>
 
 
@@ -601,19 +648,15 @@ setInterval(() => {
 }, 500);
 
 const starFrames = [
-`   *   '*
-           *
-                *
-                       *
-               *
-                     *
 
+`        *
+       
          .                      .
          .                      ;
          :                  - --+- -
          !           .          !
          |        .             .
-         |_         +
+         |_         + 
       ,  | \`.
 --- --+-<#>-+- ---  --  -
       \`._|_,
@@ -621,81 +664,69 @@ const starFrames = [
          |
          !
          :         . :
-         .       *`,
+         .`,
 
-`   '*
-         *
-              *
-                     *
-             *
-                   *
-
-       .                      .
-       .                      ;
-       :                  - --+- -
-       !           .          !
-       |        .             .
-       |_         +
-    ,  | \`.
---- --+-<#>-+- ---  --  -
-    \`._|_,
-       T
-       |
-       !
-       :         . :
-       .       *`,
-
-`    *
-           *
-                 *
-                         *
-             *
-                   *
+`      *   '
 
          .                      .
          .                      ;
          :                  - --+- -
          !           .          !
-         |        .             .
-         |_         +
-      ,  | \`.
+         |        .             
+         |_         + +         .
+      ,  | \`.                  
 --- --+-<#>-+- ---  --  -
       \`._|_,
          T
          |
          !
          :         . :
-         .       *`,
+         .      *`,
 
-`     *
-           '*
-                *
-                       *
-              *
-                    *
+`          *
 
          .                      .
          .                      ;
          :                  - --+- -
          !           .          !
          |        .             .
-         |_         +
-      ,  | \`.
+         |_         +            .   
+      ,  | \`.                  .
 --- --+-<#>-+- ---  --  -
       \`._|_,
          T
          |
          !
          :         . :
-         .       *`
+         .`,
+
+`    '     *
+
+         .                      .
+         .                      ;
+         :                  - --+- -
+         !           .          !
+         |        .             .
+         |_         +           .
+      ,  | \`.                  .
+--- --+-<#>-+- ---  --  -       .
+      \`._|_,
+         T
+         |
+         !
+         :         . :
+         .     '`
 ];
-
 let i = 0;
+
+const star = document.getElementById("star-screen");
+
 setInterval(() => {
-  console.clear();
-  console.log(starFrames[i]);
-  i = (i + 1) % starFrames.length;
-}, 500);
+  if (star) {
+    star.textContent = starFrames[i];
+    i = (i + 1) % starFrames.length;
+  }
+}, 200);
 </script>
 
 

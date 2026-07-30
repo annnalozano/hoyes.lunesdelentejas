@@ -55,6 +55,8 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 24px;
+
+    align-items:flex-start;
 }
 
 .menu-group{
@@ -103,6 +105,7 @@ footer {
         transform .1s ease,
         box-shadow .15s ease;
 }
+
 
 
 /* -------- HOVER -------- */
@@ -384,7 +387,7 @@ footer {
 .marquee-content {
   display: inline-block;
   white-space: nowrap;
-  animation: scroll-left 25s linear infinite;
+  animation: scroll-left 28s linear infinite;
 }
 
 
@@ -662,19 +665,19 @@ jgs^^^^
   </pre>
 
    <pre class="ascii-art">
-         \
-      \
-  .    \  (\             .               (_) o
-  (\    \  ))   .         \.       |       o .        
-  ((.    \((.   (\.       ))       (\   . _ o       
-   \\/    \))    ))      ((        ((. . (_)   
- |  ||   ./\    ((        \\ /      \\/  o  
- \\//    (( \    \\/   .  .||     |  || . 
- .//      \\(\  .--.____)  .-.    \\//   
- ||      | || "(o>_/___ \_//\)    .//      
-.||      \\||   .~||   \__/ \\.   ||        
-\||       \||    \||         ||   ||             
-
+         
+ .                      (_) o       (       ><(((º>        .o
+  (\                          o .   (\ 
+  ((.                 (\   . _ o     ))       ><(((º>
+   \\/              ((. . (_)       (\// )
+ |  ||                \\/  o      ) ))   ((
+ \\//                |   || .    ((((  /)\
+ .//                  \\//       \\)) (( (
+ ||                  .//          ((  ))))
+.||                  ||            )) ((//      <º)))><
+\||                  ||            ,-. )/
+                                   ,;'))((
+                                   (( ))
   </pre>
 
 
@@ -805,13 +808,38 @@ document.querySelectorAll(".submenu").forEach(win => {
 });
 
 
+document.addEventListener("DOMContentLoaded", function() {
+
+  const frases = [
+    '¿Sabías que los delfines son conocidos como los Ángeles del Mar?',
+    '¿Sabías que los delfines duermen con un ojo abierto?',
+    '¿Sabías que las nutrias marinas duermen cogidas de la mano?',
+    '¿Sabías que las ballenas jorobadas cantan durante horas cuando estan enamoradas?',
+    '¿Sabías que las medusas no tienen corazón?',
+    '¿Sabías que los caballitos de mar se saludan cada mañana con una pequeña danza?'
+  ];
+
+  const info = document.querySelector('.marquee-info');
+  const marquee = document.querySelector('.marquee-content');
+
+  function nuevaFrase() {
+    const random = Math.floor(Math.random() * frases.length);
+    info.textContent = frases[random];
+  }
+
+  nuevaFrase();
+
+  marquee.addEventListener('animationiteration', nuevaFrase);
+
+});
+
 </script>
 <div class="marquee-container">
   <div class="marquee-content">
     <span class="ascii-fish">  ,-,
  ('_)<   
   `-`</span>
-    <span class="marquee-info">Did you know that dolphins are also called "Angels of the sea"??</span>
+    <span class="marquee-info">¿Sabías que los delfines son conocidos como los "Ángeles del Mar"?</span>
   </div>
 </div>
 

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home</title>
   <link rel="icon" type="image/x-icon" href="img/dolphin_1f42c.png" />
   <style>
@@ -9,26 +10,25 @@
       box-sizing: border-box;
     }
 
-    body {
-      margin: 0;
-      background-color: #0102de;
-      font-family: Arial, sans-serif;
-      overflow-y: hidden;
-      overflow-x: scroll;
-      height: 100vh;
-      white-space: nowrap;
-      scroll-behavior: auto;
-      color: white;
-      cursor: url('cursor1.png'), auto;
-    }
+   body {
+  margin: 0;
+  background-color: #0102de;
+  font-family: Arial, sans-serif;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  white-space: nowrap;
+  color: white;
+  cursor: url('img/1.png'), auto;
+}
 
-    .section {
-      display: inline-block;
-      width: 200vw;
-      height: 100vh;
-      position: relative;
-    }
-.label-line {
+.section {
+  display: inline-block;
+  width: 6000px; /* ← ESTO controla hasta dónde llega */
+  height: 200vh;
+  position: relative;
+}
+
+    .label-line {
       font-weight: bold;
       font-style: italic;
       font-size: 1rem;
@@ -55,7 +55,8 @@
       z-index: -1;
       border-radius: 0;
     }
- .label-home {
+
+    .label-home {
       position: absolute;
       top: 8.75rem; /* 140px */
       left: 2.5rem; /* 40px */
@@ -63,28 +64,27 @@
       flex-direction: column;
     }
 
-
     .label-line.spacer {
       margin-bottom: 0.2rem;
       line-height: 1.3;
       margin-left: 5%;
     }
 
-.label-line.spacer span::before {
-  background-color: white;
-  width: 1500%;
-  height: 1.5em;
-}
+    .label-line.spacer span::before {
+      background-color: white;
+      width: 1500%;
+      height: 1.5em;
+    }
 
     /* Estilo de texto expandido */
-      .stretch-text {
+    .stretch-text {
       letter-spacing: 0.125rem;
       transform: scaleX(1.2);
       display: inline-block;
     }
 
     /* Sangrías */
-  .indent-small {
+    .indent-small {
       padding-left: 1.25rem; /* 20px */
     }
 
@@ -105,7 +105,7 @@
     }
 
     /* ASCII decorativo */
-     .ascii-block {
+    .ascii-block {
       position: absolute;
       white-space: pre;
       font-family: monospace;
@@ -114,7 +114,25 @@
       color: white;
     }
 
-   #ascii-castillo {
+    .ascii-block a {
+      color: white;
+      text-decoration: none;
+      /* Sin "cursor" propio: hereda el cursor animado del body (los peces),
+         así se ve igual encima del ascii que en el resto de la página */
+    }
+
+    .ascii-block a:hover,
+    .ascii-block a:focus-visible {
+      background: white;
+      color: #0102de;
+    }
+
+    .ascii-block a:focus-visible {
+      outline: 2px dashed white;
+      outline-offset: 2px;
+    }
+
+    #ascii-castillo {
       bottom: 0.625rem; /* 10px */
       left: 37.5rem; /* 600px */
     }
@@ -125,117 +143,399 @@
     }
 
     /* GIFs decorativos */
-    #gif1, #gif2, #gif3, #gif4, #gif5, #gif6, #gif7, #gif8, #gif9, #gif10,  #gif11, #gif12 {
+    #gif1, #gif2, #gif3, #gif4, #gif5, #gif6,
+    #gif7, #gif8, #gif9, #gif10, #gif11, #gif12 {
       position: absolute;
       z-index: 1000;
       width: 3.125rem; /* 50px */
-    }
- #gif1 { bottom: 6.875rem; left: 75rem; height: 4.0625rem; }
-    #gif2 { bottom: 6.875rem; left: 73.125rem; height: 6.25rem; }
-    #gif3 { bottom: 11.25rem; left: 73.125rem; height: 12.5rem; }
-    #gif4 { bottom: 6.875rem; left: 103.75rem; height: 4.0625rem; }
-    #gif5 { bottom: 6.875rem; left: 101.875rem; height: 6.25rem; }
-    #gif6 { bottom: 11.25rem; left: 103.125rem; height: 12.5rem; }
-    #gif7 { bottom: 7.5rem; left: 305rem; height: 5rem; }
-    #gif8 { bottom: 7.5rem; left: 325rem; height: 2.5rem; }
-    #gif9 { bottom: 7.5rem; left: 303.75rem; height: 2.5rem; }
-    #gif10 { bottom: 7.5rem; left: 325rem; height: 2.5rem; }
-    #gif11 { bottom: 7.5rem; left: 325rem; height: 9.375rem; }
-    #gif12 { bottom: 7.5rem; left: 303.75rem; height: 6.25rem; }
 
+
+    }
+    
+
+
+
+#gif1  { bottom: 6.875rem;  left: 75rem;    height: 4.0625rem; }
+#gif2  { bottom: 6.875rem;  left: 73.125rem; height: 6.25rem; }
+#gif3  { bottom: 11.25rem;  left: 73.125rem; height: 12.5rem; }
+#gif4  { bottom: 6.875rem;  left: 103.75rem; height: 4.0625rem; }
+#gif5  { bottom: 6.875rem;  left: 101.875rem; height: 6.25rem; }
+#gif6  { bottom: 11.25rem;  left: 103.125rem; height: 12.5rem; }
+#gif7  { bottom: 7.5rem;    left: 305rem;    height: 5rem; }
+#gif8  { bottom: 7.5rem;    left: 323rem; height: 2.5rem; }
+#gif9  { bottom: 7.5rem;    left: 303.75rem; height: 2.5rem; }
+#gif10 { bottom: 7.5rem;    left: 325rem;    height: 2.5rem; }
+#gif11 { bottom: 7.5rem;    left: 325rem;    height: 9.375rem; }
+#gif12 { bottom: 7.5rem;    left: 304rem;    height: 6.25rem; }
 
 
     ::-webkit-scrollbar {
-  height: 18px;
-  background:
-    repeating-linear-gradient(
-      45deg,
-      #c0c0c0 0px,
-      #c0c0c0 2px,
-      #b8b8b8 2px,
-      #b8b8b8 4px
-    );
+      height: 18px;
+      background:
+        repeating-linear-gradient(
+          45deg,
+          #c0c0c0 0px,
+          #c0c0c0 2px,
+          #b8b8b8 2px,
+          #b8b8b8 4px
+        );
+    }
+
+    ::-webkit-scrollbar-track {
+      background:
+        repeating-linear-gradient(
+          45deg,
+          #d4d0c8 0px,
+          #d4d0c8 2px,
+          #c8c4bc 2px,
+          #c8c4bc 4px
+        );
+
+      border-top: 2px solid white;
+      border-left: 2px solid white;
+      border-right: 2px solid #808080;
+      border-bottom: 2px solid #808080;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background:
+        repeating-linear-gradient(
+          45deg,
+          #c0c0c0 0px,
+          #c0c0c0 3px,
+          #b0b0b0 3px,
+          #b0b0b0 6px
+        );
+
+      border-top: 2px solid white;
+      border-left: 2px solid white;
+      border-right: 2px solid #808080;
+      border-bottom: 2px solid #808080;
+    }
+
+    /* Respeta la preferencia de movimiento reducido del sistema */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+
+
+
+    
+/* =========================
+   MENU RETRO
+   ========================= */
+
+.retro-menu {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+
+  font-family: "Courier New", monospace;
+  color: white;
+
+  z-index: 2000;
+  
 }
 
-::-webkit-scrollbar-track {
-  background:
-    repeating-linear-gradient(
-      45deg,
-      #d4d0c8 0px,
-      #d4d0c8 2px,
-      #c8c4bc 2px,
-      #c8c4bc 4px
-    );
 
-  border-top: 2px solid white;
-  border-left: 2px solid white;
-  border-right: 2px solid #808080;
-  border-bottom: 2px solid #808080;
+/* TEXTO C:\> */
+
+.retro-prompt {
+  font-family: "Courier New", monospace;
+
+  font-size: 18px;
+
+  margin-bottom: 15px;
+
+  letter-spacing: 1px;
 }
 
-::-webkit-scrollbar-thumb {
-  background:
-    repeating-linear-gradient(
-      45deg,
-      #c0c0c0 0px,
-      #c0c0c0 3px,
-      #b0b0b0 3px,
-      #b0b0b0 6px
-    );
 
-  border-top: 2px solid white;
-  border-left: 2px solid white;
-  border-right: 2px solid #808080;
-  border-bottom: 2px solid #808080;
+/* ENLACES */
+
+.retro-links {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  margin-left: 35px;
 }
+
+
+/* ENLACES NORMALES */
+
+.retro-links a {
+  display: inline-block;
+
+  width: max-content;
+
+  padding: 2px 7px;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-family: "arial", monospace;
+
+  font-size: 18px;
+  font-style: italic;
+
+  cursor: pointer;
+}
+
+
+/* BLOQUE BLANCO AL PASAR */
+
+.retro-links a:hover {
+  color: #0102de;
+  background: white;
+}
+
+
+/* CLICK */
+
+.retro-links a:active {
+  transform: translateX(3px);
+}
+
+
+/* ÚLTIMO C:\> */
+
+.retro-prompt.bottom {
+  margin-top: 30px;
+}
+
+
+
+
+/* Cursor de terminal parpadeando */
+
+.terminal-cursor {
+  display: inline-block;
+  animation: terminalBlink 0.8s steps(1) infinite;
+}
+
+@keyframes terminalBlink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+/* ====  GIFS ==== */
+
+
+.fish {
+  position: absolute;
+  height: auto;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+
+
+
+
+/* =========================
+   PECES ASCII
+   ========================= */
+
+.ascii-fish {
+  position: absolute;
+
+  color: white;
+
+  font-family: monospace;
+  font-size: 18px;
+  line-height: 1;
+
+  white-space: pre;
+
+  z-index: 3000;
+
+  pointer-events: none;
+}
+
+
+/* PEZ IZQUIERDA ARRIBA */
+
+.fish-left-1 {
+  top: 10px;
+  left: 40px;
+  font-size: 10px;
+  
+}
+
+
+/* PEZ IZQUIERDA ABAJO */
+
+.fish-left-2 {
+  top: 170px;
+  left: 80px;
+  font-size: 10px
+}
+
+
+/* PEZ DERECHA ARRIBA */
+
+.fish-right-1 {
+  top: 30px;
+  left: 350px;
+  font-size: 10px
+}
+
+
+/* PEZ DERECHA ABAJO */
+
+.fish-right-2 {
+  top: 250px;
+  left: 250px;
+  font-size: 10px
+}
+
+
+/* PEZ DEBAJO */
+
+.fish-bottom {
+  top: 310px;
+  left: 170px;
+  font-size: 10px
+}
+
+
+
+
+
+
 
   </style>
 </head>
+
+
+
+<!-- PECES NADANDO -->
+
+<img id="fish1" class="fish"
+     src="./gif/fish-anie.gif"
+      style="top: 550px; left: 400px; width: 580px;">
+
+
+<img id="fish3" class="fish"
+     src="./gif/gifPEZ4.gif"
+     style="top: 750px; left: 1000px; width: 220px;">
+
+
+
+
+
+
+  </style>
+</head>
+
 <body>
 
-  <div class="section">
-    <div class="label-home">
 
- 
 
-      <!-- Welcome Home -->
-      <span class="label-line label-big stretch-text indent-medium"><span>&lt;!-- BIENVENIDA A CASA --&gt;</span></span>
+  
+<!-- MENU RETRO -->
 
-      <!-- Espacio blanco 
-      <span class="label-line spacer"><span>&nbsp;</span></span> -->
+<div class="retro-menu">
 
-      
 
-      <!-- Tabla de contenido -- >
-      <span class="label-line label-medium  indent-medium"><span>&lt;"tabla de contenido"=&gt;</span></span>  -->
 
-      <!-- Enlaces -->
-      <span class="label-line label-medium indent-large"><span><a href="./curro.html"> ✰ curro</a></span></span>
-      <span class="label-line label-medium indent-large"><span><a href="./Info.html"> ✰ info</a></span></span>
-
-    </div>
+  <div class="retro-prompt">
+    C:\&gt; BIENVENIDA A CASA !
   </div>
 
+  <div class="retro-links">
+
+    <a href="./curro.html">
+      &gt; ✰ CURRO
+    </a>
+
+    <a href="./Info.html">
+      &gt; ✰ INFO
+    </a>
+
+  </div>
+
+ 
+<div class="retro-prompt bottom">
+  C:\&gt; <span class="terminal-cursor">_</span>
+</div>
+
+
+</div>
 
 
 
-<img id="gif1" src="./gif/planta1.gif" alt="gif1">
-<img id="gif2" src="./gif/planta1.gif" alt="gif2">
-<img id="gif3" src="gif/blueline_background.gif" alt="gif3">
-<img id="gif4" src="./gif/planta1.gif" alt="gif4">
-<img id="gif5" src="./gif/planta1.gif" alt="gif5">
-<img id="gif6" src="gif/blueline_background.gif" alt="gif6">
+<!-- PECES ASCII ALREDEDOR DEL MENÚ -->
 
-<img id="gif7" src="./gif/planta1.gif" alt="gif7">
-<img id="gif8" src="./gif/planta1.gif" alt="gif8">
-<img id="gif9" src="./gif/planta1.gif" alt="gif9">
-<img id="gif10" src="./gif/planta1.gif" alt="gif10">
-<img id="gif11" src="./gif/blueline_background.gif" alt="gif11">
-<img id="gif12" src="./gif/blueline_background.gif" alt="gif12">
+<div class="ascii-fish fish-left-1">
+<pre>
+><(((º>
+</pre>
+</div>
+
+<div class="ascii-fish fish-left-2">
+<pre>
+><> 
+</pre>
+</div>
+
+<div class="ascii-fish fish-right-1">
+<pre>
+<º)))><
+</pre>
+</div>
+
+<div class="ascii-fish fish-right-2">
+<pre>
+<><
+</pre>
+</div>
+
+<div class="ascii-fish fish-bottom">
+<pre>
+><(((º>
+</pre>
+</div>
+
+
+<img id="gif1"  src="./gif/planta1.gif" alt="Planta decorativa">
+<img id="gif2"  src="./gif/planta1.gif" alt="Planta decorativa">
+<img id="gif3"  src="gif/blueline_background.gif" alt="Línea azul decorativa">
+<img id="gif4"  src="./gif/planta1.gif" alt="Planta decorativa">
+<img id="gif5"  src="./gif/planta1.gif" alt="Planta decorativa">
+<img id="gif6"  src="gif/blueline_background.gif" alt="Línea azul decorativa">
+<img id="gif7"  src="./gif/planta1.gif" alt="Planta decorativa">
+<img id="gif8"  src="./gif/planta1.gif" alt="Planta decorativa">
+<img id="gif9"  src="./gif/planta1.gif" alt="Planta decorativa">
+<img id="gif10" src="./gif/planta1.gif" alt="Planta decorativa">
+<img id="gif11" src="gif/blueline_background.gif" alt="Línea azul decorativa">
+<img id="gif12" src="gif/blueline_background.gif" alt="Línea azul decorativa">
+
+
+
+
+
+
 
 
 <!-- CASTILLO -->
-<div class="ascii-block" style="bottom: 10px; left: 800px;">
+<div class="ascii-block" id="ascii-castillo" style="bottom: 10px; left: 800px;" aria-hidden="true">
 <pre>
    _                     _
   _|_|___________________|_|_
@@ -255,7 +555,7 @@
 </div>
 
 <!-- PUERTA -->
-<div class="ascii-block" style="bottom: 10px; left: 1200px;">
+<div class="ascii-block" id="ascii-puerta" style="bottom: 10px; left: 1200px;" aria-hidden="true">
 <pre>
  .. ..           
   o:  '  :o    
@@ -284,7 +584,7 @@ TOC TOC
 </div>
 
 <!-- VENTANA -->
-<div class="ascii-block" style="top: 100px; left: 2100px ;font-size: 19px;">
+<div class="ascii-block" style="top: 100px; left: 2100px; font-size: 19px;" aria-hidden="true">
 <pre>
 (IIIIIIIIIIIIIIIIIII)
 )'.'.'.':;:;:'.'.'.'(
@@ -306,7 +606,7 @@ TOC TOC
 </div>
 
 <!-- SOFA -->
-<div class="ascii-block" style="bottom: 100px; left: 2200px; font-size: 19px; ">
+<div class="ascii-block" style="bottom: 100px; left: 2200px; font-size: 19px;" aria-hidden="true">
 <pre>
  ___.--------'``````:``````'--------.___
 (   |               :               |   )
@@ -321,10 +621,42 @@ TOC TOC
 </pre>
 </div>
 
+<!-- CUADRO -->
+<div class="ascii-block" style="top: 110px; left: 2800px; font-size: 7px;" aria-hidden="true">
+<pre>
+o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o
+o  /\       /\  /\       /\  /\       /\  /\       /\  /\       /\  o
+o {o ><{ }>< o}{o ><{ }>< o}{o ><{ }>< o}{o ><{ }>< o}{o ><{ }>< o} o
+o  \/       \/  \/       \/  \/       \/  \/       \/  \/       \/  o
+o  /\    o o o o o o o o o o o o o o o o o o o o o o o o o o    /\  o
+o {o ><{ o                                                 o }>< o} o
+o  \/    o                                                 o    \/  o
+o  /\    o                                                 o    /\  o
+o {o ><{ o                                                 o }>< o} o
+o  \/    o                                                 o    \/  o
+o  /\    o                                                 o    /\  o
+o {o ><{ o                                                 o }>< o} o
+o  \/    o                                                 o    \/  o
+o  /\    o                                                 o    /\  o
+o {o ><{ o                                                 o }>< o} o
+o  \/    o                                                 o    \/  o
+o  /\    o                                                 o    /\  o
+o {o ><{ o                                                 o }>< o} o
+o  \/    o                                                 o    \/  o
+o  /\    o                                                 o    /\  o
+o {o ><{ o                                                 o }>< o} o
+o  \/    o o o o o o o o o o o o o o o o o o o o o o o o o o    \/  o
+o  /\       /\  /\       /\  /\       /\  /\       /\  /\       /\  o
+o {o ><{ }>< o}{o ><{ }>< o}{o ><{ }>< o}{o ><{ }>< o}{o ><{ }>< o} o
+o  \/       \/  \/       \/  \/       \/  \/       \/  \/       \/  o
+o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o
+                                                                 hjw
 
+</pre>
+</div>
 
 <!-- CAJÓN -->
-<div class="ascii-block" style="bottom: 50px; left: 3000px;">
+<div class="ascii-block" style="bottom: 50px; left: 3000px;" aria-hidden="true">
 <pre>
 _________________________________________________________
 ||-------------------------------------------------------||
@@ -342,7 +674,7 @@ _________________________________________________________
 </div>
 
 <!-- TELEVISOR -->
-<div class="ascii-block" style="bottom: 220px; left: 3000px;">
+<div class="ascii-block" style="bottom: 220px; left: 3000px;" aria-hidden="true">
 <pre id="tv-screen">
          o
           o    |
@@ -364,7 +696,7 @@ jgs | LI LI """""""   o|
 </div>
 
 <!-- RELOJ -->
-<div class="ascii-block" style="top: 100px; left: 3700px; font-size: 19px;">
+<div class="ascii-block" style="top: 100px; left: 3700px; font-size: 19px;" aria-hidden="true">
 <pre>
   _______
  /  12   \
@@ -377,8 +709,7 @@ jgs | LI LI """""""   o|
 </div>
 
 <!-- COCINA -->
-<div class="ascii-block" style="bottom: 90px; left: 4100px;">
-<pre>
+<div class="ascii-block" style="bottom: 90px; left: 4100px;" aria-hidden="true">
 <pre>
 _____________________________________________________
 ____________________________________________________\\
@@ -392,7 +723,7 @@ ____________________________________________________\\
 |]       |       [|  )    :    (  |]       |       [  |O | \\\
 ||_______|_______||"" ____:_____""||_______|_______|  |  |  |\\
 '-----------------'_______________'----------------'  |  |  |\\\
-|.--------.  |    '---------------'  (o)______)(0)  \ |  |  | \\\
+|.--------.  |    '---------------'  (o)______)(0)  \ |  |  | \\\______
 ||        |::|_________________________________())___\|  | O|  \\\______
 ||        |::|-----______*!*______-------------))( .'.\  |  |   | _____ |
 ||________|::|  _ /       '       \  _        _   (__.'\ |  |O  ||     ||
@@ -414,16 +745,14 @@ ____________________________________________________\\
            _________                  ______   \  |O | |             | ||
                                                 \ |  | |   _      _  | ||
                                 _________        \|  | |             | ||
-      ___________        __                       \  | | _        _  | || 
-    __                              _________      \ | |_____________| ||  chup chup 
-               ___________        
-</pre>
-
+      ___________        __                       \  | | _        _  | ||
+    __                              _________      \ | |_____________| ||  chup chup
+               ___________
 </pre>
 </div>
 
 <!-- VALLA -->
-<div class="ascii-block" style="bottom: 90px; left: 4900px;">
+<div class="ascii-block" style="bottom: 90px; left: 4900px;" aria-hidden="true">
 <pre>
   _             _              _
 __| |___________| |____________| |________
@@ -439,7 +768,7 @@ __| |___________| |____________| |________
 </div>
 
 <!-- ESTRELLA -->
-<div class="ascii-block" style="top: 30px; left: 5000px; font-size: 10px;">
+<div class="ascii-block" style="top: 50px; left: 5000px; font-size: 8px;" aria-hidden="true">
 <pre id="star-screen">
 
    *   '*
@@ -467,7 +796,7 @@ __| |___________| |____________| |________
 </div>
 
 <!-- CORTADOR -->
-<div class="ascii-block" style="bottom: 10px; left:5500px;">
+<div class="ascii-block" style="bottom: 10px; left:5400px;" aria-hidden="true">
 <pre>
                     .-----
                     '.  .'
@@ -492,103 +821,73 @@ __| |___________| |____________| |________
 </pre>
 </div>
 
-
-<div style="
-  position: fixed;
-  bottom: 1px;
-  right: 40px;
-  font-size: 16px;
-  color: #0102de;
-  z-index: 9999;
-  pointer-events: none;
-  font-size: 10px;
-">
-<pre>
-  _
-><_>
-     </pre>
-</div>
-
-<div class="label-line" style="
-  position: absolute;
-  bottom: 60px; /* antes era 30px */
-  left: 6000px;
-  font-size: 20px;
-">
- 
-</div>
+<div class="final-space"></div>
 
 
-<div style="
-  position: absolute;
-  bottom: 30px;
-  left: 6200px;
-  font-size: 16px;
-  font-style: italic;
-  color:#0102de;
-">
-  &lt;div &gt;
-</div>
-  </div>
+<script>
+(function () {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // --- Scroll horizontal suave ---
+  let scrollTarget = window.scrollX;
+  const speed = 0.2;
+  let scrollRafId = null;
 
+  function smoothScroll() {
+    const current = window.scrollX;
+    const distance = scrollTarget - current;
+    if (Math.abs(distance) > 0.5) {
+      window.scrollTo(current + distance * speed, 0);
+      scrollRafId = requestAnimationFrame(smoothScroll);
+    } else {
+      window.scrollTo(scrollTarget, 0);
+      scrollRafId = null;
+    }
+  }
 
- 
+  function ensureScrollLoop() {
+    if (scrollRafId === null) {
+      scrollRafId = requestAnimationFrame(smoothScroll);
+    }
+  }
 
-  <script>
-let scrollTarget = 0;
-const speed = 0.2;  // Más rápido, aún suave
+  window.addEventListener('wheel', function (e) {
+    e.preventDefault();
+    const maxScroll = document.documentElement.scrollWidth - window.innerWidth;
+    scrollTarget += e.deltaY * 2;
+    scrollTarget = Math.max(0, Math.min(scrollTarget, maxScroll));
+    ensureScrollLoop();
+  }, { passive: false });
 
-function smoothScroll() {
-  const current = window.scrollX;
-  const distance = scrollTarget - current;
-  window.scrollTo(current + distance * speed, 0);
-  requestAnimationFrame(smoothScroll);
-}
+  window.addEventListener('keydown', (e) => {
+    const maxScroll = document.documentElement.scrollWidth - window.innerWidth;
+    if (e.key === 'ArrowRight') scrollTarget = Math.min(scrollTarget + 100, maxScroll);
+    if (e.key === 'ArrowLeft') scrollTarget = Math.max(scrollTarget - 100, 0);
+    ensureScrollLoop();
+  });
 
-window.addEventListener('wheel', function(e) {
-  e.preventDefault();
-  scrollTarget += e.deltaY * 2;  // Más movimiento al girar rueda
-  scrollTarget = Math.max(0, scrollTarget);
-}, { passive: false });
+  // Si el usuario prefiere menos movimiento, saltamos directo sin animar
+  if (prefersReducedMotion) {
+    window.addEventListener('wheel', () => window.scrollTo(scrollTarget, 0));
+  }
 
-window.addEventListener('scroll', () => {
-  scrollTarget = window.scrollX;
-});
-
-smoothScroll();
-
-window.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowRight') scrollTarget += 100;
-  if (e.key === 'ArrowLeft') scrollTarget -= 100;
-});
-
-
-
-  const cursorImages = [
-    'img/1.png',
-    'img/2.png',
-     'img/3.png',
-      'img/4.png',
-       'img/5.png',
-  ];
-
+  // --- Cursor animado ---
+  const cursorImages = ['img/1.png',  ];
   let currentCursor = 0;
+  let cursorIntervalId = null;
 
   function updateCursor() {
     document.body.style.cursor = `url(${cursorImages[currentCursor]}), auto`;
     currentCursor = (currentCursor + 1) % cursorImages.length;
   }
 
-  // Inicializa el cursor
   updateCursor();
+  if (!prefersReducedMotion) {
+    cursorIntervalId = setInterval(updateCursor, 2000);
+  }
 
-  // Cambia el cursor cada 2 segundos
-  setInterval(updateCursor, 2000);
-
-
- 
-const tvFrames = [
+  // --- Televisor animado (ASCII) ---
+  const tvFrames = [
 `         o
           o    |
            \\   |
@@ -639,24 +938,27 @@ jgs | LI LI """""""   o|
     | '--------------'o|
 jgs | LI LI """""""   o|
     '=================='`
-];
+  ];
 
-let currentTVFrame = 0;
-setInterval(() => {
-  document.getElementById('tv-screen').textContent = tvFrames[currentTVFrame];
-  currentTVFrame = (currentTVFrame + 1) % tvFrames.length;
-}, 500);
+  let currentTVFrame = 0;
+  const tvScreen = document.getElementById('tv-screen');
+  if (tvScreen && !prefersReducedMotion) {
+    setInterval(() => {
+      tvScreen.textContent = tvFrames[currentTVFrame];
+      currentTVFrame = (currentTVFrame + 1) % tvFrames.length;
+    }, 500);
+  }
 
-const starFrames = [
-
+  // --- Estrella animada (ASCII) ---
+  const starFrames = [
 `        *
-       
+
          .                      .
          .                      ;
          :                  - --+- -
          !           .          !
          |        .             .
-         |_         + 
+         |_         +
       ,  | \`.
 --- --+-<#>-+- ---  --  -
       \`._|_,
@@ -672,9 +974,9 @@ const starFrames = [
          .                      ;
          :                  - --+- -
          !           .          !
-         |        .             
+         |        .
          |_         + +         .
-      ,  | \`.                  
+      ,  | \`.
 --- --+-<#>-+- ---  --  -
       \`._|_,
          T
@@ -690,7 +992,7 @@ const starFrames = [
          :                  - --+- -
          !           .          !
          |        .             .
-         |_         +            .   
+         |_         +            .
       ,  | \`.                  .
 --- --+-<#>-+- ---  --  -
       \`._|_,
@@ -716,20 +1018,28 @@ const starFrames = [
          !
          :         . :
          .     '`
-];
-let i = 0;
+  ];
 
-const star = document.getElementById("star-screen");
-
-setInterval(() => {
-  if (star) {
-    star.textContent = starFrames[i];
-    i = (i + 1) % starFrames.length;
+  let starFrameIndex = 0;
+  const star = document.getElementById('star-screen');
+  if (star && !prefersReducedMotion) {
+    setInterval(() => {
+      star.textContent = starFrames[starFrameIndex];
+      starFrameIndex = (starFrameIndex + 1) % starFrames.length;
+    }, 200);
   }
-}, 200);
+
+  // Pausar temporizadores costosos cuando la pestaña no está visible
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden && cursorIntervalId) {
+      clearInterval(cursorIntervalId);
+      cursorIntervalId = null;
+    } else if (!document.hidden && !cursorIntervalId && !prefersReducedMotion) {
+      cursorIntervalId = setInterval(updateCursor, 2000);
+    }
+  });
+})();
 </script>
 
-
-  
 </body>
 </html>

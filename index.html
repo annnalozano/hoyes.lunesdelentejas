@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home</title>
   <link rel="icon" type="image/x-icon" href="img/dolphin_1f42c.png" />
+<link rel="stylesheet" href="movil.css">
+
   <style>
     * {
       box-sizing: border-box;
@@ -424,9 +426,30 @@ font-weight: bold;
   font-size: 10px
 }
 
+/* ESTRELLA */
 
+.retro-links a {
+    perspective: 500px;
+}
 
+.estrella-menu {
+    display: inline-block;
+    transform-style: preserve-3d;
+}
 
+.retro-links a:hover .estrella-menu {
+    animation: giro3D 0.5s ease;
+}
+
+@keyframes giro3D {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
   </style>
 </head>
 
@@ -448,12 +471,12 @@ font-weight: bold;
 
 <img id="fish3" class="fish"
      src="./gif/9.gif"
-     style="top:510px; left: 3120px; width: 520px;">
+     style="top:710px; left: 4820px; width: 520px;">
 
 
 <img id="fish3" class="fish"
      src="./gif/6.gif"
-     style="top:710px; left: 3320px; width: 620px;">
+     style="top:550px; left: 4520px; width: 620px;">
 
 
 
@@ -478,14 +501,14 @@ font-weight: bold;
   <div class="retro-links">
 
     <a href="./curro.html">
-      &gt; ✰ CURRO
+        &gt; <span class="estrella-menu">✰</span> CURRO
     </a>
 
     <a href="./Info.html">
-      &gt; ✰ INFO
+        &gt; <span class="estrella-menu">✰</span> INFO
     </a>
 
-  </div>
+</div>
 
  
 <div class="retro-prompt bottom">

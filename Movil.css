@@ -1,7 +1,7 @@
 @media (max-width: 700px) {
 
   body {
-    background: #d9d7a5 !important;
+    background: #0102de !important;
     overflow: hidden !important;
   }
 
@@ -9,24 +9,55 @@
     display: none !important;
   }
 
-  body::after {
-    content: "EN CONSTRUCCIÓN\A\A Esta web está diseñada para ordenador.\A Vuelve desde un ordenador :)";
+ body::after {
+  content:
+    "⚠ AVISO DEL SISTEMA ⚠\A"
+    "\A"
+    "╔══════════════════════════════╗\A"
+    "║                              ║\A"
+    "║      ZONA EN CONSTRUCCIÓN    ║\A"
+    "║                              ║\A"
+    "║   ESTA WEB ES PARA PC        ║\A"
+    "║                              ║\A"
+    "║   📱 NO PUEDES PASAR         ║\A"
+    "║                              ║\A"
+    "╚══════════════════════════════╝\A"
+    "\A"
+    "Espero que me veas pronto desde el ordenador :)";
 
-    display: block !important;
+  display: block !important;
 
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: fixed;
+  z-index: 99999;
 
-    width: 80%;
-    text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.3;
-    white-space: pre-line;
+  width: 85%;
+  max-width: 380px;
 
-    color: black;
-  }
+  padding: 110px 20px 20px 20px;
+
+  box-sizing: border-box;
+
+  background-color: #0102de;
+  background-image: url("gif/construccion.gif");
+  background-repeat: no-repeat;
+  background-position: center 15px;
+  background-size: 80px auto;
+
+  border: 3px solid white;
+
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 1.35;
+
+  white-space: pre;
+  text-align: left;
+
+  color: white;
+
+  box-shadow: 7px 7px 0 black;
+}
 }

@@ -149,157 +149,184 @@ footer {
 
 
 
-.submenu{
+/* =================================
+   VENTANA TERMINAL
+================================= */
 
-    display:none;
-    position:fixed;
+/* =================================
+   VENTANAS TERMINAL
+   ================================= */
 
-    top:120px;
-    left:260px;
+.submenu {
+  display: none;
+  position: fixed;
 
-    width:550px;
-    height:320px;
+  top: 120px;
+  left: 260px;
 
-    background:#C0C0C0;
+  width: 600px;
+  height: 400px;
 
-    border:1px solid;
-    border-color:#FFFFFF #404040 #404040 #FFFFFF;
+  background: #0102de;
+  color: white;
 
-    box-shadow:
-        inset -1px -1px #808080,
-        inset 1px 1px #DFDFDF,
-        2px 2px #000;
+  border: 1px solid white;
 
-    overflow:hidden;
 
-    font-family:"MS Sans Serif",Tahoma,Arial,sans-serif;
-    font-size:18px;
+  overflow: hidden;
 
+  font-family: "Courier New", monospace;
+
+  z-index: 9999;
 }
 
 
-/* BARRA SUPERIOR */
-.window-title{
+/* ================================
+   BARRA DE LA VENTANA
+   ================================ */
 
-    height:24px;
+.window-title {
+  height: 30px;
+  box-sizing: border-box;
 
-    background:white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    color:#0102de;;
+  padding: 0 5px 0 10px;
 
-    display:flex;
+  background: #0102de;
+  color: white;
 
-    justify-content:space-between;
+  border-bottom: 1px solid white;
 
-    align-items:center;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  font-weight: bold;
 
-    padding:2px 3px;
-
-    font-weight:bold;
-
-    cursor:move;
-
-    user-select:none;
-
-    border-bottom:1px solid #808080;
-
-    box-sizing:border-box;
-
+  user-select: none;
+  cursor: move;
 }
 
 
+/* ================================
+   BOTONES DE LA VENTANA
+   ================================ */
 
-/* BOTON X */
-
-.window-title button{
-
-    width:20px;
-    height:20px;
-
-    background:#C0C0C0;
-
-    border:2px solid;
-    border-color:#FFFFFF #404040 #404040 #FFFFFF;
-
-    font-size:13px;
-    font-weight:bold;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    padding:0;
-
+.window-buttons {
+  display: flex;
+  gap: 2px;
+  align-items: center;
 }
 
-.window-title button:active{
+.window-buttons button {
+  width: 22px;
+  height: 20px;
 
-    border-color:#404040 #FFFFFF #FFFFFF #404040;
+  padding: 0;
 
+  background: #C0C0C0;
+  color: #000;
+
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
 }
 
+.window-buttons button:active {
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+}
 
+.window-buttons button:hover {
+  background: #d0d0d0;
+}
 
-
-
-
-
-/* CONTENIDO */
+/* ================================
+   CONTENIDO
+   ================================ */
 
 .window-content {
+  box-sizing: border-box;
 
+  height: calc(100% - 30px);
 
-  height:calc(100% - 32px);
+  padding: 20px;
 
+  background: #0102de;
+  color: white;
 
-  background: #0102de;;
+  font-family: "Arial", monospace;
+  font-size: 14px;
+  line-height: 1.5;
 
+  white-space: normal;
 
-  color:white;
-
-
-  padding:15px;
-
-
-  overflow:auto;
-
-
-  white-space:pre-line;
-
-
-  font-size:15px;
-
-
-  line-height:1.5;
-
-
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 
+/* ================================
+   TEXTO TERMINAL
+   ================================ */
 
-/* SCROLLBAR WINDOWS */
+.terminal-line {
+  font-family: "arial", monospace;
+  color: white;
+}
+
+.terminal-text {
+  font-family: "arial", monospace;
+  color: white;
+  white-space: normal;
+}
+
+
+/* ================================
+   SCROLLBAR
+   ================================ */
 
 .window-content::-webkit-scrollbar {
-    width: 16px;
+  width: 14px;
 }
 
 .window-content::-webkit-scrollbar-track {
-    background: #C0C0C0;
+  background: #0102de;
 }
 
-.window-content::-webkit-scrollbar-thumb{
-    background:
-        repeating-linear-gradient(
-            45deg,
-            #C0C0C0 0px,
-            #C0C0C0 2px,
-            #D8D8D8 2px,
-            #D8D8D8 4px
-        );
-
-    border:2px solid;
-    border-color: white #404040 #404040 white ;
+.window-content::-webkit-scrollbar-thumb {
+  background: white;
 }
+
+.window-content::-webkit-scrollbar-thumb:hover {
+  background: #dcdcdc;
+}
+
+/* =================================
+   VENTANAS INFO
+================================= */
+
+.window {
+  background: #0102de;
+  border: 1px solid white;
+  box-shadow: 2px 2px 0 #000;
+}
+
+
 /* ==== FOOTER TEXTOS ==== */
 .footer-text {
   font-size: 0.75rem; /* 12px */
@@ -308,7 +335,6 @@ footer {
   background-color: #0102de;
   color: #ffffff;
   padding: 0.625rem; /* 10px */
-  width: 100%;
 }
 
 /* ==== FOOTER GIFS ==== */
@@ -472,114 +498,317 @@ footer {
         <span class="texto">Sobre mí</span>
       </div>
 
-  <div class="submenu">
-   <div class="window-title">
-      <span>SOBRE MI  </span>
-      <button onclick="closeWindow(event,this)">×</button>
+  <div id="sobre-mi" class="submenu">
+
+ <div class="window-title">
+  <span>C:\DESCARGAS\DESCARGAS\</span>
+
+  <div class="window-buttons">
+    <button class="minimize">_</button>
+    <button class="maximize">□</button>
+    <button class="close" onclick="closeWindow(event,this)">×</button>
+  </div>
+</div>
+
+  <div class="window-content">
+
+    <div class="terminal-line">C:\&gt; sobre mi  </div>
+
+    <br>
+
+    <div class="terminal-text">
+      Tengo formación en Artes Digitales, Medios Audiovisuales
+      aplicados a las Artes Escénicas y diseño.
+      <br><br>
+
+      Me dedico a la creación y experimentación audiovisual y
+      lumínica, combinando herramientas digitales con el trabajo
+      de taller.
+      <br><br>
+
+      Mi práctica se centra en la experimentación, las metodologías
+      DIY, el hacking y las tecnologías abiertas.
     </div>
 
-    <div class="window-content">
-Tengo formación en Artes Digitales, Medios Audiovisuales aplicados a las Artes Escénicas y diseño. 
-Me dedico a la creación y experimentación audiovisual y lumínica, combinando herramientas digitales con el trabajo de taller. 
-Mi práctica se centra en la experimentación, las metodologías DIY, el hacking y las tecnologías abiertas.
+    <br>
 
-    </div>
-
+    <div class="terminal-line">C:\&gt; _</div>
 
   </div>
 
+</div>
 </div>
 
 <!-- TALLERES -->
 <div class="menu-group">
-    <div class="menu-item" onclick="toggleSubmenu(this.parentElement)">
 
+  <div class="menu-item" onclick="toggleSubmenu(this.parentElement)">
 
     <span class="icono">╰┈➤</span>
     <span class="texto">Talleres</span>
+
   </div>
 
 
-  <div class="submenu">
+  <div id="talleres" class="submenu">
+
+    <!-- BARRA DE LA VENTANA -->
 
     <div class="window-title">
-      <span>TALLERES </span>
-      <button onclick="closeWindow(event,this)">×</button>
+
+      <span>C:\DESCARGAS\DESCARGAS\</span>
+
+      <div class="window-buttons">
+
+        <button class="minimize">_</button>
+
+        <button class="maximize">□</button>
+
+        <button
+          class="close"
+          onclick="closeWindow(event,this)">
+          ×
+        </button>
+
+      </div>
+
     </div>
+
+
+    <!-- CONTENIDO -->
 
     <div class="window-content">
 
-Tallers de Circuit Bending: Creació d’instruments DIY : 
-Juny 2026. Associació Sonora MUTAN LAB en col·laboració amb
-Dissonant , La Negra Factory .Barcelona (ES)
-Juny 2026. Festival Rauxa: Jornada ElectrónicaTransfeminista.
-CSO La 13. Molins de Rei. (ES)
-Abril 2025. Associació Sonora MUTAN LAB, Barcelona (ES)
-Febrer 2025. Dinamo Espai DIY, Barcelona (ES)
+      <div class="terminal-line">
+        C:\&gt; talleres
+      </div>
 
-Taller Dirty Video Mixer: Inyección Technicolor, Agost 2026. Festival
-Landlight. Teruel (ES)
+      <br>
 
-Taller Sonorització de Videojocs: Iniciació a l’electrónica i al Circuit
-Bending , Juny 2026. Centre Civic La Capsa i Centre Civic Jardins
-de la Pau. El Prat (ES)
 
-Taller Electronica bàsica i soldadura ( mixtes i no mixtes) ,
-Juny 2026. Centre Civic Convent Sant Agusti, Barcelona (ES)
+      <div class="terminal-text">
 
-Taller Sonorització de pelis mudes: Circuit Bending i altres meravelles del pirateig. Abril - Juny 2026. Centre Civic Convent de Sant
-Agustí. Barcelona (ES)
+        <strong>Tallers de Circuit Bending:
+        Creació d’instruments DIY</strong>
 
-Taller per a Infants i Joves: La meva primera caixa de Soroll.
-Febrer 2026. Dissonant. Ateneu del Clot, Barcelona (ES)
+        <br><br>
 
-Taller Hacking: Dirty Video Mixer, per l’ ART CITY BOLOGNA 2026
-Febrer 2026. Bologna (IT)
+        Juny 2026. Associació Sonora MUTAN LAB en
+        col·laboració amb Dissonant, La Negra Factory.
+        Barcelona (ES)
 
-Conferència a l’ISE (Integrated Systems Europe), Youz Talent &
-VIBEZ.
+        <br><br>
 
-Taller per a alumnes d’art i disseny interactiu: Cap a la recerca de
-l’anarquia elèctrica i La importància de construir els teus propis
-aparells. Novembre 2025. Elisava. Barcelona (ES)
+        Juny 2026. Festival Rauxa:
+        Jornada Electrónica Transfeminista.
+        CSO La 13. Molins de Rei. (ES)
 
-Taller per a Joves i Adolescents: Iniciació al Pirateig
-Octubre 2025.Centre Civic Convent Sant Agusti. MakerConvent,
-Barcelona (ES)
+        <br><br>
+
+        Abril 2025. Associació Sonora MUTAN LAB.
+        Barcelona (ES)
+
+        <br><br>
+
+        Febrer 2025. Dinamo Espai DIY.
+        Barcelona (ES)
+
+
+        <br><br><br>
+
+
+        <strong>Taller Dirty Video Mixer:
+        Inyección Technicolor</strong>
+
+        <br><br>
+
+        Agost 2026. Festival Landlight.
+        Teruel (ES)
+
+
+        <br><br><br>
+
+
+        <strong>Taller Sonorització de Videojocs:
+        Iniciació a l’electrónica i al Circuit Bending</strong>
+
+        <br><br>
+
+        Juny 2026. Centre Civic La Capsa i
+        Centre Civic Jardins de la Pau.
+        El Prat (ES)
+
+
+        <br><br><br>
+
+
+        <strong>Taller Electrònica bàsica i soldadura
+        (mixtes i no mixtes)</strong>
+
+        <br><br>
+
+        Juny 2026. Centre Civic Convent Sant Agusti.
+        Barcelona (ES)
+
+
+        <br><br><br>
+
+
+        <strong>Taller Sonorització de pelis mudes:
+        Circuit Bending i altres meravelles del pirateig</strong>
+
+        <br><br>
+
+        Abril - Juny 2026.
+        Centre Civic Convent de Sant Agustí.
+        Barcelona (ES)
+
+
+        <br><br><br>
+
+
+        <strong>Taller per a Infants i Joves:
+        La meva primera caixa de Soroll</strong>
+
+        <br><br>
+
+        Febrer 2026. Dissonant.
+        Ateneu del Clot, Barcelona (ES)
+
+
+        <br><br><br>
+
+
+        <strong>Taller Hacking:
+        Dirty Video Mixer, per l’ART CITY BOLOGNA 2026</strong>
+
+        <br><br>
+
+        Febrer 2026. Bologna (IT)
+
+
+        <br><br><br>
+
+
+        <strong>Conferència a l’ISE
+        (Integrated Systems Europe)</strong>
+
+        <br><br>
+
+        Youz Talent &amp; VIBEZ.
+
+
+        <br><br><br>
+
+
+        <strong>Taller per a alumnes d’art i disseny interactiu:
+        Cap a la recerca de l’anarquia elèctrica i
+        La importància de construir els teus propis aparells</strong>
+
+        <br><br>
+
+        Novembre 2025. Elisava.
+        Barcelona (ES)
+
+
+        <br><br><br>
+
+
+        <strong>Taller per a Joves i Adolescents:
+        Iniciació al Pirateig</strong>
+
+        <br><br>
+
+        Octubre 2025.
+        Centre Civic Convent Sant Agusti.
+        MakerConvent, Barcelona (ES)
+
+      </div>
+
+
+      <br>
+
+      <div class="terminal-line">
+        C:\&gt; _
+      </div>
 
     </div>
-
 
   </div>
 
 </div>
 
-
+<!-- PREMIOS -->
 <!-- PREMIOS -->
 
 <div class="menu-group">
-    <div class="menu-item" onclick="toggleSubmenu(this.parentElement)">
 
+  <div class="menu-item" onclick="toggleSubmenu(this.parentElement)">
 
     <span class="icono">╰┈➤</span>
     <span class="texto">Premios</span>
+
   </div>
 
 
-  <div class="submenu">
+  <div id="premios" class="submenu">
+
+    <!-- BARRA DE LA VENTANA -->
 
     <div class="window-title">
-      <span>PREMIOS </span>
-      <button onclick="closeWindow(event,this)">×</button>
+
+      <span>C:\DESCARGAS\DESCARGAS\</span>
+
+      <div class="window-buttons">
+
+        <button class="minimize">_</button>
+
+        <button class="maximize">□</button>
+
+        <button
+          class="close"
+          onclick="closeWindow(event,this)">
+          ×
+        </button>
+
+      </div>
+
     </div>
+
+
+    <!-- CONTENIDO -->
 
     <div class="window-content">
 
- Projecte Premiat de “Cultura Digital” a Vibez Festival 2024.
-42Barcelona. Fundació Telefonica.Generalitat de Catalunya, Departament de Recerca.
+      <div class="terminal-line">
+        C:\&gt; premios
+      </div>
+
+      <br>
+
+      <div class="terminal-text">
+
+        <strong>Projecte Premiat de “Cultura Digital”</strong>
+
+        <br><br>
+
+        Vibez Festival 2024.
+
+        <br><br>
+
+        42Barcelona. Fundació Telefònica.
+        Generalitat de Catalunya,
+        Departament de Recerca.
+
+      </div>
+
+      <br>
+
+      <div class="terminal-line">
+        C:\&gt; _
+      </div>
 
     </div>
-
 
   </div>
 
@@ -587,12 +816,76 @@ Barcelona (ES)
 
 <!-- CONTACTO  -->
 
-<div class="menu-group">
-    <div class="menu-item" onclick="toggleSubmenu(this.parentElement)">
+ <!-- CONTACTO -->
 
-      
+<div class="menu-group">
+
+  <div class="menu-item" onclick="toggleSubmenu(this.parentElement)">
+
     <span class="icono">╰┈➤</span>
-    <span class="texto">Contacto </span>
+    <span class="texto">Contacto</span>
+
+  </div>
+
+
+  <div id="contacto" class="submenu">
+
+    <!-- BARRA DE LA VENTANA -->
+
+    <div class="window-title">
+
+      <span>C:\DESCARGAS\DESCARGAS\</span>
+
+      <div class="window-buttons">
+
+        <button class="minimize">_</button>
+
+        <button class="maximize">□</button>
+
+        <button
+          class="close"
+          onclick="closeWindow(event,this)">
+          ×
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- CONTENIDO -->
+
+    <div class="window-content">
+
+      <div class="terminal-line">
+        C:\&gt; contacto
+      </div>
+
+      <br>
+
+      <div class="terminal-text">
+
+        Redes sociales =
+        <strong>@soldadores.estanyo</strong>
+
+        <br><br>
+
+        Correo electrónico =
+        <strong>usaestoparadescargar@gmail.com</strong>
+
+      </div>
+
+      <br>
+
+      <div class="terminal-line">
+        C:\&gt; _
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
   </div>
 
 

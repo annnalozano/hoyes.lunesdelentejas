@@ -10,7 +10,7 @@
       box-sizing: border-box;
     }
 
-   body {
+  body {
   margin: 0;
   background-color: #0102de;
   font-family: Arial, sans-serif;
@@ -18,7 +18,14 @@
   overflow-x: scroll;
   white-space: nowrap;
   color: white;
-  cursor: url('img/1.png'), auto;
+  
+ 
+  
+}
+
+html,
+body {
+  cursor: url("img/1.png") 0 0, auto !important;
 }
 
 .section {
@@ -26,6 +33,8 @@
   width: 6000px; /* ← ESTO controla hasta dónde llega */
   height: 200vh;
   position: relative;
+   cursor: url('img/1.png') 0 0, auto; 
+  
 }
 
     .label-line {
@@ -112,11 +121,14 @@
       font-size: 0.875rem; /* 14px */
       line-height: 1.1;
       color: white;
+      
     }
 
     .ascii-block a {
       color: white;
       text-decoration: none;
+        cursor: url('img/1.png') 0 0, auto;
+
       /* Sin "cursor" propio: hereda el cursor animado del body (los peces),
          así se ve igual encima del ascii que en el resto de la página */
     }
@@ -232,7 +244,7 @@
 .retro-menu {
   position: absolute;
   top: 100px;
-  left: 100px;
+  left: 130px;
 
   font-family: "Courier New", monospace;
   color: white;
@@ -246,10 +258,9 @@
 
 .retro-prompt {
   font-family: "Courier New", monospace;
-
-  font-size: 18px;
-
-  margin-bottom: 15px;
+font-weight: bold;
+  font-size: 20px;
+    margin-bottom: 15px;
 
   letter-spacing: 1px;
 }
@@ -284,8 +295,7 @@
 
   font-size: 18px;
   font-style: italic;
-
-  cursor: pointer;
+  cursor: url('img/1.png') 0 0, auto;
 }
 
 
@@ -417,9 +427,6 @@
 
 
 
-
-
-
   </style>
 </head>
 
@@ -438,6 +445,15 @@
 
 
 
+
+<img id="fish3" class="fish"
+     src="./gif/9.gif"
+     style="top:510px; left: 3120px; width: 520px;">
+
+
+<img id="fish3" class="fish"
+     src="./gif/6.gif"
+     style="top:710px; left: 3320px; width: 620px;">
 
 
 
@@ -872,19 +888,35 @@ __| |___________| |____________| |________
   }
 
   // --- Cursor animado ---
-  const cursorImages = ['img/1.png',  ];
-  let currentCursor = 0;
-  let cursorIntervalId = null;
+const cursorImages = ['img/1.png', 'img/2.png', 'img/3.png', 'img/4.png'];
 
-  function updateCursor() {
-    document.body.style.cursor = `url(${cursorImages[currentCursor]}), auto`;
-    currentCursor = (currentCursor + 1) % cursorImages.length;
-  }
+let currentCursor = 0;
+let cursorIntervalId = null;
 
-  updateCursor();
-  if (!prefersReducedMotion) {
-    cursorIntervalId = setInterval(updateCursor, 2000);
-  }
+function updateCursor() {
+
+  const cursor = `url("${cursorImages[currentCursor]}") 0 0, auto`;
+
+  document.documentElement.style.setProperty(
+    "cursor",
+    cursor,
+    "important"
+  );
+
+  document.body.style.setProperty(
+    "cursor",
+    cursor,
+    "important"
+  );
+
+  currentCursor = (currentCursor + 1) % cursorImages.length;
+}
+
+updateCursor();
+
+if (!prefersReducedMotion) {
+  cursorIntervalId = setInterval(updateCursor, 2000);
+}
 
   // --- Televisor animado (ASCII) ---
   const tvFrames = [

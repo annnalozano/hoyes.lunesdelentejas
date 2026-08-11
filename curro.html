@@ -128,10 +128,53 @@
             height: var(--gif-size); /* Utiliza la variable para el tamaño */
             pointer-events: none; /* No interfiere con el click */
         }
-        
+
+
+.flechas {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+}
+
+.flechas button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.flecha-gif {
+    width: 60px;
+    cursor: pointer;
+}
+
+#pagina2 {
+    display: none;
+} 
+
+
+
+
+
+
     </style>
 </head>
 <body>
+
+  <div class="flechas">
+
+    <img src="gif/nect2.gif"
+         onclick="paginaAnterior()"
+         class="flecha-gif">
+
+    <img src="gif/next.gif"
+         onclick="paginaSiguiente()"
+         class="flecha-gif">
+
+</div>
 
     <div class="top-bar">
         <img src="./gif/home_pink.gif" alt="Casa" onclick="window.location.href='index.html'">
@@ -140,6 +183,8 @@
     </div>
 
     <!-- Primera barra + títulos -->
+
+    <div id="pagina1">
     <div class="barra-con-texto">
         <div class="barra">
             <div class="contenedor">
@@ -152,7 +197,7 @@
                 <img src="img/vfx/dithered-image (10)copia.png" class="imagen" alt="Dreams Do Come True" onclick="window.location.href='Curro/vfx.html'">
             </div>
             <div class="contenedor">
-                <img src="img/jaleo/dithered-image (10).png" class="imagen" alt="Jaleo" onclick="window.location.href='Curro/Jaleo.html'">
+                <img src="img/CircuitBending/dithering-effect.png" class="imagen" alt="Circuit Bending" onclick="window.location.href='Curro/CircuitBending.html'">
             </div>
         </div>
         <div class="titulos">
@@ -166,7 +211,7 @@
                 <img src="gif/info_teclado.gif" alt="Gif Dreams Do Come True"> VFX
             </div>
             <div class="titulo">
-                <img src="gif/info_teclado.gif" alt="Gif Jaleo"> Circuit Bendig
+                <img src="gif/info_teclado.gif" alt="Gif Circuit Bending"> Circuit Bendig
             </div>
         </div>
     </div>
@@ -205,11 +250,79 @@
         </div>
     </div>
 
+    </div>
 
+ <!-- SEGUNDA PAGINA -->
+    
+    <!-- Primera barra + títulos -->
 
+    <div id="pagina2">
+    <div class="barra-con-texto">
+        <div class="barra">
+            <div class="contenedor">
+                <img src="img/barça/dithered-image (2) - copia.png" class="imagen" alt="Comiat Victor Tomas" onclick="window.location.href='Curro/MappingBarça.html'">
+            </div>
+            <div class="contenedor">
+                <img src="./img/tiburon/dithered-image (11).png" class="imagen" alt="Tiburon" onclick="window.location.href='Curro/SujetoNeoLiberal.html'">
+            </div>
+            <div class="contenedor">
+                <img src="img/vfx/dithered-image (10)copia.png" class="imagen" alt="Dreams Do Come True" onclick="window.location.href='Curro/vfx.html'">
+            </div>
+            <div class="contenedor">
+                <img src="img/jaleo/dithered-image (10).png" class="imagen" alt="Jaleo" onclick="window.location.href='Curro/Jaleo.html'">
+            </div>
+        </div>
+        <div class="titulos">
+            <div class="titulo">
+                <img src="gif/info_teclado.gif" alt="Gif Comiat Victor Tomas"> Mapping Barça
+            </div>
+            <div class="titulo">
+                <img src="gif/info_teclado.gif" alt="Gif Tiburon"> Ilustración
+            </div>
+            <div class="titulo">
+                <img src="gif/info_teclado.gif" alt="Gif Dreams Do Come True"> VFX
+            </div>
+            <div class="titulo">
+                <img src="gif/info_teclado.gif" alt="Gif Jaleo"> Circuit Bendig
+            </div>
+        </div>
+    </div>
+
+    <!-- Segunda barra + títulos -->
     
 
+ <div class="flechas">
 
+    <img src="gif/nect2.gif"
+         onclick="paginaAnterior()"
+         class="flecha-gif">
+
+    <img src="gif/next.gif"
+         onclick="paginaSiguiente()"
+         class="flecha-gif">
+
+</div>
+
+    </div>
+    
+
+<script>
+
+function paginaSiguiente() {
+
+    document.getElementById("pagina1").style.display = "none";
+    document.getElementById("pagina2").style.display = "block";
+
+}
+
+function paginaAnterior() {
+
+    document.getElementById("pagina2").style.display = "none";
+    document.getElementById("pagina1").style.display = "block";
+
+}
+
+</script>
 
 
     

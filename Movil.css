@@ -28,17 +28,16 @@
 
     white-space: nowrap;
 
-    animation: pez 8s linear infinite;
+    animation: pez 18s linear infinite;
   }
 
   @keyframes pez {
-    from {
-      transform: translateX(-100%);
-    }
-
-    to {
-      transform: translateX(100%);
-    }
+  from {
+    transform: translateX(100%);
   }
 
+  to {
+    transform: translateX(-100%);
+  }
+}
 }

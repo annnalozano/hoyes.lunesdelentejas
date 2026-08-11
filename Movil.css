@@ -1,29 +1,5 @@
-@media (max-width: 700px) {
-
-  body {
-    background: #0102de !important;
-    overflow: hidden !important;
-  }
-
-  body * {
-    display: none !important;
-  }
-
- body::after {
-  content:
-    "⚠ AVISO DEL SISTEMA ⚠\A"
-    "\A"
-    "╔══════════════════════════════╗\A"
-    "║                              ║\A"
-    "║      ZONA EN CONSTRUCCIÓN    ║\A"
-    "║                              ║\A"
-    "║   ESTA WEB ES PARA PC        ║\A"
-    "║                              ║\A"
-    "║   📱 NO PUEDES PASAR         ║\A"
-    "║                              ║\A"
-    "╚══════════════════════════════╝\A"
-    "\A"
-    "Espero que me veas pronto desde el ordenador :)";
+body::after {
+  content: "><(((º>  →  →  →  →  →  Esta web no esta disponible para movil :)";
 
   display: block !important;
 
@@ -31,33 +7,25 @@
   z-index: 99999;
 
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
 
-  width: 85%;
-  max-width: 380px;
-
-  padding: 110px 20px 20px 20px;
-
-  box-sizing: border-box;
-
-  background-color: #0102de;
-  background-image: url("gif/construccion.gif");
-  background-repeat: no-repeat;
-  background-position: center 15px;
-  background-size: 80px auto;
-
-  border: 3px solid white;
+  width: 100%;
 
   font-family: monospace;
-  font-size: 13px;
-  line-height: 1.35;
-
-  white-space: pre;
-  text-align: left;
-
+  font-size: 16px;
   color: white;
 
-  box-shadow: 7px 7px 0 black;
+  white-space: nowrap;
+
+  animation: pez 8s linear infinite;
 }
+
+@keyframes pez {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
 }

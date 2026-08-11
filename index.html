@@ -5,37 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home</title>
   <link rel="icon" type="image/x-icon" href="img/dolphin_1f42c.png" />
- <link rel="stylesheet" href="movil.css">
+  <link rel="stylesheet" href="movil.css">
   <style>
     * {
       box-sizing: border-box;
     }
 
-  body {
-  margin: 0;
-  background-color: #0102de;
-  font-family: Arial, sans-serif;
-  overflow-y: hidden;
-  overflow-x: scroll;
-  white-space: nowrap;
-  color: white;
-  
- 
-  
-}
+    html {
+      font-size: 16px !important; /* Blindaje: nada depende ya del tamaño de fuente del sistema */
+    }
 
-html,
-body {
-  cursor: url("img/1.png") 0 0, auto !important;
-}
+    body {
+      margin: 0;
+      background-color: #0102de;
+      font-family: Arial, sans-serif;
+      overflow-y: hidden;
+      overflow-x: scroll;
+      white-space: nowrap;
+      color: white;
+    }
 
-.section {
-  display: inline-block;
-  width: 6000px;
-  height: 900px;
-  position: relative;
-  cursor: url('img/1.png') 0 0, auto;
-}
+    html,
+    body {
+      cursor: url("img/1.png") 0 0, auto !important;
+    }
+
+    .section {
+      display: inline-block;
+      width: 6000px;
+      height: 900px;
+      position: relative;
+      cursor: url('img/1.png') 0 0, auto;
+    }
 
     .label-line {
       font-weight: bold;
@@ -67,8 +68,8 @@ body {
 
     .label-home {
       position: absolute;
-      top: 8.75rem; /* 140px */
-      left: 2.5rem; /* 40px */
+      top: 140px;
+      left: 40px;
       display: flex;
       flex-direction: column;
     }
@@ -85,52 +86,45 @@ body {
       height: 1.5em;
     }
 
-    /* Estilo de texto expandido */
     .stretch-text {
       letter-spacing: 0.125rem;
       transform: scaleX(1.2);
       display: inline-block;
     }
 
-    /* Sangrías */
     .indent-small {
-      padding-left: 1.25rem; /* 20px */
+      padding-left: 20px;
     }
 
     .indent-medium {
-      padding-left: 3.5625rem; /* 57px */
+      padding-left: 57px;
     }
 
     .indent-large {
-      padding-left: 6.25rem; /* 100px */
+      padding-left: 100px;
     }
 
     .label-big {
-      font-size: 1.875rem; /* 30px */
+      font-size: 30px;
     }
 
     .label-medium {
-      font-size: 1.25rem; /* 20px */
+      font-size: 20px;
     }
 
-    /* ASCII decorativo */
     .ascii-block {
       position: absolute;
       white-space: pre;
       font-family: monospace;
-      font-size: 0.875rem; /* 14px */
+      font-size: 14px;
       line-height: 1.1;
       color: white;
-      
     }
 
     .ascii-block a {
       color: white;
       text-decoration: none;
-        cursor: url('img/1.png') 0 0, auto;
-
-      /* Sin "cursor" propio: hereda el cursor animado del body (los peces),
-         así se ve igual encima del ascii que en el resto de la página */
+      cursor: url('img/1.png') 0 0, auto;
     }
 
     .ascii-block a:hover,
@@ -144,42 +138,35 @@ body {
       outline-offset: 2px;
     }
 
-   #ascii-castillo {
-  bottom: 10px;
-  left: 600px;
-}
+    #ascii-castillo {
+      bottom: 10px;
+      left: 600px;
+    }
 
-#ascii-puerta {
-  bottom: 10px;
-  left: 950px;
-}
+    #ascii-puerta {
+      bottom: 10px;
+      left: 950px;
+    }
 
-    /* GIFs decorativos */
     #gif1, #gif2, #gif3, #gif4, #gif5, #gif6,
     #gif7, #gif8, #gif9, #gif10, #gif11, #gif12 {
       position: absolute;
       z-index: 1000;
-      width: 3.125rem; /* 50px */
-
-
+      width: 50px;
     }
-    
 
-
-
-#gif1  { bottom: 6.875rem;  left: 75rem;    height: 4.0625rem; }
-#gif2  { bottom: 6.875rem;  left: 73.125rem; height: 6.25rem; }
-#gif3  { bottom: 11.25rem;  left: 73.125rem; height: 12.5rem; }
-#gif4  { bottom: 6.875rem;  left: 103.75rem; height: 4.0625rem; }
-#gif5  { bottom: 6.875rem;  left: 101.875rem; height: 6.25rem; }
-#gif6  { bottom: 11.25rem;  left: 103.125rem; height: 12.5rem; }
-#gif7  { bottom: 7.5rem;    left: 305rem;    height: 5rem; }
-#gif8  { bottom: 7.5rem;    left: 323rem; height: 2.5rem; }
-#gif9  { bottom: 7.5rem;    left: 303.75rem; height: 2.5rem; }
-#gif10 { bottom: 7.5rem;    left: 325rem;    height: 2.5rem; }
-#gif11 { bottom: 7.5rem;    left: 325rem;    height: 9.375rem; }
-#gif12 { bottom: 7.5rem;    left: 304rem;    height: 6.25rem; }
-
+    #gif1  { bottom: 110px; left: 1200px; height: 65px; }
+    #gif2  { bottom: 110px; left: 1170px; height: 100px; }
+    #gif3  { bottom: 180px; left: 1170px; height: 200px; }
+    #gif4  { bottom: 110px; left: 1660px; height: 65px; }
+    #gif5  { bottom: 110px; left: 1630px; height: 100px; }
+    #gif6  { bottom: 180px; left: 1650px; height: 200px; }
+    #gif7  { bottom: 120px; left: 4880px; height: 80px; }
+    #gif8  { bottom: 120px; left: 5168px; height: 40px; }
+    #gif9  { bottom: 120px; left: 4860px; height: 40px; }
+    #gif10 { bottom: 120px; left: 5200px; height: 40px; }
+    #gif11 { bottom: 120px; left: 5200px; height: 150px; }
+    #gif12 { bottom: 120px; left: 4864px; height: 100px; }
 
     ::-webkit-scrollbar {
       height: 18px;
@@ -225,7 +212,6 @@ body {
       border-bottom: 2px solid #808080;
     }
 
-    /* Respeta la preferencia de movimiento reducido del sistema */
     @media (prefers-reduced-motion: reduce) {
       * {
         animation-duration: 0.001ms !important;
@@ -234,345 +220,231 @@ body {
       }
     }
 
-
-
-    
-/* =========================
-   MENU RETRO
-   ========================= */
-
-.retro-menu {
-  position: absolute;
-  top: 100px;
-  left: 130px;
-
-  font-family: "Courier New", monospace;
-  color: white;
-
-  z-index: 2000;
-  
-}
-
-
-/* TEXTO C:\> */
-
-.retro-prompt {
-  font-family: "Courier New", monospace;
-font-weight: bold;
-  font-size: 20px;
-    margin-bottom: 15px;
-
-  letter-spacing: 1px;
-}
-
-
-/* ENLACES */
-
-.retro-links {
-  display: flex;
-  flex-direction: column;
-
-  gap: 12px;
-
-  margin-left: 35px;
-}
-
-
-/* ENLACES NORMALES */
-
-.retro-links a {
-  display: inline-block;
-
-  width: max-content;
-
-  padding: 2px 7px;
-
-  color: white;
-
-  text-decoration: none;
-
-  font-family: "arial", monospace;
-
-  font-size: 18px;
-  font-style: italic;
-  cursor: url('img/1.png') 0 0, auto;
-}
-
-
-/* BLOQUE BLANCO AL PASAR */
-
-.retro-links a:hover {
-  color: #0102de;
-  background: white;
-}
-
-
-/* CLICK */
-
-.retro-links a:active {
-  transform: translateX(3px);
-}
-
-
-/* ÚLTIMO C:\> */
-
-.retro-prompt.bottom {
-  margin-top: 30px;
-}
-
-
-
-
-/* Cursor de terminal parpadeando */
-
-.terminal-cursor {
-  display: inline-block;
-  animation: terminalBlink 0.8s steps(1) infinite;
-}
-
-@keyframes terminalBlink {
-  0%,
-  50% {
-    opacity: 1;
-  }
-
-  51%,
-  100% {
-    opacity: 0;
-  }
-}
-
-
-
-/* ====  GIFS ==== */
-
-
-.fish {
-  position: absolute;
-  height: auto;
-  z-index: 9999;
-  pointer-events: none;
-}
-
-
-
-
-
-/* =========================
-   PECES ASCII
-   ========================= */
-
-.ascii-fish {
-  position: absolute;
-
-  color: white;
-
-  font-family: monospace;
-  font-size: 18px;
-  line-height: 1;
-
-  white-space: pre;
-
-  z-index: 3000;
-
-  pointer-events: none;
-}
-
-
-/* PEZ IZQUIERDA ARRIBA */
-
-.fish-left-1 {
-  top: 10px;
-  left: 40px;
-  font-size: 10px;
-  
-}
-
-
-/* PEZ IZQUIERDA ABAJO */
-
-.fish-left-2 {
-  top: 170px;
-  left: 80px;
-  font-size: 10px
-}
-
-
-/* PEZ DERECHA ARRIBA */
-
-.fish-right-1 {
-  top: 30px;
-  left: 350px;
-  font-size: 10px
-}
-
-
-/* PEZ DERECHA ABAJO */
-
-.fish-right-2 {
-  top: 250px;
-  left: 250px;
-  font-size: 10px
-}
-
-
-/* PEZ DEBAJO */
-
-.fish-bottom {
-  top: 310px;
-  left: 170px;
-  font-size: 10px
-}
-
-/* ESTRELLA */
-
-.retro-links a {
-    perspective: 500px;
-}
-
-.estrella-menu {
-    display: inline-block;
-    transform-style: preserve-3d;
-}
-
-.retro-links a:hover .estrella-menu {
-    animation: giro3D 0.5s ease;
-}
-
-@keyframes giro3D {
-    0% {
-        transform: rotateY(0deg);
+    /* =========================
+       MENU RETRO
+       ========================= */
+
+    .retro-menu {
+      position: absolute;
+      top: 100px;
+      left: 130px;
+      font-family: "Courier New", monospace;
+      color: white;
+      z-index: 2000;
     }
 
-    100% {
-        transform: rotateY(360deg);
+    .retro-prompt {
+      font-family: "Courier New", monospace;
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
     }
-}
-  </style>
-</head>
 
+    .retro-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-left: 35px;
+    }
 
+    .retro-links a {
+      display: inline-block;
+      width: max-content;
+      padding: 2px 7px;
+      color: white;
+      text-decoration: none;
+      font-family: "arial", monospace;
+      font-size: 18px;
+      font-style: italic;
+      cursor: url('img/1.png') 0 0, auto;
+      perspective: 500px;
+    }
 
+    .retro-links a:hover {
+      color: #0102de;
+      background: white;
+    }
 
+    .retro-links a:active {
+      transform: translateX(3px);
+    }
 
+    .retro-prompt.bottom {
+      margin-top: 30px;
+    }
 
+    .terminal-cursor {
+      display: inline-block;
+      animation: terminalBlink 0.8s steps(1) infinite;
+    }
 
+    @keyframes terminalBlink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    /* ==== GIFS ==== */
+
+    .fish {
+      position: absolute;
+      height: auto;
+      z-index: 9999;
+      pointer-events: none;
+    }
+
+    /* =========================
+       PECES ASCII
+       ========================= */
+
+    .ascii-fish {
+      position: absolute;
+      color: white;
+      font-family: monospace;
+      font-size: 18px;
+      line-height: 1;
+      white-space: pre;
+      z-index: 3000;
+      pointer-events: none;
+    }
+
+    .fish-left-1 {
+      top: 10px;
+      left: 40px;
+      font-size: 10px;
+    }
+
+    .fish-left-2 {
+      top: 170px;
+      left: 80px;
+      font-size: 10px;
+    }
+
+    .fish-right-1 {
+      top: 30px;
+      left: 350px;
+      font-size: 10px;
+    }
+
+    .fish-right-2 {
+      top: 250px;
+      left: 250px;
+      font-size: 10px;
+    }
+
+    .fish-bottom {
+      top: 310px;
+      left: 170px;
+      font-size: 10px;
+    }
+
+    /* ESTRELLA */
+
+    .estrella-menu {
+      display: inline-block;
+      transform-style: preserve-3d;
+    }
+
+    .retro-links a:hover .estrella-menu {
+      animation: giro3D 0.5s ease;
+    }
+
+    @keyframes giro3D {
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
+    }
   </style>
 </head>
 
 <body>
 
-<!-- PECES NADANDO -->
+  <!-- PECES NADANDO -->
+  <img id="fish1" class="fish"
+       src="./gif/fish-anie.gif"
+       style="top: 550px; left: 400px; width: 580px;">
 
-<img id="fish1" class="fish"
-     src="./gif/fish-anie.gif"
-      style="top: 550px; left: 400px; width: 580px;">
+  <img id="fish2" class="fish"
+       src="./gif/gifPEZ4.gif"
+       style="top: 750px; left: 1000px; width: 220px;">
 
+  <img id="fish3" class="fish"
+       src="./gif/9.gif"
+       style="top: 710px; left: 4820px; width: 520px;">
 
-<img id="fish3" class="fish"
-     src="./gif/gifPEZ4.gif"
-     style="top: 750px; left: 1000px; width: 220px;">
+  <img id="fish4" class="fish"
+       src="./gif/6.gif"
+       style="top: 550px; left: 4520px; width: 620px;">
 
+  <!-- MENU RETRO -->
+  <div class="retro-menu">
 
+    <div class="retro-prompt">
+      C:\&gt; BIENVENIDA A CASA !
+    </div>
 
+    <div class="retro-links">
+      <a href="./curro.html">
+        &gt; <span class="estrella-menu">✰</span> CURRO
+      </a>
 
-<img id="fish3" class="fish"
-     src="./gif/9.gif"
-     style="top:710px; left: 4820px; width: 520px;">
+      <a href="./Info.html">
+        &gt; <span class="estrella-menu">✰</span> INFO
+      </a>
+    </div>
 
+    <div class="retro-prompt bottom">
+      C:\&gt; <span class="terminal-cursor">_</span>
+    </div>
 
-<img id="fish3" class="fish"
-     src="./gif/6.gif"
-     style="top:550px; left: 4520px; width: 620px;">
-
-  
-<!-- MENU RETRO -->
-
-<div class="retro-menu">
-
-
-
-  <div class="retro-prompt">
-    C:\&gt; BIENVENIDA A CASA !
   </div>
 
-  <div class="retro-links">
+  <!-- PECES ASCII ALREDEDOR DEL MENÚ -->
 
-    <a href="./curro.html">
-        &gt; <span class="estrella-menu">✰</span> CURRO
-    </a>
-
-    <a href="./Info.html">
-        &gt; <span class="estrella-menu">✰</span> INFO
-    </a>
-
-</div>
-
- 
-<div class="retro-prompt bottom">
-  C:\&gt; <span class="terminal-cursor">_</span>
-</div>
-
-
-</div>
-
-
-
-<!-- PECES ASCII ALREDEDOR DEL MENÚ -->
-
-<div class="ascii-fish fish-left-1">
+  <div class="ascii-fish fish-left-1">
 <pre>
 ><(((º>
 </pre>
-</div>
+  </div>
 
-<div class="ascii-fish fish-left-2">
+  <div class="ascii-fish fish-left-2">
 <pre>
 ><> 
 </pre>
-</div>
+  </div>
 
-<div class="ascii-fish fish-right-1">
+  <div class="ascii-fish fish-right-1">
 <pre>
 <º)))><
 </pre>
-</div>
+  </div>
 
-<div class="ascii-fish fish-right-2">
+  <div class="ascii-fish fish-right-2">
 <pre>
 <><
 </pre>
-</div>
+  </div>
 
-<div class="ascii-fish fish-bottom">
+  <div class="ascii-fish fish-bottom">
 <pre>
 ><(((º>
 </pre>
-</div>
+  </div>
 
+  <img id="gif1"  src="./gif/planta1.gif" alt="Planta decorativa">
+  <img id="gif2"  src="./gif/planta1.gif" alt="Planta decorativa">
+  <img id="gif3"  src="gif/blueline_background.gif" alt="Línea azul decorativa">
+  <img id="gif4"  src="./gif/planta1.gif" alt="Planta decorativa">
+  <img id="gif5"  src="./gif/planta1.gif" alt="Planta decorativa">
+  <img id="gif6"  src="gif/blueline_background.gif" alt="Línea azul decorativa">
+  <img id="gif7"  src="./gif/planta1.gif" alt="Planta decorativa">
+  <img id="gif8"  src="./gif/planta1.gif" alt="Planta decorativa">
+  <img id="gif9"  src="./gif/planta1.gif" alt="Planta decorativa">
+  <img id="gif10" src="./gif/planta1.gif" alt="Planta decorativa">
+  <img id="gif11" src="gif/blueline_background.gif" alt="Línea azul decorativa">
+  <img id="gif12" src="gif/blueline_background.gif" alt="Línea azul decorativa">
 
-<img id="gif1"  src="./gif/planta1.gif" alt="Planta decorativa">
-<img id="gif2"  src="./gif/planta1.gif" alt="Planta decorativa">
-<img id="gif3"  src="gif/blueline_background.gif" alt="Línea azul decorativa">
-<img id="gif4"  src="./gif/planta1.gif" alt="Planta decorativa">
-<img id="gif5"  src="./gif/planta1.gif" alt="Planta decorativa">
-<img id="gif6"  src="gif/blueline_background.gif" alt="Línea azul decorativa">
-<img id="gif7"  src="./gif/planta1.gif" alt="Planta decorativa">
-<img id="gif8"  src="./gif/planta1.gif" alt="Planta decorativa">
-<img id="gif9"  src="./gif/planta1.gif" alt="Planta decorativa">
-<img id="gif10" src="./gif/planta1.gif" alt="Planta decorativa">
-<img id="gif11" src="gif/blueline_background.gif" alt="Línea azul decorativa">
-<img id="gif12" src="gif/blueline_background.gif" alt="Línea azul decorativa">
-
-
-
-
-
-
-
-
-<!-- CASTILLO -->
-<div class="ascii-block" id="ascii-castillo" style="bottom: 10px; left: 800px;" aria-hidden="true">
+  <!-- CASTILLO -->
+  <div class="ascii-block" id="ascii-castillo" style="bottom: 10px; left: 800px;" aria-hidden="true">
 <pre>
    _                     _
   _|_|___________________|_|_
@@ -589,10 +461,10 @@ font-weight: bold;
    | |                   | |
    |_|                   |_|lc
 </pre>
-</div>
+  </div>
 
-<!-- PUERTA -->
-<div class="ascii-block" id="ascii-puerta" style="bottom: 10px; left: 1200px;" aria-hidden="true">
+  <!-- PUERTA -->
+  <div class="ascii-block" id="ascii-puerta" style="bottom: 10px; left: 1200px;" aria-hidden="true">
 <pre>
  .. ..           
   o:  '  :o    
@@ -618,10 +490,10 @@ o |  |  | || o|  |  |  | |  ;     ;  | |  |  |  |o |  |  |  | o
                        ~~~~~~~~~~~~~~~~~ 
 TOC TOC
 </pre>
-</div>
+  </div>
 
-<!-- VENTANA -->
-<div class="ascii-block" style="top: 100px; left: 2100px; font-size: 19px;" aria-hidden="true">
+  <!-- VENTANA -->
+  <div class="ascii-block" style="top: 100px; left: 2100px; font-size: 19px;" aria-hidden="true">
 <pre>
 (IIIIIIIIIIIIIIIIIII)
 )'.'.'.':;:;:'.'.'.'(
@@ -640,10 +512,10 @@ TOC TOC
 ('.'             '.')
  ~                 ~
 </pre>
-</div>
+  </div>
 
-<!-- SOFA -->
-<div class="ascii-block" style="bottom: 10vh; left: 2200px; font-size: 19px;" aria-hidden="true">
+  <!-- SOFA -->
+  <div class="ascii-block" style="bottom: 90px; left: 2200px; font-size: 19px;" aria-hidden="true">
 <pre>
  ___.--------'``````:``````'--------.___
 (   |               :               |   )
@@ -656,10 +528,10 @@ TOC TOC
  ||_____________________________________||
 /_|_____________________________________|_\ zzz
 </pre>
-</div>
+  </div>
 
-<!-- CUADRO -->
-<div class="ascii-block" style="top: 11vh; left: 2800px; font-size: 7px;" aria-hidden="true">
+  <!-- CUADRO -->
+  <div class="ascii-block" style="top: 88px; left: 2800px; font-size: 7px;" aria-hidden="true">
 <pre>
 o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o
 o  /\       /\  /\       /\  /\       /\  /\       /\  /\       /\  o
@@ -690,10 +562,10 @@ o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o
                                                                  hjw
 
 </pre>
-</div>
+  </div>
 
-<!-- CAJÓN -->
-<div class="ascii-block" style="bottom: 50px; left: 3000px;" aria-hidden="true">
+  <!-- CAJÓN -->
+  <div class="ascii-block" style="bottom: 50px; left: 3000px;" aria-hidden="true">
 <pre>
 _________________________________________________________
 ||-------------------------------------------------------||
@@ -708,10 +580,10 @@ _________________________________________________________
 ||-------------------------------------------------------||
 ||-------------------------------------------------------||
 </pre>
-</div>
+  </div>
 
-<!-- TELEVISOR -->
-<div class="ascii-block" style="bottom: 220px; left: 3000px;" aria-hidden="true">
+  <!-- TELEVISOR -->
+  <div class="ascii-block" style="bottom: 220px; left: 3000px;" aria-hidden="true">
 <pre id="tv-screen">
          o
           o    |
@@ -730,10 +602,10 @@ _________________________________________________________
 jgs | LI LI """""""   o|
     '=================='
 </pre>
-</div>
+  </div>
 
-<!-- RELOJ -->
-<div class="ascii-block" style="top: 100px; left: 3700px; font-size: 19px;" aria-hidden="true">
+  <!-- RELOJ -->
+  <div class="ascii-block" style="top: 100px; left: 3700px; font-size: 19px;" aria-hidden="true">
 <pre>
   _______
  /  12   \
@@ -743,10 +615,10 @@ jgs | LI LI """""""   o|
 |         |
  \___6___/
 </pre>
-</div>
+  </div>
 
-<!-- COCINA -->
-<div class="ascii-block" style="bottom: 90px; left: 4100px;" aria-hidden="true">
+  <!-- COCINA -->
+  <div class="ascii-block" style="bottom: 90px; left: 4100px;" aria-hidden="true">
 <pre>
 _____________________________________________________
 ____________________________________________________\\
@@ -786,10 +658,10 @@ ____________________________________________________\\
     __                              _________      \ | |_____________| ||  chup chup
                ___________
 </pre>
-</div>
+  </div>
 
-<!-- VALLA -->
-<div class="ascii-block" style="bottom: 90px; left: 4900px;" aria-hidden="true">
+  <!-- VALLA -->
+  <div class="ascii-block" style="bottom: 90px; left: 4900px;" aria-hidden="true">
 <pre>
   _             _              _
 __| |___________| |____________| |________
@@ -802,10 +674,10 @@ __| |___________| |____________| |________
   | |           | |            | |      VK
 '''''''''''''''''''''''''''''''''''''''''''''
 </pre>
-</div>
+  </div>
 
-<!-- ESTRELLA -->
-<div class="ascii-block" style="top: 50px; left: 5000px; font-size: 8px;" aria-hidden="true">
+  <!-- ESTRELLA -->
+  <div class="ascii-block" style="top: 50px; left: 5000px; font-size: 8px;" aria-hidden="true">
 <pre id="star-screen">
 
    *   '*
@@ -830,10 +702,10 @@ __| |___________| |____________| |________
          :         . :
          .       *
 </pre>
-</div>
+  </div>
 
-<!-- CORTADOR -->
-<div class="ascii-block" style="bottom: 10px; left:5400px;" aria-hidden="true">
+  <!-- CORTADOR -->
+  <div class="ascii-block" style="bottom: 10px; left: 5400px;" aria-hidden="true">
 <pre>
                     .-----
                     '.  .'
@@ -856,91 +728,76 @@ __| |___________| |____________| |________
 \\_'--''--''--'\\__//
  `--' LGBT       `--`
 </pre>
-</div>
+  </div>
 
-<div class="final-space"></div>
+  <div class="final-space"></div>
 
+  <script>
+  (function () {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-<script>
-(function () {
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // --- Scroll horizontal suave ---
+    let scrollTarget = window.scrollX;
+    const speed = 0.2;
+    let scrollRafId = null;
 
-  // --- Scroll horizontal suave ---
-  let scrollTarget = window.scrollX;
-  const speed = 0.2;
-  let scrollRafId = null;
-
-  function smoothScroll() {
-    const current = window.scrollX;
-    const distance = scrollTarget - current;
-    if (Math.abs(distance) > 0.5) {
-      window.scrollTo(current + distance * speed, 0);
-      scrollRafId = requestAnimationFrame(smoothScroll);
-    } else {
-      window.scrollTo(scrollTarget, 0);
-      scrollRafId = null;
+    function smoothScroll() {
+      const current = window.scrollX;
+      const distance = scrollTarget - current;
+      if (Math.abs(distance) > 0.5) {
+        window.scrollTo(current + distance * speed, 0);
+        scrollRafId = requestAnimationFrame(smoothScroll);
+      } else {
+        window.scrollTo(scrollTarget, 0);
+        scrollRafId = null;
+      }
     }
-  }
 
-  function ensureScrollLoop() {
-    if (scrollRafId === null) {
-      scrollRafId = requestAnimationFrame(smoothScroll);
+    function ensureScrollLoop() {
+      if (scrollRafId === null) {
+        scrollRafId = requestAnimationFrame(smoothScroll);
+      }
     }
-  }
 
-  window.addEventListener('wheel', function (e) {
-    e.preventDefault();
-    const maxScroll = document.documentElement.scrollWidth - window.innerWidth;
-    scrollTarget += e.deltaY * 2;
-    scrollTarget = Math.max(0, Math.min(scrollTarget, maxScroll));
-    ensureScrollLoop();
-  }, { passive: false });
+    window.addEventListener('wheel', function (e) {
+      e.preventDefault();
+      const maxScroll = document.documentElement.scrollWidth - window.innerWidth;
+      scrollTarget += e.deltaY * 2;
+      scrollTarget = Math.max(0, Math.min(scrollTarget, maxScroll));
+      ensureScrollLoop();
+    }, { passive: false });
 
-  window.addEventListener('keydown', (e) => {
-    const maxScroll = document.documentElement.scrollWidth - window.innerWidth;
-    if (e.key === 'ArrowRight') scrollTarget = Math.min(scrollTarget + 100, maxScroll);
-    if (e.key === 'ArrowLeft') scrollTarget = Math.max(scrollTarget - 100, 0);
-    ensureScrollLoop();
-  });
+    window.addEventListener('keydown', (e) => {
+      const maxScroll = document.documentElement.scrollWidth - window.innerWidth;
+      if (e.key === 'ArrowRight') scrollTarget = Math.min(scrollTarget + 100, maxScroll);
+      if (e.key === 'ArrowLeft') scrollTarget = Math.max(scrollTarget - 100, 0);
+      ensureScrollLoop();
+    });
 
-  // Si el usuario prefiere menos movimiento, saltamos directo sin animar
-  if (prefersReducedMotion) {
-    window.addEventListener('wheel', () => window.scrollTo(scrollTarget, 0));
-  }
+    if (prefersReducedMotion) {
+      window.addEventListener('wheel', () => window.scrollTo(scrollTarget, 0));
+    }
 
-  // --- Cursor animado ---
-const cursorImages = ['img/1.png', 'img/2.png', 'img/3.png', 'img/4.png'];
+    // --- Cursor animado ---
+    const cursorImages = ['img/1.png', 'img/2.png', 'img/3.png', 'img/4.png'];
+    let currentCursor = 0;
+    let cursorIntervalId = null;
 
-let currentCursor = 0;
-let cursorIntervalId = null;
+    function updateCursor() {
+      const cursor = `url("${cursorImages[currentCursor]}") 0 0, auto`;
+      document.documentElement.style.setProperty("cursor", cursor, "important");
+      document.body.style.setProperty("cursor", cursor, "important");
+      currentCursor = (currentCursor + 1) % cursorImages.length;
+    }
 
-function updateCursor() {
+    updateCursor();
 
-  const cursor = `url("${cursorImages[currentCursor]}") 0 0, auto`;
+    if (!prefersReducedMotion) {
+      cursorIntervalId = setInterval(updateCursor, 2000);
+    }
 
-  document.documentElement.style.setProperty(
-    "cursor",
-    cursor,
-    "important"
-  );
-
-  document.body.style.setProperty(
-    "cursor",
-    cursor,
-    "important"
-  );
-
-  currentCursor = (currentCursor + 1) % cursorImages.length;
-}
-
-updateCursor();
-
-if (!prefersReducedMotion) {
-  cursorIntervalId = setInterval(updateCursor, 2000);
-}
-
-  // --- Televisor animado (ASCII) ---
-  const tvFrames = [
+    // --- Televisor animado (ASCII) ---
+    const tvFrames = [
 `         o
           o    |
            \\   |
@@ -991,19 +848,19 @@ jgs | LI LI """""""   o|
     | '--------------'o|
 jgs | LI LI """""""   o|
     '=================='`
-  ];
+    ];
 
-  let currentTVFrame = 0;
-  const tvScreen = document.getElementById('tv-screen');
-  if (tvScreen && !prefersReducedMotion) {
-    setInterval(() => {
-      tvScreen.textContent = tvFrames[currentTVFrame];
-      currentTVFrame = (currentTVFrame + 1) % tvFrames.length;
-    }, 500);
-  }
+    let currentTVFrame = 0;
+    const tvScreen = document.getElementById('tv-screen');
+    if (tvScreen && !prefersReducedMotion) {
+      setInterval(() => {
+        tvScreen.textContent = tvFrames[currentTVFrame];
+        currentTVFrame = (currentTVFrame + 1) % tvFrames.length;
+      }, 500);
+    }
 
-  // --- Estrella animada (ASCII) ---
-  const starFrames = [
+    // --- Estrella animada (ASCII) ---
+    const starFrames = [
 `        *
 
          .                      .
@@ -1071,28 +928,27 @@ jgs | LI LI """""""   o|
          !
          :         . :
          .     '`
-  ];
+    ];
 
-  let starFrameIndex = 0;
-  const star = document.getElementById('star-screen');
-  if (star && !prefersReducedMotion) {
-    setInterval(() => {
-      star.textContent = starFrames[starFrameIndex];
-      starFrameIndex = (starFrameIndex + 1) % starFrames.length;
-    }, 200);
-  }
-
-  // Pausar temporizadores costosos cuando la pestaña no está visible
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden && cursorIntervalId) {
-      clearInterval(cursorIntervalId);
-      cursorIntervalId = null;
-    } else if (!document.hidden && !cursorIntervalId && !prefersReducedMotion) {
-      cursorIntervalId = setInterval(updateCursor, 2000);
+    let starFrameIndex = 0;
+    const star = document.getElementById('star-screen');
+    if (star && !prefersReducedMotion) {
+      setInterval(() => {
+        star.textContent = starFrames[starFrameIndex];
+        starFrameIndex = (starFrameIndex + 1) % starFrames.length;
+      }, 200);
     }
-  });
-})();
-</script>
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden && cursorIntervalId) {
+        clearInterval(cursorIntervalId);
+        cursorIntervalId = null;
+      } else if (!document.hidden && !cursorIntervalId && !prefersReducedMotion) {
+        cursorIntervalId = setInterval(updateCursor, 2000);
+      }
+    });
+  })();
+  </script>
 
 </body>
 </html>

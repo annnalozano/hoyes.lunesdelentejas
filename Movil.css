@@ -1,31 +1,44 @@
-body::after {
-  content: "><(((º>  →  →  →  →  →  Esta web no esta disponible para movil :)";
+@media (pointer: coarse) {
 
-  display: block !important;
-
-  position: fixed;
-  z-index: 99999;
-
-  top: 50%;
-  left: 0;
-
-  width: 100%;
-
-  font-family: monospace;
-  font-size: 16px;
-  color: white;
-
-  white-space: nowrap;
-
-  animation: pez 8s linear infinite;
-}
-
-@keyframes pez {
-  from {
-    transform: translateX(-100%);
+  body {
+    background: #0102de !important;
+    overflow: hidden !important;
   }
 
-  to {
-    transform: translateX(100%);
+  body * {
+    display: none !important;
   }
+
+  body::after {
+    content: "><(((º>  →  →  →  →  →  Esta web no esta disponible para movil :)";
+
+    display: block !important;
+
+    position: fixed;
+    z-index: 99999;
+
+    top: 50%;
+    left: 0;
+
+    width: 100%;
+
+    font-family: monospace;
+    font-size: 16px;
+    color: white;
+
+    white-space: nowrap;
+
+    animation: pez 8s linear infinite;
+  }
+
+  @keyframes pez {
+    from {
+      transform: translateX(-100%);
+    }
+
+    to {
+      transform: translateX(100%);
+    }
+  }
+
 }

@@ -7,6 +7,12 @@
   <link rel="icon" type="image/x-icon" href="img/dolphin_1f42c.png" />
   <link rel="stylesheet" href="Movil.css">
   <style>
+
+
+
+
+
+
     * {
       box-sizing: border-box;
     }
@@ -357,6 +363,48 @@
 </head>
 
 <body>
+
+<div class="mobile-warning" id="warning1">
+
+    <div class="mobile-warning-content">
+
+        <p class="question">
+          Noooooooo! 
+        </p>
+
+        <img src="img/tetas.jpg" alt="fish">
+
+        <p class="mobile-warning-text">
+            Desafortunadamente esta web  <br>
+            no funcina para movil :(
+        </p>
+
+        <div class="warning-buttons">
+
+            <button class="mobile-warning-button" onclick="showQuestion()">
+                ok
+            </button>
+
+            <button class="mobile-warning-button" onclick="showQuestion()">
+                ok
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<script>
+function showQuestion() {
+    document.getElementById("warning1").style.display = "none";
+    document.getElementById("warning2").style.display = "block";
+}
+
+function animal(name) {
+    document.getElementById("animal-answer").innerHTML =
+        "Excellent choice! " + name + " ♡";
+}
+</script>
 
   <!-- PECES NADANDO -->
   <img id="fish1" class="fish"

@@ -1,32 +1,129 @@
-@media (max-width: 700px) {
+@media (max-width: 768px) {
 
+    html,
     body {
-        background: #d9d7a5 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
         overflow: hidden !important;
+
+        background: #d0d0d0 !important;
     }
 
-    body * {
+    /* Ocultar la web */
+    body > *:not(.mobile-warning) {
         display: none !important;
     }
 
-    body::after {
-        content: "EN CONSTRUCCIÓN\A\A Esta web está diseñada para ordenador.\A Vuelve desde un ordenador :)";
-
+    /* CUADRO PRINCIPAL */
+    .mobile-warning {
         display: block !important;
 
         position: fixed;
-        top: 50%;
+
         left: 50%;
+        top: 50%;
+
         transform: translate(-50%, -50%);
 
-        width: 80%;
-        text-align: center;
+        width: 90vw;
+        max-width: 700px;
+
+        background: #d0d0d0;
+
+        border-top: 3px solid #eeeeee;
+        border-left: 3px solid #eeeeee;
+        border-right: 3px solid #888888;
+        border-bottom: 3px solid #888888;
+
+        box-shadow:
+            inset 0 0 0 1px #aaaaaa,
+            2px 2px 0 #777777;
 
         font-family: Arial, sans-serif;
-        font-size: 16px;
-        line-height: 1.3;
-        white-space: pre-line;
+        color: #111;
 
-        color: black;
+        z-index: 999999;
     }
+
+    /* CONTENIDO */
+    .mobile-warning-content {
+        padding: 65px 45px 70px;
+
+        box-sizing: border-box;
+
+        text-align: center;
+
+        font-size: 18px;
+    }
+
+    /* TEXTO */
+    .mobile-warning-content .question {
+        text-align: left;
+
+        margin: 0 0 75px 25px;
+
+        font-size: 18px;
+    }
+
+    /* PEZ */
+    .mobile-warning-content img {
+        display: block;
+
+        width: 145px;
+        height: auto;
+
+        margin: 0 auto 65px;
+    }
+
+    /* BOTONES */
+    .warning-buttons {
+        display: flex;
+
+        justify-content: space-between;
+
+        padding: 0 60px;
+    }
+
+    .warning-buttons button {
+        width: 130px;
+        height: 55px;
+
+        background: #d0d0d0;
+
+        color: #111;
+
+        font-family: Arial, sans-serif;
+        font-size: 17px;
+
+        border-top: 2px solid #ffffff;
+        border-left: 2px solid #ffffff;
+        border-right: 2px solid #555555;
+        border-bottom: 2px solid #555555;
+
+        box-shadow: 1px 1px 0 #000;
+
+        cursor: pointer;
+    }
+
+    .warning-buttons button:active {
+        border-top: 2px solid #555555;
+        border-left: 2px solid #555555;
+        border-right: 2px solid #ffffff;
+        border-bottom: 2px solid #ffffff;
+
+        box-shadow: none;
+
+        transform: translate(1px, 1px);
+    }
+}
+
+
+/* OCULTO EN ORDENADOR */
+.mobile-warning {
+    display: none;
+}
+
+#warning2 {
+    display: none;
 }

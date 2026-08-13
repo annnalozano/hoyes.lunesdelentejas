@@ -45,19 +45,19 @@
       padding: 0;
       box-sizing: border-box;
     }
+.main-image {
+  flex: 0 0 30%;
+  max-width: 30%;
+}
 
-    .main-image {
-      flex: 0 0 30%;
-      max-width: 30%;
-    }
-
-    .main-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 5px;
-      border: 1px solid #ccc;
-    }
+.main-image img,
+.main-image video {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+}
 
     .main-image em {
       display: block;
@@ -92,19 +92,21 @@
       overflow-y: auto;
     }
 
-    .gallery-content img {
-      width: 100%;
-      max-width: 100px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      cursor: pointer;
-      display: block;
-    }
+ .gallery-content img,
+.gallery-content video {
+  width: 100%;
+  max-width: 100px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  display: block;
+  object-fit: cover;
+}
 
-    .gallery-content img:hover {
-      border-color: black;
-    }
-
+.gallery-content img:hover,
+.gallery-content video:hover {
+  border-color: black;
+}
     /* texto principal que está arriba y luego el resto abajo */
     #texto-principal {
       margin: 0 0 0 0;
@@ -151,24 +153,22 @@
 
   <div class="gallery-dropdown">
     <div class="gallery-button" onclick="toggleGallery()">Galería ▼</div>
-    <div class="gallery-content" id="gallery">
-      <img src="../img/razz/image_2022-03-08_12-49-18-1024x683.png" alt="Imagen 2" onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Human Razzmatazz." />
-      <img src="../img/razz/REEL_VR-ezgif.com-video-to-gif-converter.gif" alt="Imagen 2" onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Video Resumen." />
-      <img src="../img/razz/street_series2-ezgif.com-video-to-gif-converter.gif" alt="Imagen 2" onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas." />
-      <img src="../img/razz/street_series4-ezgif.com-video-to-gif-converter.gif" alt="Imagen 2" onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas." />
-      <img src="../img/razz/street_series5-ezgif.com-video-to-gif-converter.gif" alt="Imagen 2" onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas." />
-      <img src="../img/razz/street_series6-ezgif.com-video-to-gif-converter.gif" alt="Imagen 2" onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas." />
-      <img src="../img/razz/street_series7-ezgif.com-video-to-gif-converter.gif" alt="Imagen 2" onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas." />
-      <img src="../img/razz/street_series8-ezgif.com-video-to-gif-converter.gif" alt="Imagen 2" onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas." />
-      <img src="../img/razz/street_series9-ezgif.com-video-to-gif-converter.gif" alt="Imagen 2" onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas." />
-      <img src="../img/razz/street_series10-ezgif.com-video-to-gif-converter.gif" alt="Imagen 2" onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas." />
-      <img src="../img/razz/street_series11-ezgif.com-video-to-gif-converter.gif" alt="Imagen 2" onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas." />
-      <img src="../img/razz/street_series12-ezgif.com-video-to-gif-converter.gif" alt="Imagen 2" onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas." />
-      <img src="../img/razz/street_series-ezgif.com-video-to-gif-converter.gif" alt="Imagen 2" onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas." />
-      <img src="../img/razz/street_series13-ezgif.com-video-to-gif-converter.gif" alt="Imagen 2" onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas." />
-
-
-    </div>
+<div class="gallery-content" id="gallery">
+  <img src="../img/razz/image_2022-03-08_12-49-18-1024x683.png" alt="Imagen 2" onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Human Razzmatazz." />
+  <video src="../mp4/razz/REEL_VR.mp4" autoplay loop muted playsinline onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Video Resumen."></video>
+  <video src="../mp4/razz/street_series 2.mp4" autoplay loop muted playsinline onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas."></video>
+  <video src="../mp4/razz/street_series 4.mp4" autoplay loop muted playsinline onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas."></video>
+  <video src="../mp4/razz/street_series 5.mp4" autoplay loop muted playsinline onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas."></video>
+  <video src="../mp4/razz/street_series 6.mp4" autoplay loop muted playsinline onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas."></video>
+  <video src="../mp4/razz/street_series 7.mp4" autoplay loop muted playsinline onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas."></video>
+  <video src="../mp4/razz/street_series 8.mp4" autoplay loop muted playsinline onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas."></video>
+  <video src="../mp4/razz/street_series 9.mp4" autoplay loop muted playsinline onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas."></video>
+  <video src="../mp4/razz/street_series 10.mp4" autoplay loop muted playsinline onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas."></video>
+  <video src="../mp4/razz/street_series 11.mp4" autoplay loop muted playsinline onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas."></video>
+  <video src="../mp4/razz/street_series 12.mp4" autoplay loop muted playsinline onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas."></video>
+  <video src="../mp4/razz/street_series.mp4" autoplay loop muted playsinline onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas."></video>
+  <video src="../mp4/razz/street_series 13.mp4" autoplay loop muted playsinline onclick="changeMainImage(this.src, this.dataset.caption)" data-caption="Capsulas."></video>
+</div>
   </div>
 
 </div>
@@ -177,8 +177,37 @@
 
 
 
-        <script>
-    function toggleGallery() {
+        
+
+<script>
+function changeMainImage(src, caption) {
+  const mainImg = document.getElementById('main-img');
+  const mainCaption = document.getElementById('main-caption');
+  const isVideo = /\.(mp4|webm)$/i.test(src);
+
+  let newEl;
+  if (isVideo) {
+    newEl = document.createElement('video');
+    newEl.autoplay = true;
+    newEl.loop = true;
+    newEl.muted = true;
+    newEl.playsInline = true;
+  } else {
+    newEl = document.createElement('img');
+  }
+
+  newEl.id = 'main-img';
+  newEl.className = mainImg.className; // conserva estilos/clases
+  newEl.src = src;
+
+  mainImg.replaceWith(newEl);
+  mainCaption.textContent = caption;
+
+}
+
+
+
+ function toggleGallery() {
       const gallery = document.getElementById('gallery');
       if (gallery.style.display === 'block') {
         gallery.style.display = 'none';
@@ -186,14 +215,10 @@
         gallery.style.display = 'block';
       }
     }
+</script>
+   
 
-    function changeMainImage(src, caption) {
-  const mainImg = document.getElementById('main-img');
-  const mainCaption = document.getElementById('main-caption');
-  mainImg.src = src;
-  mainCaption.textContent = caption;
-}
-  </script>
+
 
 </body>
 </html>

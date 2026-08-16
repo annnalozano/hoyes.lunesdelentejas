@@ -47,6 +47,11 @@
             cursor: pointer;
         }
 
+.top-bar button:hover {
+    background-color: black;
+    color:  #d9d7a5;
+}
+
         .barra-con-texto {
             display: flex;
             flex-direction: column;
@@ -118,6 +123,25 @@
             user-select: none;
         }
 
+  .titulo::after {
+    content: "";
+    position: absolute;
+
+    right: -4px;
+    top: 0;
+    bottom: 0;
+
+    width: 2px;
+
+    background: repeating-linear-gradient(
+        to bottom,
+        black 0px,
+        black 6px,
+        transparent 6px,
+        transparent 9px
+    );
+}
+
         /* Estilo para los gifs fuera del recuadro */
         .titulo img {
             position: absolute;
@@ -169,6 +193,8 @@
     padding-left: 8rem;
     box-sizing: border-box;
 }
+
+
 
     </style>
 </head>

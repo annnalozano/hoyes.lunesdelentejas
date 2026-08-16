@@ -19,11 +19,16 @@ body {
 
 
 }
+
+/*
 a,
 button,
 .menu-item {
     cursor: url('img/1.png') 0 0, auto !important;
 }
+*/
+
+
 
 footer {
   position: absolute;
@@ -50,6 +55,11 @@ footer {
   font-size: 1rem;    /* 16px */
   font-weight: normal;
   pointer-events: auto;
+}
+
+.inicio-btn:hover {
+    background-color: white;
+    color: #0102de;
 }
 
 /* ==== MENÚ PRINCIPAL ==== */
@@ -149,15 +159,6 @@ footer {
     background:#d5d5d5;
 
 }
-/* ===== VENTANA ESTILO WINDOWS 95 ===== */
-
-
-
-
-/* =================================
-   VENTANA TERMINAL
-================================= */
-
 /* =================================
    VENTANAS TERMINAL
    ================================= */
@@ -458,7 +459,7 @@ footer {
   display: inline-block;
   margin-left: 1.25rem; /* 20px */
   transform: translateY(0.625rem); /* 10px */
-  color: blue;
+  color: #0102de;
   background-color: white;
   padding: 0.125rem 0.375rem; /* 2px 6px */
 }
@@ -476,6 +477,139 @@ footer {
 .mail-link:hover {
   color: yellow;
 }
+
+.foto-button {
+    background: transparent;
+    border: 1px solid white;
+    padding: 3px 8px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    color: white;
+}
+
+.foto-button:hover {
+    background: white;
+    color: #0102de;
+   /* font-weight: bold; */
+}
+
+
+
+/* =========================
+   VENTANA DE FOTOS
+   ========================= */
+
+
+
+.foto-window {
+    position: fixed;
+    display: none;
+
+
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+
+    margin: 0;
+    border: 2px solid white;
+    background: transparent;
+    box-sizing: border-box;
+    z-index: 9999;
+    object-fit: contain;
+    left: 55%;
+}
+
+#foto-display {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 20vw;
+    max-height: 30vh;
+
+    margin: 0;
+    padding: 0;
+}
+
+/* X de cerrar */
+.foto-close {
+    position: absolute;
+    top: -14px;
+    right: -11px;
+
+    color: white;
+    background: transparent;
+    border: none;
+
+    padding: 0;
+    margin: 0;
+
+    font-size: 27px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+/* CUADRADOS */
+.handle {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: #0102de;
+    border: 2px solid white;
+    box-sizing: border-box;
+    z-index: 20;
+}
+
+/* arriba */
+.top-left {
+    top: -14px;
+    left: -14px;
+}
+
+.top-center {
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.top-right {
+    top: -14px;
+    right: -14px;
+}
+
+/* laterales */
+.middle-left {
+    top: 50%;
+    left: -14px;
+    transform: translateY(-50%);
+}
+
+.middle-right {
+    top: 50%;
+    right: -14px;
+    transform: translateY(-50%);
+}
+
+/* abajo */
+.bottom-left {
+    bottom: -14px;
+    left: -14px;
+}
+
+.bottom-center {
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bottom-right {
+    bottom: -14px;
+    right: -14px;
+}
+
 
 
 
@@ -592,15 +726,42 @@ footer {
 
       <div class="terminal-text">
 
+
+
+
+<div id="foto-window" class="foto-window">
+
+    <button class="foto-close" onclick="closeFoto()">X</button>
+
+    <img id="foto-display" src="" alt="">
+
+    <span class="handle top-left"></span>
+    <span class="handle top-center"></span>
+    <span class="handle top-right"></span>
+
+    <span class="handle middle-left"></span>
+    <span class="handle middle-right"></span>
+
+    <span class="handle bottom-left"></span>
+    <span class="handle bottom-center"></span>
+    <span class="handle bottom-right"></span>
+
+</div>
+
+
         <strong>Tallers de Circuit Bending:
-        Creació d’instruments DIY</strong>
+        Creació d’instruments DIY</strong>    
+        <button class="foto-button" onclick="openFoto('./img/CircuitBending/DSCN0450.JPG')"> FOTO </button>
         <br>
         Juny 2026. Associació Sonora MUTAN LAB en
         col·laboració amb Dissonant, La Negra Factory.
         Barcelona (ES)
 
-        <br><br>
+        <br>
 
+       
+
+        <br>
         Juny 2026. Festival Rauxa:
         Jornada Electrónica Transfeminista.
         CSO La 13. Molins de Rei. (ES)
@@ -614,13 +775,15 @@ footer {
 
         Febrer 2025. Dinamo Espai DIY.
         Barcelona (ES)
-
-
-        <br><br><br>
+        <br>
+      
+        
+        <br><br>
 
 
         <strong>Taller Dirty Video Mixer:
-        Inyección Technicolor</strong>
+        Inyección Technicolor</strong>   
+        <button class="foto-button" onclick="openFoto('img/dirtyVideoMixer/DSC09019.JPG')"> FOTO </button>
 
         <br>
 
@@ -631,8 +794,9 @@ footer {
         <br><br><br>
 
 
-        <strong>Taller Sonorització de Videojocs:
-        Iniciació a l’electrónica i al Circuit Bending</strong>
+        <strong>Taller Sonorització de Videojocs: <br> 
+        Iniciació a l’electrónica i al Circuit Bending</strong>   
+        <button class="foto-button" onclick="openFoto('img/CircuitBending/DSC08930.JPG')"> FOTO </button>
 
         <br>
 
@@ -645,8 +809,8 @@ footer {
 
 
         <strong>Taller Electrònica bàsica i soldadura
-        (mixtes i no mixtes)</strong>
-
+        (mixtes i no mixtes)</strong>   
+       
         <br>
 
         Juny 2026. Centre Civic Convent Sant Agusti.
@@ -656,8 +820,9 @@ footer {
         <br><br><br>
 
 
-        <strong>Taller Sonorització de pelis mudes:
-        Circuit Bending i altres meravelles del pirateig</strong>
+        <strong>Taller Sonorització de pelis mudes: <br>
+        Circuit Bending i altres meravelles del pirateig</strong>   
+        <button class="foto-button" onclick="openFoto('img/CircuitBending/DSC08860.JPG')"> FOTO </button>
 
         <br>
 
@@ -670,7 +835,8 @@ footer {
 
 
         <strong>Taller per a Infants i Joves:
-        La meva primera caixa de Soroll</strong>
+        La meva primera caixa de Soroll</strong>   
+        
 
         <br>
 
@@ -682,7 +848,8 @@ footer {
 
 
         <strong>Taller Hacking:
-        Dirty Video Mixer, per l’ART CITY BOLOGNA 2026</strong>
+        Dirty Video Mixer, per l’ART CITY BOLOGNA 2026</strong>   
+        <button class="foto-button" onclick="openFoto('img/CircuitBending/IMG_1827.JPG')"> FOTO </button>
 
         <br>
 
@@ -706,8 +873,7 @@ footer {
         <strong>Taller per a alumnes d’art i disseny interactiu:
         Cap a la recerca de l’anarquia elèctrica i
         La importància de construir els teus propis aparells</strong>
-
-        <br>
+               <br>
 
         Novembre 2025. Elisava.
         Barcelona (ES)
@@ -718,6 +884,7 @@ footer {
 
         <strong>Taller per a Joves i Adolescents:
         Iniciació al Pirateig</strong>
+          <button class="foto-button" onclick="openFoto('img/CircuitBending/DSC09573.JPG')"> FOTO </button>
 
         <br>
 
@@ -751,6 +918,7 @@ footer {
     <span class="texto">Premios</span>
 
   </div>
+
 
 
   <div id="premios" class="submenu">
@@ -816,7 +984,6 @@ footer {
 
 </div>
 
-<!-- CONTACTO  -->
 
  <!-- CONTACTO -->
 
@@ -979,7 +1146,15 @@ jgs^^^^
 
 <div class="gif-container">
   <img src="./gif/9.gif" alt="Decorativo" />
+
+
+
+
+
+
 </div>
+
+
 
 
 
@@ -1166,6 +1341,24 @@ if (!prefersReducedMotion) {
 }
 
 
+
+
+
+
+
+function openFoto(image) {
+    document.getElementById("foto-display").src = image;
+    document.getElementById("foto-window").style.display = "block";
+}
+
+function closeFoto() {
+    document.getElementById("foto-window").style.display = "none";
+}
+
+
+
+
+
 </script>
 <div class="marquee-container">
   <div class="marquee-content">
@@ -1187,6 +1380,9 @@ if (!prefersReducedMotion) {
 <div class="gif-container gif-bottom-right">
   <img src="./gif/fish-anie.gif" alt="GIF 3" />
 </div>
+
+
+
 
   
 </body>

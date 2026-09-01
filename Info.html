@@ -532,6 +532,8 @@ footer {
 
     margin: 0;
     padding: 0;
+
+    transition: opacity 0.2s ease;
 }
 
 /* X de cerrar */
@@ -794,7 +796,7 @@ function animal(name) {
 
         <strong>Tallers de Circuit Bending:
         Creació d’instruments DIY</strong>    
-        <button class="foto-button" onclick="openFoto('./img/CircuitBending/DSCN0450.JPG')"> FOTO </button>
+        <button class="foto-button" onclick="openFoto('./img/CircuitBending/DSCN0450.jpg')"> FOTO </button>
         <br>
         Juny 2026. Associació Sonora MUTAN LAB en
         col·laboració amb Dissonant, La Negra Factory.
@@ -826,7 +828,7 @@ function animal(name) {
 
         <strong>Taller Dirty Video Mixer:
         Inyección Technicolor</strong>   
-        <button class="foto-button" onclick="openFoto('img/dirtyVideoMixer/DSC09019.JPG')"> FOTO </button>
+        <button class="foto-button" onclick="openFoto('img/dirtyVideoMixer/DSC09019.jpg')"> FOTO </button>
 
         <br>
 
@@ -839,7 +841,7 @@ function animal(name) {
 
         <strong>Taller Sonorització de Videojocs: <br> 
         Iniciació a l’electrónica i al Circuit Bending</strong>   
-        <button class="foto-button" onclick="openFoto('img/CircuitBending/DSC08930.JPG')"> FOTO </button>
+        <button class="foto-button" onclick="openFoto('img/CircuitBending/DSC08930.jpg')"> FOTO </button>
 
         <br>
 
@@ -865,7 +867,7 @@ function animal(name) {
 
         <strong>Taller Sonorització de pelis mudes: <br>
         Circuit Bending i altres meravelles del pirateig</strong>   
-        <button class="foto-button" onclick="openFoto('img/CircuitBending/DSC08860.JPG')"> FOTO </button>
+        <button class="foto-button" onclick="openFoto('img/CircuitBending/DSC08860.jpg')"> FOTO </button>
 
         <br>
 
@@ -892,7 +894,7 @@ function animal(name) {
 
         <strong>Taller Hacking:
         Dirty Video Mixer, per l’ART CITY BOLOGNA 2026</strong>   
-        <button class="foto-button" onclick="openFoto('img/CircuitBending/IMG_1827.JPG')"> FOTO </button>
+        <button class="foto-button" onclick="openFoto('img/CircuitBending/IMG_1827.jpg')"> FOTO </button>
 
         <br>
 
@@ -927,7 +929,7 @@ function animal(name) {
 
         <strong>Taller per a Joves i Adolescents:
         Iniciació al Pirateig</strong>
-          <button class="foto-button" onclick="openFoto('img/CircuitBending/DSC09573.JPG')"> FOTO </button>
+          <button class="foto-button" onclick="openFoto('img/CircuitBending/DSC09573.jpg')"> FOTO </button>
 
         <br>
 
@@ -1390,8 +1392,18 @@ if (!prefersReducedMotion) {
 
 
 function openFoto(image) {
-    document.getElementById("foto-display").src = image;
-    document.getElementById("foto-window").style.display = "block";
+    const img = document.getElementById("foto-display");
+    const win = document.getElementById("foto-window");
+
+    win.style.display = "block";
+    img.style.opacity = "0.3";
+    img.src = "";
+
+    img.onload = function () {
+        img.style.opacity = "1";
+    };
+
+    img.src = image;
 }
 
 function closeFoto() {

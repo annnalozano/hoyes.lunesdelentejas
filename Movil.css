@@ -131,6 +131,10 @@ box-shadow:
     display: none;
 }
 
+.mobile-warning.oculto {
+    display: none !important;
+}
+
 #warning2 {
     display: none;
 }
@@ -186,4 +190,23 @@ box-shadow:
         height: 40px;
         font-size: 15px;
     }
+
+
+
+    @media (max-width: 480px) and (orientation: portrait) {
+    .mobile-warning-content {
+        padding: 30px 15px 30px;
+    }
+
+    .warning-buttons {
+        gap: 20px;
+    }
+
+    .warning-buttons button {
+        width: 100px;
+        height: 45px;
+        font-size: 14px;
+    }
 }
+}
+

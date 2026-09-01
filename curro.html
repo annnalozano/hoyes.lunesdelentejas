@@ -2,8 +2,10 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Porfolio</title>
     <link rel="icon" type="image/x-icon" href="img/dolphin_1f42c.png" /> <!-- Favicon -->
+    <link rel="stylesheet" href="Movil.css">
     <style>
         :root {
             /* Variables para controlar los tamaños usando rem (1rem = 16px base) */
@@ -200,6 +202,47 @@
     </style>
 </head>
 <body>
+
+
+<div class="mobile-warning" id="warning1">
+
+    <div class="mobile-warning-content">
+
+        <p class="question">
+          Noooooooo! 
+        </p>
+
+        <img src="img/tetas.jpg" alt="fish">
+
+        <p class="mobile-warning-text">
+            Desafortunadamente esta web  <br>
+            no funcina para movil :(
+        </p>
+
+        <div class="warning-buttons">
+
+            <button class="mobile-warning-button" onclick="showQuestion()">
+                ok
+            </button>
+
+            <button class="mobile-warning-button" onclick="showQuestion()">
+                ok
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<script>
+
+function showQuestion() {
+    document.getElementById("warning1").classList.add("oculto");
+}
+
+
+</script>
+ 
 
   <div class="flechas">
 
